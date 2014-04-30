@@ -16,4 +16,5 @@
 @property (nonatomic, strong)       NSArray         *arr_imgArray;
 @property (nonatomic, readwrite)    int             startPage;
 
+- (id)initWithFrame:(CGRect)frame andViewData:(NSArray *)dataArray;
 @end

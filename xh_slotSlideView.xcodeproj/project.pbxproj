@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8207877719116CAD00279840 /* slotScroll.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8207877619116CAD00279840 /* slotScroll.plist */; };
 		826AE92E19094DCD006A689B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826AE92D19094DCD006A689B /* Foundation.framework */; };
 		826AE93019094DCD006A689B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826AE92F19094DCD006A689B /* CoreGraphics.framework */; };
 		826AE93219094DCD006A689B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826AE93119094DCD006A689B /* UIKit.framework */; };
@@ -25,6 +26,7 @@
 		826AE968190963A6006A689B /* fpo_tmp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826AE965190963A6006A689B /* fpo_tmp.jpg */; };
 		826AE969190963A6006A689B /* movie_tmp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826AE966190963A6006A689B /* movie_tmp.jpg */; };
 		826AE96A190963A6006A689B /* pdf_tmp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826AE967190963A6006A689B /* pdf_tmp.jpg */; };
+		8276D27819119B7900849E39 /* BGImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8276D27719119B7900849E39 /* BGImage.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8207877619116CAD00279840 /* slotScroll.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = slotScroll.plist; sourceTree = "<group>"; };
 		826AE92A19094DCD006A689B /* xh_slotSlideView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xh_slotSlideView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		826AE92D19094DCD006A689B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		826AE92F19094DCD006A689B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +65,7 @@
 		826AE965190963A6006A689B /* fpo_tmp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fpo_tmp.jpg; sourceTree = "<group>"; };
 		826AE966190963A6006A689B /* movie_tmp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie_tmp.jpg; sourceTree = "<group>"; };
 		826AE967190963A6006A689B /* pdf_tmp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pdf_tmp.jpg; sourceTree = "<group>"; };
+		8276D27719119B7900849E39 /* BGImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BGImage.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 				826AE94319094DCD006A689B /* ViewController.m */,
 				826AE96219095253006A689B /* xh_slotScrollView.h */,
 				826AE96319095254006A689B /* xh_slotScrollView.m */,
+				8207877619116CAD00279840 /* slotScroll.plist */,
+				8276D27719119B7900849E39 /* BGImage.jpg */,
 				826AE965190963A6006A689B /* fpo_tmp.jpg */,
 				826AE966190963A6006A689B /* movie_tmp.jpg */,
 				826AE967190963A6006A689B /* pdf_tmp.jpg */,
@@ -213,6 +219,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Xiaohe Hu";
 				TargetAttributes = {
+					826AE92919094DCD006A689B = {
+						DevelopmentTeam = 97VHU5A6BJ;
+					};
 					826AE94A19094DCD006A689B = {
 						TestTargetID = 826AE92919094DCD006A689B;
 					};
@@ -243,10 +252,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				826AE94619094DCD006A689B /* Images.xcassets in Resources */,
+				8207877719116CAD00279840 /* slotScroll.plist in Resources */,
 				826AE93819094DCD006A689B /* InfoPlist.strings in Resources */,
 				826AE96A190963A6006A689B /* pdf_tmp.jpg in Resources */,
 				826AE969190963A6006A689B /* movie_tmp.jpg in Resources */,
 				826AE94119094DCD006A689B /* Main.storyboard in Resources */,
+				8276D27819119B7900849E39 /* BGImage.jpg in Resources */,
 				826AE968190963A6006A689B /* fpo_tmp.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,7 +385,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Neoscape, Incorporated";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Neoscape, Incorporated";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -385,6 +397,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "5DA75D41-A3E9-4CA0-84FE-F76E92D6BFA0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -396,6 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "xh_slotSlideView/xh_slotSlideView-Prefix.pch";
 				INFOPLIST_FILE = "xh_slotSlideView/xh_slotSlideView-Info.plist";
@@ -410,6 +424,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Neoscape, Incorporated";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Neoscape, Incorporated";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "xh_slotSlideView/xh_slotSlideView-Prefix.pch";
 				INFOPLIST_FILE = "xh_slotSlideView/xh_slotSlideView-Info.plist";
