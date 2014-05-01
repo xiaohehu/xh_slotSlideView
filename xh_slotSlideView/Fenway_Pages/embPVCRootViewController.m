@@ -104,7 +104,7 @@
 {
 	CGFloat staticWidth     = 105;		// Static Width for all Buttons.
 	CGFloat staticHeight    = 42;		// Static Height for all buttons.
-	CGFloat staticPadding   = 18;		// Padding to add between each button.
+	CGFloat staticPadding   = 10;		// Padding to add between each button.
 	
 //	_sectionsIndex		= @[@0,@3,@7,@13,@16];
     _sectionsIndex		= @[@0,@4,@8,@14,@17];
@@ -112,7 +112,7 @@
 //    _sectionsIndex		= @[@0,@3,@5,@7,@13,@16];
 //	NSArray *sectionTitles	= @[@"INTRODUCTION",@"CULTURE",@"SCIENCE",@"RESIDENTIAL",@"GREEN SPACE",@"RETAIL"];
 	
-	_uivBtn_container = [[UIView alloc] initWithFrame:CGRectMake(358, 675, _sectionsIndex.count*(staticWidth-staticPadding)+40, staticHeight)];
+	_uivBtn_container = [[UIView alloc] initWithFrame:CGRectMake(158, 675, _sectionsIndex.count*(staticWidth+staticPadding)+40, staticHeight)];
     
 	[self.view insertSubview:_uivBtn_container atIndex:HUGE_VAL];
 	
@@ -123,13 +123,13 @@
 		UIButton *settButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		//[settButton setTag:i];
         if (i ==0) {
-            [settButton setFrame:CGRectMake(((i * (staticWidth-staticPadding))),0,staticWidth,staticHeight)];
+            [settButton setFrame:CGRectMake(((i * (staticWidth+staticPadding))),0,staticWidth,staticHeight)];
         }
         else if (i==1){
-            [settButton setFrame:CGRectMake(((i * (staticWidth-staticPadding))),0,staticWidth+40,staticHeight)];
+            [settButton setFrame:CGRectMake(((i * (staticWidth+staticPadding))),0,staticWidth+40,staticHeight)];
         }
         else if (i > 1){
-            [settButton setFrame:CGRectMake(((i * (staticWidth-staticPadding)))+40,0,staticWidth,staticHeight)];
+            [settButton setFrame:CGRectMake(((i * (staticWidth+staticPadding)))+40,0,staticWidth,staticHeight)];
         }
 		
 		settButton.tag = [_sectionsIndex[i] integerValue];
@@ -138,9 +138,9 @@
 		[settButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
 		[settButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
 		
-		settButton.titleLabel.font = [UIFont fontWithName:@"DINEngschriftStd" size:13.5]; //custom font
+		settButton.titleLabel.font = [UIFont systemFontOfSize:13]; //custom font
 		[settButton setTitleEdgeInsets:UIEdgeInsetsMake(5.0f, 0.0f, 0.0f, 0.0f)];
-		
+		settButton.backgroundColor = [UIColor blackColor];
 		UIImage* defaultImage = [UIImage imageNamed:@"btn_fenway.png"];
 		UIImage* hilightImage = [UIImage imageNamed:@"btn_fenway_hlt.png"];
 		
@@ -183,7 +183,7 @@
 	[menuButton setBackgroundImage:hilightImage forState:UIControlStateSelected];
 
 	[menuButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-	[self.view addSubview: menuButton];
+//	[self.view addSubview: menuButton];
 //    [self.view insertSubview:menuButton belowSubview:_uivBtn_container];
     
     UIImageView *uiiv_containerBG = [[UIImageView alloc] initWithFrame:CGRectMake(menuButton.frame.origin.x-2, _uivBtn_container.frame.origin.y-2, _uivBtn_container.frame.size.width+menuButton.frame.size.width+4, _uivBtn_container.frame.size.height+4)];
@@ -282,7 +282,7 @@
 {
     embPVCBaseViewController *theCurrentViewController = [self.pageViewController.viewControllers objectAtIndex:0];
     _pageIndex = [self.modelController indexOfViewController:theCurrentViewController];
-		
+    
 	BOOL shouldAddPanel;
     BOOL shouldChange = YES;
 	int convertedIndex = -1;

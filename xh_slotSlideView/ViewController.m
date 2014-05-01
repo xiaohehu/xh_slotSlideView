@@ -29,6 +29,7 @@
     [super viewDidLoad];
     _pageVC = [[embPVCRootViewController alloc] init];
     _pageVC.view.frame = CGRectMake(0.0, 0.0, 1024, 768);
+    _pageVC.view.alpha = 0.0;
     
 	// Do any additional setup after loading the view, typically from a nib.
     UIImageView *uiiv_bg = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 1024, 768)];
@@ -106,10 +107,13 @@
 
 -(void)tapOnSlotScrollView:(UITapGestureRecognizer *)recognizer {
     _uiv_backView = [[UIView alloc] initWithFrame:self.view.bounds];
-    [self.view insertSubview:_uiv_backView belowSubview:_uis_slotScrollView];
+//    [self.view insertSubview:_uiv_backView belowSubview:_uis_slotScrollView];
     _uiv_backView.backgroundColor = [UIColor blackColor];
+    [self.view insertSubview:_pageVC.view belowSubview:_uib_back];
+    
     
     if (recognizer.view.tag == 100) {
+        [_pageVC loadPageFromParent:16];
         NSLog(@"The tag is 100");
         if ((_uis_slotScrollView.contentOffset.y/_uis_slotScrollView.frame.size.height) == 1) {
             _uiv_backView.backgroundColor = [UIColor redColor];
@@ -121,7 +125,7 @@
         }
                          completion:^(BOOL finished){
                              _uib_back.hidden = NO;
-                             [self.view addSubview:_pageVC.view];
+                             _pageVC.view.alpha = 1.0;
                          }];
     }
     
@@ -163,10 +167,10 @@
     _uib_back.hidden = YES;
     
     [UIView animateWithDuration:0.33 animations:^{
-        _uiv_backView.alpha = 0.0;
+        _pageVC.view.alpha = 0.0;
     } completion:^(BOOL finished){
-        [_uiv_backView removeFromSuperview];
-        _uiv_backView = nil;
+//        [_uiv_backView removeFromSuperview];
+//        _uiv_backView = nil;
         
         [UIView animateWithDuration:1.0 animations:^{
             _uis_slotScrollView.transform = CGAffineTransformIdentity;
