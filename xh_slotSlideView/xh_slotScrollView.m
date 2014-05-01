@@ -9,8 +9,7 @@
 #import "xh_slotScrollView.h"
 
 @interface xh_slotScrollView () <UIScrollViewDelegate>
-//@property (nonatomic, strong)       UIView                  *uiv_contentView;
-//@property (nonatomic, strong)       UIImageView             *uiiv_animationImages;
+
 @end
 static float alphaValue = 0.8;
 @implementation xh_slotScrollView
@@ -90,6 +89,7 @@ static float alphaValue = 0.8;
         
         UIView *uiv_contentView = [[UIView alloc] initWithFrame:CGRectMake(contentFrame.origin.x, contentFrame.origin.y, contentFrame.size.width, contentFrame.size.height)];
         NSDictionary *contentViewData = [[NSDictionary alloc] initWithDictionary:[dataArray objectAtIndex:i]];
+        uiv_contentView.tag = 100+i;
         
         //Init animation Imageview part
         NSArray *imageNames = [[NSArray alloc]initWithArray:[contentViewData objectForKey:@"images"]];
@@ -103,6 +103,7 @@ static float alphaValue = 0.8;
         uiiv_animationView.animationDuration = [[contentViewData objectForKey:@"duration"] floatValue];
         [uiv_contentView addSubview:uiiv_animationView];
         [uiiv_animationView startAnimating];
+        uiiv_animationView.tag = 200+i;
         
         //Change Content View BG Color
         NSString *colorData = [contentViewData objectForKey: @"color"];
@@ -134,6 +135,48 @@ static float alphaValue = 0.8;
         
         [self addSubview: uiv_contentView];
     }
+}
+
+#pragma mark - Scrollview Delegate
+// After scrolling, Get current page and resume animation
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    int pageIndex = self.contentOffset.y/self.frame.size.height;
+    for (UIView *tmp in [self subviews]) {
+        if (tmp.tag == 100+pageIndex) {
+            for (UIImageView *tmpImageView in [tmp subviews]) {
+                [self resumeLayer:tmpImageView.layer];
+            }
+        }
+    }
+}
+
+// While scrolling, STOP all UIImageView Animation
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSLog(@"It is scrolling!!!");
+    for (UIView *tmp in [self subviews]) {
+        if (tmp.tag >= 100) {
+            for (UIImageView *tmpImageView in [tmp subviews]) {
+                [self pauseLayer:tmpImageView.layer];
+            }
+        }
+    }
+}
+#pragma mark - Pause & Resume Image Animation
+-(void)pauseLayer:(CALayer*)layer
+{
+    CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
+    layer.speed = 0.0;
+    layer.timeOffset = pausedTime;
+}
+
+-(void)resumeLayer:(CALayer*)layer
+{
+    CFTimeInterval pausedTime = [layer timeOffset];
+    layer.speed = 1.0;
+    layer.timeOffset = 0.0;
+    layer.beginTime = 0.0;
+    CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+    layer.beginTime = timeSincePause;
 }
 /*
 // Only override drawRect: if you perform custom drawing.

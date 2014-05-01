@@ -15,9 +15,9 @@
 @property (nonatomic, strong) xh_slotScrollView         *uis_slotScrollView2;
 @property (nonatomic, strong) UIView                    *uiv_backView;
 @property (nonatomic, strong) UIButton                  *uib_back;
-@property (nonatomic, strong) UITapGestureRecognizer    *tapToExpansion;
-@property (nonatomic, strong) UITapGestureRecognizer    *tapToExpansion1;
-@property (nonatomic, strong) UITapGestureRecognizer    *tapToExpansion2;
+//@property (nonatomic, strong) UITapGestureRecognizer    *tapToExpansion;
+//@property (nonatomic, strong) UITapGestureRecognizer    *tapToExpansion1;
+//@property (nonatomic, strong) UITapGestureRecognizer    *tapToExpansion2;
 @end
 
 @implementation ViewController
@@ -37,59 +37,64 @@
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"slotScroll" ofType:@"plist"];
     NSArray *totalData = [[NSArray alloc] initWithContentsOfFile:path];
-    NSArray *slotViewData = [[NSArray alloc] initWithArray:[totalData objectAtIndex:0]];
-    NSLog(@"The first slotView data is %@", slotViewData);
     
-    _uis_slotScrollView = [[xh_slotScrollView alloc] initWithFrame:CGRectMake(0.0, 0.0, 341, 768) andViewData:slotViewData];
-    [self.view addSubview:_uis_slotScrollView];
-    
-    
-//    NSArray *imageArray = [[NSArray alloc] initWithObjects:@"fpo_tmp.jpg", @"movie_tmp.jpg", @"pdf_tmp.jpg", nil];
-//    _uis_slotScrollView = [[xh_slotScrollView alloc] initWithFrame:CGRectMake(0.0, 0.0, 341, 768)];
-//    _uis_slotScrollView.arr_imgArray = imageArray;
-//    _uis_slotScrollView.startPage = 0;
-//    _uis_slotScrollView.tag = 100;
-//    
-//    _uis_slotScrollView1 = [[xh_slotScrollView alloc] initWithFrame:CGRectMake(341, 0.0, 341, 768)];
-//    _uis_slotScrollView1.arr_imgArray = imageArray;
-//    _uis_slotScrollView1.startPage = 1;
-//    _uis_slotScrollView1.tag = 101;
-//    
-//    _uis_slotScrollView2 = [[xh_slotScrollView alloc] initWithFrame:CGRectMake(682, 0.0, 342, 768)];
-//    _uis_slotScrollView2.arr_imgArray = imageArray;
-//    _uis_slotScrollView2.startPage = 2;
-//    _uis_slotScrollView2.tag = 102;
-//    
-//    [self.view addSubview:_uis_slotScrollView];
-//    [self.view addSubview:_uis_slotScrollView1];
-//    [self.view addSubview:_uis_slotScrollView2];
-//    
-//    _tapToExpansion = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnSlotScrollView:)];
-//    _tapToExpansion.delegate = self;
-//    _uis_slotScrollView.userInteractionEnabled = YES;
-//    [_uis_slotScrollView setShowsVerticalScrollIndicator:NO];
-//    
-//    _tapToExpansion1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnSlotScrollView:)];
-//    _tapToExpansion1.delegate = self;
-//    _uis_slotScrollView1.userInteractionEnabled = YES;
-//    [_uis_slotScrollView1 setShowsVerticalScrollIndicator:NO];
-//    
-//    _tapToExpansion2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnSlotScrollView:)];
-//    _tapToExpansion2.delegate = self;
-//    _uis_slotScrollView2.userInteractionEnabled = YES;
-//    [_uis_slotScrollView2 setShowsVerticalScrollIndicator:NO];
-//    
-//    [_uis_slotScrollView addGestureRecognizer:_tapToExpansion];
-//    [_uis_slotScrollView1 addGestureRecognizer:_tapToExpansion1];
-//    [_uis_slotScrollView2 addGestureRecognizer:_tapToExpansion2];
-//    
-//    _uib_back = [UIButton buttonWithType:UIButtonTypeCustom];
-//    _uib_back.frame = CGRectMake(0.0, 20.0, 60.0, 30.0);
-//    _uib_back.backgroundColor = [UIColor blueColor];
-//    [_uib_back setTitle:@"back" forState:UIControlStateNormal];
-//    [self.view insertSubview:_uib_back aboveSubview:_uis_slotScrollView];
-//    _uib_back.hidden = YES;
-//    [_uib_back addTarget:self action:@selector(backToMain) forControlEvents:UIControlEventTouchUpInside];
+    for (int i = 0; i < totalData.count; i++) {
+        NSArray *slotViewData = [[NSArray alloc] initWithArray:[totalData objectAtIndex:i]];
+        
+        switch (i) {
+            case 0:
+            {
+                _uis_slotScrollView = [[xh_slotScrollView alloc] initWithFrame:CGRectMake(0.0 + (342 * i), 0.0, 342, 768) andViewData:slotViewData];
+                _uis_slotScrollView.tag = 100 + i;
+                
+                UITapGestureRecognizer *tapToExpansion = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnSlotScrollView:)];
+                tapToExpansion.delegate = self;
+                _uis_slotScrollView.userInteractionEnabled = YES;
+                [_uis_slotScrollView setShowsVerticalScrollIndicator:NO];
+                
+                [_uis_slotScrollView addGestureRecognizer: tapToExpansion];
+                [self.view addSubview: _uis_slotScrollView];
+                break;
+            }
+            case 1:
+            {
+                _uis_slotScrollView1 = [[xh_slotScrollView alloc] initWithFrame:CGRectMake(0.0 + (342 * i), 0.0, 342, 768) andViewData:slotViewData];
+                _uis_slotScrollView1.tag = 100 + i;
+                
+                UITapGestureRecognizer *tapToExpansion = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnSlotScrollView:)];
+                tapToExpansion.delegate = self;
+                _uis_slotScrollView1.userInteractionEnabled = YES;
+                [_uis_slotScrollView1 setShowsVerticalScrollIndicator:NO];
+                
+                [_uis_slotScrollView1 addGestureRecognizer: tapToExpansion];
+                [self.view addSubview: _uis_slotScrollView1];
+                break;
+            }
+            case 2:
+            {
+                _uis_slotScrollView2 = [[xh_slotScrollView alloc] initWithFrame:CGRectMake(0.0 + (342 * i), 0.0, 342, 768) andViewData:slotViewData];
+                _uis_slotScrollView2.tag = 100 + i;
+                
+                UITapGestureRecognizer *tapToExpansion = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnSlotScrollView:)];
+                tapToExpansion.delegate = self;
+                _uis_slotScrollView2.userInteractionEnabled = YES;
+                [_uis_slotScrollView2 setShowsVerticalScrollIndicator:NO];
+                
+                [_uis_slotScrollView2 addGestureRecognizer: tapToExpansion];
+                [self.view addSubview: _uis_slotScrollView2];
+                break;
+            }
+            default:
+                break;
+        }
+    }
+    _uib_back = [UIButton buttonWithType:UIButtonTypeCustom];
+    _uib_back.frame = CGRectMake(0.0, 20.0, 60.0, 30.0);
+    _uib_back.backgroundColor = [UIColor blueColor];
+    [_uib_back setTitle:@"back" forState:UIControlStateNormal];
+    [self.view addSubview: _uib_back];
+    _uib_back.hidden = YES;
+    [_uib_back addTarget:self action:@selector(backToMain) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - Handle Tap On Slot Scroll View
@@ -98,6 +103,7 @@
     _uiv_backView = [[UIView alloc] initWithFrame:self.view.bounds];
     [self.view insertSubview:_uiv_backView belowSubview:_uis_slotScrollView];
     _uiv_backView.backgroundColor = [UIColor blackColor];
+    
     if (recognizer.view.tag == 100) {
         NSLog(@"The tag is 100");
         if ((_uis_slotScrollView.contentOffset.y/_uis_slotScrollView.frame.size.height) == 1) {
@@ -148,15 +154,20 @@
 #pragma mark - Back to Slot Scroll Views
 -(void)backToMain
 {
-    [_uis_slotScrollView addGestureRecognizer:_tapToExpansion];
     _uib_back.hidden = YES;
-    [UIView animateWithDuration:1.0 animations:^{
-        _uis_slotScrollView.transform = CGAffineTransformIdentity;
-        _uis_slotScrollView1.transform = CGAffineTransformIdentity;
-        _uis_slotScrollView2.transform = CGAffineTransformIdentity;
+    
+    [UIView animateWithDuration:0.33 animations:^{
+        _uiv_backView.alpha = 0.0;
     } completion:^(BOOL finished){
         [_uiv_backView removeFromSuperview];
         _uiv_backView = nil;
+        
+        [UIView animateWithDuration:1.0 animations:^{
+            _uis_slotScrollView.transform = CGAffineTransformIdentity;
+            _uis_slotScrollView1.transform = CGAffineTransformIdentity;
+            _uis_slotScrollView2.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished){          }];
+        
     }];
 }
 
