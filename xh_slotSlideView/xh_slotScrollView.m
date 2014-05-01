@@ -114,7 +114,7 @@ static float alphaValue = 0.8;
         [uiv_contentView setBackgroundColor:[UIColor colorWithRed:redValue/255.0 green:greenValue/255.0 blue:blueValue/255.0 alpha:1.0]];
         
         //Init Text Part
-        UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, 200.0, self.frame.size.width, 300)];
+        UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, 210.0, self.frame.size.width, 300)];
         textView.userInteractionEnabled = NO;
         NSString *str_text = [contentViewData objectForKey:@"label"];
         textView.text = str_text;
