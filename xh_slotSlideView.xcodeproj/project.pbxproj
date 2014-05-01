@@ -27,6 +27,24 @@
 		826AE969190963A6006A689B /* movie_tmp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826AE966190963A6006A689B /* movie_tmp.jpg */; };
 		826AE96A190963A6006A689B /* pdf_tmp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826AE967190963A6006A689B /* pdf_tmp.jpg */; };
 		8276D27819119B7900849E39 /* BGImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8276D27719119B7900849E39 /* BGImage.jpg */; };
+		82E209E41912CC3400D7BDEC /* embBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E209D61912CC3400D7BDEC /* embBlockViewController.m */; };
+		82E209E51912CC3400D7BDEC /* embDrawPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E209D81912CC3400D7BDEC /* embDrawPath.m */; };
+		82E209E61912CC3400D7BDEC /* embMorphTwoPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E209DA1912CC3400D7BDEC /* embMorphTwoPaths.m */; };
+		82E209E71912CC3400D7BDEC /* embOverlayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E209DC1912CC3400D7BDEC /* embOverlayScrollView.m */; };
+		82E209E81912CC3400D7BDEC /* embPVCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E209DE1912CC3400D7BDEC /* embPVCBaseViewController.m */; };
+		82E209E91912CC3400D7BDEC /* embPVCModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E209E01912CC3400D7BDEC /* embPVCModelController.m */; };
+		82E209EA1912CC3400D7BDEC /* embPVCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E209E21912CC3400D7BDEC /* embPVCRootViewController.m */; };
+		82E209EB1912CC3400D7BDEC /* Fenway.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82E209E31912CC3400D7BDEC /* Fenway.storyboard */; };
+		82E209F31912CC5A00D7BDEC /* blockpaths.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82E209ED1912CC5A00D7BDEC /* blockpaths.plist */; };
+		82E209F41912CC5A00D7BDEC /* fenway_panel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82E209EE1912CC5A00D7BDEC /* fenway_panel.plist */; };
+		82E209F51912CC5A00D7BDEC /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82E209EF1912CC5A00D7BDEC /* images.plist */; };
+		82E209F61912CC5A00D7BDEC /* panel_fenway.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82E209F01912CC5A00D7BDEC /* panel_fenway.plist */; };
+		82E209F71912CC5A00D7BDEC /* panel_images.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82E209F11912CC5A00D7BDEC /* panel_images.plist */; };
+		82E209F81912CC5A00D7BDEC /* titles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82E209F21912CC5A00D7BDEC /* titles.plist */; };
+		82E209FD1912CD0000D7BDEC /* embBezierItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E209FA1912CD0000D7BDEC /* embBezierItem.m */; };
+		82E209FE1912CD0000D7BDEC /* embDrawBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E209FC1912CD0000D7BDEC /* embDrawBezierPath.m */; };
+		82E20A011912CD2400D7BDEC /* embFenwayBlockPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E20A001912CD2400D7BDEC /* embFenwayBlockPaths.m */; };
+		82E20A041912CD3C00D7BDEC /* embBezierPathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E20A031912CD3C00D7BDEC /* embBezierPathItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +84,35 @@
 		826AE966190963A6006A689B /* movie_tmp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie_tmp.jpg; sourceTree = "<group>"; };
 		826AE967190963A6006A689B /* pdf_tmp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pdf_tmp.jpg; sourceTree = "<group>"; };
 		8276D27719119B7900849E39 /* BGImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BGImage.jpg; sourceTree = "<group>"; };
+		82E209D51912CC3400D7BDEC /* embBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embBlockViewController.h; sourceTree = "<group>"; };
+		82E209D61912CC3400D7BDEC /* embBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embBlockViewController.m; sourceTree = "<group>"; };
+		82E209D71912CC3400D7BDEC /* embDrawPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embDrawPath.h; sourceTree = "<group>"; };
+		82E209D81912CC3400D7BDEC /* embDrawPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embDrawPath.m; sourceTree = "<group>"; };
+		82E209D91912CC3400D7BDEC /* embMorphTwoPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embMorphTwoPaths.h; sourceTree = "<group>"; };
+		82E209DA1912CC3400D7BDEC /* embMorphTwoPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embMorphTwoPaths.m; sourceTree = "<group>"; };
+		82E209DB1912CC3400D7BDEC /* embOverlayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embOverlayScrollView.h; sourceTree = "<group>"; };
+		82E209DC1912CC3400D7BDEC /* embOverlayScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embOverlayScrollView.m; sourceTree = "<group>"; };
+		82E209DD1912CC3400D7BDEC /* embPVCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embPVCBaseViewController.h; sourceTree = "<group>"; };
+		82E209DE1912CC3400D7BDEC /* embPVCBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embPVCBaseViewController.m; sourceTree = "<group>"; };
+		82E209DF1912CC3400D7BDEC /* embPVCModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embPVCModelController.h; sourceTree = "<group>"; };
+		82E209E01912CC3400D7BDEC /* embPVCModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embPVCModelController.m; sourceTree = "<group>"; };
+		82E209E11912CC3400D7BDEC /* embPVCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embPVCRootViewController.h; sourceTree = "<group>"; };
+		82E209E21912CC3400D7BDEC /* embPVCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embPVCRootViewController.m; sourceTree = "<group>"; };
+		82E209E31912CC3400D7BDEC /* Fenway.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fenway.storyboard; sourceTree = "<group>"; };
+		82E209ED1912CC5A00D7BDEC /* blockpaths.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = blockpaths.plist; sourceTree = "<group>"; };
+		82E209EE1912CC5A00D7BDEC /* fenway_panel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fenway_panel.plist; sourceTree = "<group>"; };
+		82E209EF1912CC5A00D7BDEC /* images.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = images.plist; sourceTree = "<group>"; };
+		82E209F01912CC5A00D7BDEC /* panel_fenway.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = panel_fenway.plist; sourceTree = "<group>"; };
+		82E209F11912CC5A00D7BDEC /* panel_images.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = panel_images.plist; sourceTree = "<group>"; };
+		82E209F21912CC5A00D7BDEC /* titles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = titles.plist; sourceTree = "<group>"; };
+		82E209F91912CD0000D7BDEC /* embBezierItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embBezierItem.h; sourceTree = "<group>"; };
+		82E209FA1912CD0000D7BDEC /* embBezierItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embBezierItem.m; sourceTree = "<group>"; };
+		82E209FB1912CD0000D7BDEC /* embDrawBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embDrawBezierPath.h; sourceTree = "<group>"; };
+		82E209FC1912CD0000D7BDEC /* embDrawBezierPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embDrawBezierPath.m; sourceTree = "<group>"; };
+		82E209FF1912CD2400D7BDEC /* embFenwayBlockPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embFenwayBlockPaths.h; sourceTree = "<group>"; };
+		82E20A001912CD2400D7BDEC /* embFenwayBlockPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embFenwayBlockPaths.m; sourceTree = "<group>"; };
+		82E20A021912CD3C00D7BDEC /* embBezierPathItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embBezierPathItem.h; sourceTree = "<group>"; };
+		82E20A031912CD3C00D7BDEC /* embBezierPathItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embBezierPathItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +184,7 @@
 				826AE965190963A6006A689B /* fpo_tmp.jpg */,
 				826AE966190963A6006A689B /* movie_tmp.jpg */,
 				826AE967190963A6006A689B /* pdf_tmp.jpg */,
+				82E209D41912CC3400D7BDEC /* Fenway_Pages */,
 				826AE94519094DCD006A689B /* Images.xcassets */,
 				826AE93419094DCD006A689B /* Supporting Files */,
 			);
@@ -170,6 +218,50 @@
 				826AE95519094DCD006A689B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		82E209D41912CC3400D7BDEC /* Fenway_Pages */ = {
+			isa = PBXGroup;
+			children = (
+				82E209D51912CC3400D7BDEC /* embBlockViewController.h */,
+				82E209D61912CC3400D7BDEC /* embBlockViewController.m */,
+				82E209D71912CC3400D7BDEC /* embDrawPath.h */,
+				82E209D81912CC3400D7BDEC /* embDrawPath.m */,
+				82E209D91912CC3400D7BDEC /* embMorphTwoPaths.h */,
+				82E209DA1912CC3400D7BDEC /* embMorphTwoPaths.m */,
+				82E209DB1912CC3400D7BDEC /* embOverlayScrollView.h */,
+				82E209DC1912CC3400D7BDEC /* embOverlayScrollView.m */,
+				82E209DD1912CC3400D7BDEC /* embPVCBaseViewController.h */,
+				82E209DE1912CC3400D7BDEC /* embPVCBaseViewController.m */,
+				82E209DF1912CC3400D7BDEC /* embPVCModelController.h */,
+				82E209E01912CC3400D7BDEC /* embPVCModelController.m */,
+				82E209E11912CC3400D7BDEC /* embPVCRootViewController.h */,
+				82E209E21912CC3400D7BDEC /* embPVCRootViewController.m */,
+				82E209F91912CD0000D7BDEC /* embBezierItem.h */,
+				82E209FA1912CD0000D7BDEC /* embBezierItem.m */,
+				82E209FB1912CD0000D7BDEC /* embDrawBezierPath.h */,
+				82E209FC1912CD0000D7BDEC /* embDrawBezierPath.m */,
+				82E209FF1912CD2400D7BDEC /* embFenwayBlockPaths.h */,
+				82E20A001912CD2400D7BDEC /* embFenwayBlockPaths.m */,
+				82E20A021912CD3C00D7BDEC /* embBezierPathItem.h */,
+				82E20A031912CD3C00D7BDEC /* embBezierPathItem.m */,
+				82E209E31912CC3400D7BDEC /* Fenway.storyboard */,
+				82E209EC1912CC5A00D7BDEC /* Fenway_plists */,
+			);
+			path = Fenway_Pages;
+			sourceTree = "<group>";
+		};
+		82E209EC1912CC5A00D7BDEC /* Fenway_plists */ = {
+			isa = PBXGroup;
+			children = (
+				82E209ED1912CC5A00D7BDEC /* blockpaths.plist */,
+				82E209EE1912CC5A00D7BDEC /* fenway_panel.plist */,
+				82E209EF1912CC5A00D7BDEC /* images.plist */,
+				82E209F01912CC5A00D7BDEC /* panel_fenway.plist */,
+				82E209F11912CC5A00D7BDEC /* panel_images.plist */,
+				82E209F21912CC5A00D7BDEC /* titles.plist */,
+			);
+			path = Fenway_plists;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,11 +343,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82E209EB1912CC3400D7BDEC /* Fenway.storyboard in Resources */,
 				826AE94619094DCD006A689B /* Images.xcassets in Resources */,
 				8207877719116CAD00279840 /* slotScroll.plist in Resources */,
+				82E209F61912CC5A00D7BDEC /* panel_fenway.plist in Resources */,
+				82E209F31912CC5A00D7BDEC /* blockpaths.plist in Resources */,
+				82E209F71912CC5A00D7BDEC /* panel_images.plist in Resources */,
+				82E209F81912CC5A00D7BDEC /* titles.plist in Resources */,
+				82E209F51912CC5A00D7BDEC /* images.plist in Resources */,
 				826AE93819094DCD006A689B /* InfoPlist.strings in Resources */,
 				826AE96A190963A6006A689B /* pdf_tmp.jpg in Resources */,
 				826AE969190963A6006A689B /* movie_tmp.jpg in Resources */,
+				82E209F41912CC5A00D7BDEC /* fenway_panel.plist in Resources */,
 				826AE94119094DCD006A689B /* Main.storyboard in Resources */,
 				8276D27819119B7900849E39 /* BGImage.jpg in Resources */,
 				826AE968190963A6006A689B /* fpo_tmp.jpg in Resources */,
@@ -278,9 +377,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				826AE94419094DCD006A689B /* ViewController.m in Sources */,
+				82E209E71912CC3400D7BDEC /* embOverlayScrollView.m in Sources */,
+				82E209E61912CC3400D7BDEC /* embMorphTwoPaths.m in Sources */,
 				826AE96419095254006A689B /* xh_slotScrollView.m in Sources */,
 				826AE93E19094DCD006A689B /* AppDelegate.m in Sources */,
+				82E20A041912CD3C00D7BDEC /* embBezierPathItem.m in Sources */,
+				82E209FE1912CD0000D7BDEC /* embDrawBezierPath.m in Sources */,
+				82E209E41912CC3400D7BDEC /* embBlockViewController.m in Sources */,
+				82E209E91912CC3400D7BDEC /* embPVCModelController.m in Sources */,
 				826AE93A19094DCD006A689B /* main.m in Sources */,
+				82E209E51912CC3400D7BDEC /* embDrawPath.m in Sources */,
+				82E209E81912CC3400D7BDEC /* embPVCBaseViewController.m in Sources */,
+				82E209FD1912CD0000D7BDEC /* embBezierItem.m in Sources */,
+				82E209EA1912CC3400D7BDEC /* embPVCRootViewController.m in Sources */,
+				82E20A011912CD2400D7BDEC /* embFenwayBlockPaths.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

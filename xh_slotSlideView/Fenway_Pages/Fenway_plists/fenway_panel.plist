@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>pathName</key>
+			<string>red triangle left</string>
+			<key>pathClose</key>
+			<string>34.77, -0.18,40.81, -0.18,40.81, 0,34.77, 0,34.77, -0.18</string>
+			<key>pathOpen</key>
+			<string>-50.92, 0.89,-49.08, 0.11,287.42, 767.61,285.58, 768.39,-50.92, 0.89</string>
+			<key>pathZindex</key>
+			<string>0</string>
+			<key>pathDelay</key>
+			<string>1.0</string>
+		</dict>
+		<dict>
+			<key>pathName</key>
+			<string>close btn</string>
+			<key>pathClose</key>
+			<string>228.89, 646,247, 646,246.8, 665.84,220, 665.84</string>
+			<key>pathOpen</key>
+			<string>228.89, 646,247, 646,246.8, 665.84,220, 665.84</string>
+			<key>pathZindex</key>
+			<string>0</string>
+			<key>pathDelay</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>pathName</key>
+			<string>close arrow</string>
+			<key>pathClose</key>
+			<string>238, 651.5,233, 656.5,238, 661.5,239, 660.5,235, 656.5,239, 652.5,238, 651.5</string>
+			<key>pathOpen</key>
+			<string>238, 651.5,233, 656.5,238, 661.5,239, 660.5,235, 656.5,239, 652.5,238, 651.5</string>
+			<key>pathZindex</key>
+			<string>0</string>
+			<key>pathDelay</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>pathName</key>
+			<string>close connector</string>
+			<key>pathClose</key>
+			<string>243, 665.72,246.39, 665.72,244.54, 668.5</string>
+			<key>pathOpen</key>
+			<string>243, 665.72,246.39, 665.72,244.54, 668.5</string>
+			<key>pathZindex</key>
+			<string>0</string>
+			<key>pathDelay</key>
+			<string>0</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>pathName</key>
+			<string>red triangle right</string>
+			<key>pathClose</key>
+			<string>970.81, -0.18,964.77, -0.18,614.77, 768,620.81, 768,970.81, -0.18</string>
+			<key>pathOpen</key>
+			<string>1360.81, -0.18,964.77, -0.18,614.77, 768,1010.81, 768,1360.81, -0.18</string>
+			<key>pathZindex</key>
+			<string>0</string>
+			<key>pathDelay</key>
+			<string>1.0</string>
+		</dict>
+		<dict>
+			<key>pathName</key>
+			<string>white triangle</string>
+			<key>pathClose</key>
+			<string>1024.82, 767.89,1024.41, 767.89,1084.41, 636.2,1024.82, 767.89</string>
+			<key>pathOpen</key>
+			<string>964.82, 767.89,1024.41, 767.89,1024.41, 636.2,964.82, 767.89</string>
+			<key>pathZindex</key>
+			<string>0</string>
+			<key>pathDelay</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>pathName</key>
+			<string>close btn</string>
+			<key>pathClose</key>
+			<string>662.11, 677,644, 677,644.2, 696.84,671, 696.84</string>
+			<key>pathOpen</key>
+			<string>662.11, 677,644, 677,644.2, 696.84,671, 696.84</string>
+			<key>pathZindex</key>
+			<string>0</string>
+			<key>pathDelay</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>pathName</key>
+			<string>close arrow</string>
+			<key>pathClose</key>
+			<string>653, 682.5,658, 687.5,653, 692.5,652, 691.5,656, 687.5,652, 683.5,653, 682.5</string>
+			<key>pathOpen</key>
+			<string>653, 682.5,658, 687.5,653, 692.5,652, 691.5,656, 687.5,652, 683.5,653, 682.5</string>
+			<key>pathZindex</key>
+			<string>0</string>
+			<key>pathDelay</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>pathName</key>
+			<string>close connector</string>
+			<key>pathClose</key>
+			<string>648, 696.72,644.61, 696.72,646.46, 699.5</string>
+			<key>pathOpen</key>
+			<string>648, 696.72,644.61, 696.72,646.46, 699.5</string>
+			<key>pathZindex</key>
+			<string>0</string>
+			<key>pathDelay</key>
+			<string>0</string>
+		</dict>
+	</array>
+</array>
+</plist>

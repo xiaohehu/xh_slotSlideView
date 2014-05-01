@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "xh_slotScrollView.h"
+#import "embPVCRootViewController.h"
 @interface ViewController ()
 
 @property (nonatomic, strong) xh_slotScrollView         *uis_slotScrollView;
@@ -15,6 +16,7 @@
 @property (nonatomic, strong) xh_slotScrollView         *uis_slotScrollView2;
 @property (nonatomic, strong) UIView                    *uiv_backView;
 @property (nonatomic, strong) UIButton                  *uib_back;
+@property (nonatomic, strong) embPVCRootViewController     *pageVC;
 //@property (nonatomic, strong) UITapGestureRecognizer    *tapToExpansion;
 //@property (nonatomic, strong) UITapGestureRecognizer    *tapToExpansion1;
 //@property (nonatomic, strong) UITapGestureRecognizer    *tapToExpansion2;
@@ -25,6 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _pageVC = [[embPVCRootViewController alloc] init];
+    _pageVC.view.frame = CGRectMake(0.0, 0.0, 1024, 768);
+    
 	// Do any additional setup after loading the view, typically from a nib.
     UIImageView *uiiv_bg = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 1024, 768)];
     [uiiv_bg setImage: [UIImage imageNamed:@"BGImage.jpg"]];
@@ -116,6 +121,7 @@
         }
                          completion:^(BOOL finished){
                              _uib_back.hidden = NO;
+                             [self.view addSubview:_pageVC.view];
                          }];
     }
     

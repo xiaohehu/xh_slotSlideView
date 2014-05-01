@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>fenway_factfigure.png</string>
+	</array>
+	<array>
+		<string>fenway_aerial_loc.png</string>
+		<string>fenway_aerial_loc_overlay.png</string>
+	</array>
+	<array>
+		<string>fenway_aerial_area.png</string>
+		<string>fenway_aerial_area_overlay.jpg</string>
+	</array>
+	<array>
+		<string></string>
+	</array>
+	<array>
+		<string>fenway_museum.jpg</string>
+	</array>
+	<array>
+		<string>fenway_backbay fens.jpg</string>
+	</array>
+	<array>
+		<string>fenway_childrens.jpg</string>
+	</array>
+	<array>
+		<string>fenway_aerial_school.png</string>
+	</array>
+	<array>
+		<string>fenway_hero resi.jpg</string>
+	</array>
+	<array>
+		<string>fenway_map_resi.jpg</string>
+	</array>
+	<array>
+		<string>fenway_heroes.jpg</string>
+	</array>
+	<array>
+		<string>fenway_amenities int.jpg</string>
+	</array>
+	<array>
+		<string>fenway_amenities ext.jpg</string>
+	</array>
+	<array>
+		<string>fenway_hero night.jpg</string>
+	</array>
+	<array>
+		<string>fenway_park path.jpg</string>
+	</array>
+	<array>
+		<string>fenway_park water.jpg</string>
+	</array>
+	<array>
+		<string>fenway_architecutural.jpg</string>
+	</array>
+	<array>
+		<string>fenway_retail eat.jpg</string>
+	</array>
+	<array>
+		<string>fenway_retail cheeks.jpg</string>
+	</array>
+	<array>
+		<string>fenway_retail yard.jpg</string>
+	</array>
+	<array>
+		<string>fenway_retail aerial.jpg</string>
+	</array>
+	<array>
+		<string>fenway_retail quad eat.jpg</string>
+	</array>
+	<array>
+		<string>fenway_retail quad shop.jpg</string>
+	</array>
+	<array>
+		<string>fenway_hotel.jpg</string>
+	</array>
+	<array>
+		<string>fenway_retail oyster.jpg</string>
+	</array>
+	<array>
+		<string>fenway_watercolor.jpg</string>
+	</array>
+</array>
+</plist>

@@ -43,4 +43,10 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma - mark - useful methods
++ (AppDelegate *)appDelegate
+{
+    AppDelegate *theDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    return theDelegate;
+}
 @end

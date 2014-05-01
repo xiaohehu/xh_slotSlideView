@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>pathName</key>
+			<string>red triangle right</string>
+			<key>pathClose</key>
+			<string>1017, 767.5,1024, 767.5,1024.5, -1,1017, -1,1017, 767.5</string>
+			<key>pathOpen</key>
+			<string>947.5, 767.5,1024, 767.5,1024.5, -1,623, -1,947.5, 767.5</string>
+			<key>pathZindex</key>
+			<string>0</string>
+			<key>pathDelay</key>
+			<string>1.0</string>
+		</dict>
+		<dict>
+			<key>pathName</key>
+			<string>close btn</string>
+			<key>pathClose</key>
+			<string>908.11, 645,890, 645,890.2, 664.84,917, 664.84</string>
+			<key>pathOpen</key>
+			<string>908.11, 645,890, 645,890.2, 664.84,917, 664.84</string>
+			<key>pathZindex</key>
+			<string>0</string>
+			<key>pathDelay</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>pathName</key>
+			<string>close arrow</string>
+			<key>pathClose</key>
+			<string>899, 650.5,904, 655.5,899, 660.5,898, 659.5,902, 655.5,898, 651.5,899, 650.5</string>
+			<key>pathOpen</key>
+			<string>899, 650.5,904, 655.5,899, 660.5,898, 659.5,902, 655.5,898, 651.5,899, 650.5</string>
+			<key>pathZindex</key>
+			<string>0</string>
+			<key>pathDelay</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>pathName</key>
+			<string>close connector</string>
+			<key>pathClose</key>
+			<string>904, 665,890.61, 664.72,905, 668</string>
+			<key>pathOpen</key>
+			<string>904, 665,890.61, 664.72,905, 668</string>
+			<key>pathZindex</key>
+			<string>0</string>
+			<key>pathDelay</key>
+			<string>0</string>
+		</dict>
+	</array>
+</array>
+</plist>
