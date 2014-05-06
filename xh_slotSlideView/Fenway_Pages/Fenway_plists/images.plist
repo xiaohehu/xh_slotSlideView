@@ -3,84 +3,82 @@
 <plist version="1.0">
 <array>
 	<array>
-		<string>fenway_factfigure.png</string>
+		<string>000page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_aerial_loc.png</string>
-		<string>fenway_aerial_loc_overlay.png</string>
+		<string>001page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_aerial_area.png</string>
-		<string>fenway_aerial_area_overlay.jpg</string>
+		<string>002page.jpg</string>
 	</array>
 	<array>
 		<string></string>
 	</array>
 	<array>
-		<string>fenway_museum.jpg</string>
+		<string>003page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_backbay fens.jpg</string>
+		<string>004page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_childrens.jpg</string>
+		<string>005page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_aerial_school.png</string>
+		<string>006page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_hero resi.jpg</string>
+		<string>007page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_map_resi.jpg</string>
+		<string>008page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_heroes.jpg</string>
+		<string>009page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_amenities int.jpg</string>
+		<string>010page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_amenities ext.jpg</string>
+		<string>011page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_hero night.jpg</string>
+		<string>012page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_park path.jpg</string>
+		<string>013page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_park water.jpg</string>
+		<string>014page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_architecutural.jpg</string>
+		<string>015page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_retail eat.jpg</string>
+		<string>016page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_retail cheeks.jpg</string>
+		<string>017page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_retail yard.jpg</string>
+		<string>018page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_retail aerial.jpg</string>
+		<string>019page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_retail quad eat.jpg</string>
+		<string>020page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_retail quad shop.jpg</string>
+		<string>021page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_hotel.jpg</string>
+		<string>022page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_retail oyster.jpg</string>
+		<string>023page.jpg</string>
 	</array>
 	<array>
-		<string>fenway_watercolor.jpg</string>
+		<string>024page.jpg</string>
 	</array>
 </array>
 </plist>
