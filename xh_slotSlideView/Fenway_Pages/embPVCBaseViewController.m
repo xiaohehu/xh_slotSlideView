@@ -32,7 +32,7 @@
 
 -(void)viewDidLayoutSubviews
 {
-	if (_vcIndex != 3) { // this is the tappable axonometric
+//	if (_vcIndex != 3) { // this is the tappable axonometric
 		
 		NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:self.dataObject[0]];
 		
@@ -44,14 +44,14 @@
 		
 		[self.view addSubview:_zoomScroll];
 		
-	} else {
-		
-		UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Fenway" bundle:nil];
-		UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"embBlockViewController"];
-		vc.view.frame = self.view.bounds;
-		[self addChildViewController:vc];
-		[self.view addSubview:vc.view];
-	}
+//	} else {
+//		
+//		UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Fenway" bundle:nil];
+//		UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"embBlockViewController"];
+//		vc.view.frame = self.view.bounds;
+//		[self addChildViewController:vc];
+//		[self.view addSubview:vc.view];
+//	}
 }
 
 - (void)viewWillAppear:(BOOL)animated

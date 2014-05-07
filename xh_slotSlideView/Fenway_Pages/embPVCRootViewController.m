@@ -107,8 +107,8 @@
 	CGFloat staticPadding   = 10;		// Padding to add between each button.
 	
 //	_sectionsIndex		= @[@0,@3,@7,@13,@16];
-    _sectionsIndex		= @[@0,@4,@8,@14,@17];
-	NSArray *sectionTitles	= @[@"INTRODUCTION",@"CULTURE & SCIENCE",@"RESIDENTIAL",@"GREEN SPACE",@"RETAIL"];
+    _sectionsIndex		= @[@1,@2,@3,@4,@5];
+	NSArray *sectionTitles	= @[@"BIKE",@"CAR & ZIP-CAR",@"PLANE",@"FOOT",@"FERRY"];
 //    _sectionsIndex		= @[@0,@3,@5,@7,@13,@16];
 //	NSArray *sectionTitles	= @[@"INTRODUCTION",@"CULTURE",@"SCIENCE",@"RESIDENTIAL",@"GREEN SPACE",@"RETAIL"];
 	
@@ -272,7 +272,7 @@
 {
 	if (completed) {
 		[self setPageIndex];
-		[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(addTitleLabels) object: nil];
+//		[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(addTitleLabels) object: nil];
 	}
 }
 
@@ -283,35 +283,74 @@
     embPVCBaseViewController *theCurrentViewController = [self.pageViewController.viewControllers objectAtIndex:0];
     _pageIndex = [self.modelController indexOfViewController:theCurrentViewController];
     
+    NSLog(@"\n\nThe current page is %i", _pageIndex);
+    if (_pageIndex == 6) {
+        _pageIndex = 0;
+        
+        _uib_hiliteBtn = buttons[0];
+        [self clearAllButtons];
+        [self hilightButton:_uib_hiliteBtn];
+
+        UIStoryboard *tmp_Sb = [UIStoryboard storyboardWithName:@"Fenway" bundle:nil];
+        
+        embPVCBaseViewController *startingViewController = [self.modelController viewControllerAtIndex:_pageIndex storyboard:tmp_Sb];
+        
+        NSArray *viewControllers = @[startingViewController];
+        
+        [self.pageViewController setViewControllers:viewControllers
+                                              direction:UIPageViewControllerNavigationDirectionForward
+                                               animated:NO
+                                         completion:nil];
+        return;
+    }
+    if (_pageIndex == 0) {
+        _pageIndex = 6;
+        
+        _uib_hiliteBtn = buttons[4];
+        [self clearAllButtons];
+        [self hilightButton:_uib_hiliteBtn];
+        UIStoryboard *tmp_Sb = [UIStoryboard storyboardWithName:@"Fenway" bundle:nil];
+        
+        embPVCBaseViewController *startingViewController = [self.modelController viewControllerAtIndex:_pageIndex storyboard:tmp_Sb];
+        
+        NSArray *viewControllers = @[startingViewController];
+        
+        [self.pageViewController setViewControllers:viewControllers
+                                              direction:UIPageViewControllerNavigationDirectionReverse
+                                               animated:NO
+                                             completion:nil];
+        return;
+    }
+    
 	BOOL shouldAddPanel;
-    BOOL shouldChange = YES;
-	int convertedIndex = -1;
-	int sumOfPage = -1;
+    BOOL shouldChange = NO;
+	int convertedIndex = 1;
+	int sumOfPage = 1;
     
 	if (_pageIndex >= [_sectionsIndex[0]integerValue] && _pageIndex < [_sectionsIndex[1]integerValue]) {
-		shouldAddPanel=YES;
+//		shouldAddPanel=YES;
 		convertedIndex = 0;
-        sumOfPage = 4;
+//        sumOfPage = 4;
 		
 	} else if (_pageIndex >= [_sectionsIndex[1]integerValue] && _pageIndex < [_sectionsIndex[2]integerValue]) {
-		shouldAddPanel=YES;
+//		shouldAddPanel=YES;
 		convertedIndex = 1;
-        sumOfPage = 4;
+//        sumOfPage = 4;
 		
 	} else if (_pageIndex >= [_sectionsIndex[2]integerValue] && _pageIndex < [_sectionsIndex[3]integerValue]) {
-		shouldAddPanel=YES;
+//		shouldAddPanel=YES;
 		convertedIndex = 2;
-        sumOfPage = 6;
+//        sumOfPage = 6;
 		
 	} else if (_pageIndex >= [_sectionsIndex[3]integerValue] && _pageIndex < [_sectionsIndex[4]integerValue]) {
-		shouldAddPanel=YES;
+//		shouldAddPanel=YES;
 		convertedIndex = 3;
-		sumOfPage = 3;
+//		sumOfPage = 3;
 	}
     else if (_pageIndex >= [_sectionsIndex[4]integerValue]) { //&& _pageIndex < [_sectionsIndex[5]integerValue]) {
-		shouldAddPanel=YES;
+//		shouldAddPanel=YES;
 		convertedIndex = 4;
-        sumOfPage = 9;
+//        sumOfPage = 9;
 	}
 //    else if (_pageIndex >= [_sectionsIndex[5]integerValue]) {
 //		shouldAddPanel=YES;
@@ -321,23 +360,23 @@
     
 	// add panel if needed
 	if (_pageIndex == [_sectionsIndex[0]integerValue]) { //
-		shouldAddPanel=YES;
+//		shouldAddPanel=YES;
         pageInSection = 1;
         shouldChange = NO;
 	} else if (_pageIndex == [_sectionsIndex[1]integerValue]) { //
-		shouldAddPanel=YES;
+//		shouldAddPanel=YES;
         pageInSection = 1;
         shouldChange = NO;
 	} else if (_pageIndex == [_sectionsIndex[2]integerValue]) { //
-		shouldAddPanel=YES;
+//		shouldAddPanel=YES;
         pageInSection = 1;
         shouldChange = NO;
 	} else if (_pageIndex == [_sectionsIndex[3]integerValue]) { //
-		shouldAddPanel=YES;
+//		shouldAddPanel=YES;
         pageInSection = 1;
         shouldChange = NO;
 	} else if (_pageIndex == [_sectionsIndex[4]integerValue]) { //
-		shouldAddPanel=YES;
+//		shouldAddPanel=YES;
         pageInSection = 1;
         shouldChange = NO;
 //	} else if (_pageIndex == [_sectionsIndex[5]integerValue]) { //
@@ -477,7 +516,7 @@
 	int convertedIndex = -1;
 	
 	// convert index
-	if (_pageIndex == 6) {
+	if (_pageIndex == 9) {
 		convertedIndex = 1;
 	} else if (_pageIndex == 7) {
 		convertedIndex = 2;
@@ -666,7 +705,7 @@
 		[self buttonAttributes:_uib_panelBtn isOpen:YES];
 	}
 	
-	[self.view insertSubview:_uib_panelBtn belowSubview:_embdraw2dview];
+//	[self.view insertSubview:_uib_panelBtn belowSubview:_embdraw2dview];
 	
 	[UIView animateWithDuration:0.33
 					 animations:^{
@@ -787,7 +826,7 @@
 		_titleLabel.layer.contentsRect = CGRectMake(0.0, 0.0, 1.0, 0.0);
 		y = y - 75.0;
 		x = x - 35.0;
-		[self.view insertSubview:_titleLabel belowSubview:_embdraw2dview];
+//		[self.view insertSubview:_titleLabel belowSubview:_embdraw2dview];
 		
 		[_arr_titleLabels addObject:_titleLabel];
 	}
