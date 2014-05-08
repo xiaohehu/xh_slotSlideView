@@ -114,12 +114,19 @@ static float alphaValue = 0.8;
         [uiv_contentView setBackgroundColor:[UIColor colorWithRed:redValue/255.0 green:greenValue/255.0 blue:blueValue/255.0 alpha:1.0]];
         
         //Init Text Part
-        UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, 210.0, self.frame.size.width, 300)];
+        UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, 255.0, self.frame.size.width, 300)];
         textView.userInteractionEnabled = NO;
         NSString *str_text = [contentViewData objectForKey:@"label"];
-        textView.text = str_text;
+        textView.text = [str_text stringByReplacingOccurrencesOfString:@" " withString:@"\n"];
         textView.backgroundColor = [UIColor clearColor];
-        [textView setFont: [UIFont systemFontOfSize:100]];
+        if ([str_text length] > 16) {
+//            textView.frame = CGRectMake(textView.frame.origin.x, textView.frame.origin.y + 50, textView.frame.size.width, textView.frame.size.height);
+            [textView setFont: [UIFont systemFontOfSize:50]];
+        }
+        else {
+            [textView setFont: [UIFont systemFontOfSize:70]];
+        }
+        
         
 //        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
 //        paragraphStyle.lineHeightMultiple = 50.0f;
@@ -149,10 +156,8 @@ static float alphaValue = 0.8;
         }
     }
 }
-
 // While scrolling, STOP all UIImageView Animation
--(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"It is scrolling!!!");
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     for (UIView *tmp in [self subviews]) {
         if (tmp.tag >= 100) {
             for (UIImageView *tmpImageView in [tmp subviews]) {
@@ -160,6 +165,16 @@ static float alphaValue = 0.8;
             }
         }
     }
+}
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    NSLog(@"It is scrolling!!!");
+//    for (UIView *tmp in [self subviews]) {
+//        if (tmp.tag >= 100) {
+//            for (UIImageView *tmpImageView in [tmp subviews]) {
+//                [self pauseLayer:tmpImageView.layer];
+//            }
+//        }
+//    }
 }
 #pragma mark - Pause & Resume Image Animation
 -(void)pauseLayer:(CALayer*)layer

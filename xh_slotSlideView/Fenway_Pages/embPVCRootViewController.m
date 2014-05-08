@@ -44,6 +44,8 @@
 
 @implementation embPVCRootViewController
 
+static int TotalPages = 7;
+
 @synthesize modelController = _modelController;
 
 - (void)viewDidLoad
@@ -107,8 +109,8 @@
 	CGFloat staticPadding   = 10;		// Padding to add between each button.
 	
 //	_sectionsIndex		= @[@0,@3,@7,@13,@16];
-    _sectionsIndex		= @[@1,@2,@3,@4,@5];
-	NSArray *sectionTitles	= @[@"BIKE",@"CAR & ZIP-CAR",@"PLANE",@"FOOT",@"FERRY"];
+    _sectionsIndex		= @[@1,@2,@3,@4,@5,@6];
+	NSArray *sectionTitles	= @[@"BIKE",@"PUBLIC TRANSPORT",@"PLANE",@"FOOT",@"BOAT", @"CAR"];
 //    _sectionsIndex		= @[@0,@3,@5,@7,@13,@16];
 //	NSArray *sectionTitles	= @[@"INTRODUCTION",@"CULTURE",@"SCIENCE",@"RESIDENTIAL",@"GREEN SPACE",@"RETAIL"];
 	
@@ -194,7 +196,7 @@
     _uib_pageNum.backgroundColor = [UIColor clearColor];
     [_uib_pageNum setBackgroundImage:[UIImage imageNamed:@"grfx_pageBtn_bg.png"] forState:UIControlStateNormal];
     _uib_pageNum.userInteractionEnabled = NO;
-    [self.view addSubview: _uib_pageNum];
+//    [self.view addSubview: _uib_pageNum];
     
     UIImageView *uiiv_pageNumBg = [[UIImageView alloc] initWithFrame:CGRectMake(_uib_pageNum.frame.origin.x-2, _uib_pageNum.frame.origin.y-2, _uib_pageNum.frame.size.width+4, _uib_pageNum.frame.size.height+4)];
     uiiv_pageNumBg.image = [UIImage imageNamed:@"grfx_numBtn_bg.png"];
@@ -284,7 +286,7 @@
     _pageIndex = [self.modelController indexOfViewController:theCurrentViewController];
     
     NSLog(@"\n\nThe current page is %i", _pageIndex);
-    if (_pageIndex == 6) {
+    if (_pageIndex == TotalPages) {
         _pageIndex = 0;
         
         _uib_hiliteBtn = buttons[0];
@@ -304,9 +306,9 @@
         return;
     }
     if (_pageIndex == 0) {
-        _pageIndex = 6;
+        _pageIndex = TotalPages;
         
-        _uib_hiliteBtn = buttons[4];
+        _uib_hiliteBtn = buttons[5];
         [self clearAllButtons];
         [self hilightButton:_uib_hiliteBtn];
         UIStoryboard *tmp_Sb = [UIStoryboard storyboardWithName:@"Fenway" bundle:nil];
@@ -347,10 +349,15 @@
 		convertedIndex = 3;
 //		sumOfPage = 3;
 	}
-    else if (_pageIndex >= [_sectionsIndex[4]integerValue]) { //&& _pageIndex < [_sectionsIndex[5]integerValue]) {
+    else if (_pageIndex >= [_sectionsIndex[4]integerValue] && _pageIndex < [_sectionsIndex[5]integerValue]) {
 //		shouldAddPanel=YES;
 		convertedIndex = 4;
 //        sumOfPage = 9;
+	}
+    else if (_pageIndex >= [_sectionsIndex[5]integerValue]) { //&& _pageIndex < [_sectionsIndex[5]integerValue]) {
+        //		shouldAddPanel=YES;
+		convertedIndex = 5;
+        //        sumOfPage = 9;
 	}
 //    else if (_pageIndex >= [_sectionsIndex[5]integerValue]) {
 //		shouldAddPanel=YES;
