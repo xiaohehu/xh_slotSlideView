@@ -96,6 +96,7 @@ static int TotalPages = 7;
 	//[self loadPageFromParent:_incomingIndex];
 }
 
+#pragma mark - Create Submenu's Control Buttons
 -(void)createMenuButtons
 {
 	CGFloat staticWidth     = 105;		// Static Width for all Buttons.
