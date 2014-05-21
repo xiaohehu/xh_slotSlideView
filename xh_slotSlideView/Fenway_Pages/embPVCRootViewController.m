@@ -10,8 +10,8 @@
 #import "embPVCModelController.h"
 #import "embPVCBaseViewController.h"
 #import "embMorphTwoPaths.h"
-
-@interface embPVCRootViewController () <embMorphTwoPathsDelegate>
+#import "menuWithIndicator.h"
+@interface embPVCRootViewController () <embMorphTwoPathsDelegate, indicatorMenuDataSource, indicatorMenuDelegate>
 {
 	CGRect				titleLabelFrame;
 	NSArray				*arr_titleArray;
@@ -37,6 +37,8 @@
 @property (nonatomic, strong)			NSArray					*sectionsIndex;
 @property (nonatomic, strong)			UIView					*uivBtn_container;
 @property (nonatomic, strong)			UIButton				*uib_hiliteBtn;
+
+@property (nonatomic, strong)           menuWithIndicator       *indicatorMenu;
 @end
 
 @implementation embPVCRootViewController
@@ -92,6 +94,11 @@ static int TotalPages = 7;
 	// just to set initial value of pagendex var
 	[self setPageIndex];
 	
+    //Alloc the menu with indicator
+    _indicatorMenu = [[menuWithIndicator alloc] initWithFrame:CGRectMake(0.0, 40.0, 1024.0, 50.0)];
+    _indicatorMenu.dataSource = self;
+    _indicatorMenu.delegate = self;
+    [self.view addSubview: _indicatorMenu];
 	// example
 	//[self loadPageFromParent:_incomingIndex];
 }
@@ -257,8 +264,95 @@ static int TotalPages = 7;
 {
 	if (completed) {
 		[self setPageIndex];
+        if (_pageIndex == 0) {
+            _pageIndex = 1;
+        }
+        if (_pageIndex == 7) {
+            _pageIndex = 6;
+        }
+        [_indicatorMenu hightLightBtns:_pageIndex-1 withAnimation:YES];
+        NSLog(@"the current page is %i",_pageIndex);
 //		[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(addTitleLabels) object: nil];
 	}
+}
+
+
+#pragma mark - Datasource & Delegate for Menu with indicator
+-(NSInteger) numberOfMenuItems {
+    return 6;
+}
+-(NSString *) titleOfButtonsAtIndex:(NSInteger) index {
+    NSString *buttonTitle = nil;
+    
+    switch (index) {
+        case 0:
+            buttonTitle = @"BIKE";
+            break;
+        case 1:
+            buttonTitle = @"PUBLIC TRANSPORT";
+            break;
+        case 2:
+            buttonTitle = @"PLANE";
+            break;
+        case 3:
+            buttonTitle = @"FOOT";
+            break;
+        case 4:
+            buttonTitle = @"BOAT";
+            break;
+        case 5:
+            buttonTitle = @"CAR";
+            break;
+        default:
+            break;
+    }
+    return buttonTitle;
+}
+
+-(UIImage *)  imageOfButtonsAtIndex:(NSInteger) index {
+    return nil;
+}
+-(UIImage *)  imageOfSelectedButtonAtIndex:(NSInteger) index {
+    return nil;
+}
+-(UIView *)indicatorForMenu {
+    UIView *uiv_indicator = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 20.0, 20.0)];
+    uiv_indicator.backgroundColor = [UIColor brownColor];
+    return uiv_indicator;
+}
+-(void) didSelectItemAtIndex:(NSInteger) selectedIndex inMenu:(menuWithIndicator *)indicatorMenu {
+    NSLog(@"\n\n No.%i  Tap first time", (int)selectedIndex);
+    [self loadThePage:(int)selectedIndex+1];
+}
+-(void) didSelectItemAgainInMenu:(menuWithIndicator *)indicatorMenu {
+    NSLog(@"\n\nTap again!");
+}
+
+#pragma mark - Set Page Mehod used in Delegate
+-(void)loadThePage:(int)index {
+    self.pageViewController.dataSource = self.modelController;
+	
+	_pageIndex = index;
+    UIStoryboard *tmp_Sb = [UIStoryboard storyboardWithName:@"Fenway" bundle:nil];
+    
+	embPVCBaseViewController *startingViewController = [self.modelController viewControllerAtIndex:_pageIndex storyboard:tmp_Sb];
+	
+	NSArray *viewControllers = @[startingViewController];
+	
+	if (_pageIndex<pageCurrent) {
+		[self.pageViewController setViewControllers:viewControllers
+										  direction:UIPageViewControllerNavigationDirectionReverse
+										   animated:NO
+										 completion:nil];
+	} else {
+		[self.pageViewController setViewControllers:viewControllers
+										  direction:UIPageViewControllerNavigationDirectionForward
+										   animated:NO
+										 completion:nil];
+	}
+	
+	[self setPageIndex];
+
 }
 
 
@@ -268,7 +362,7 @@ static int TotalPages = 7;
     embPVCBaseViewController *theCurrentViewController = [self.pageViewController.viewControllers objectAtIndex:0];
     _pageIndex = [self.modelController indexOfViewController:theCurrentViewController];
     
-    NSLog(@"\n\nThe current page is %i", _pageIndex);
+//    NSLog(@"\n\nThe current page is %i", _pageIndex);
     if (_pageIndex == TotalPages) {
         _pageIndex = 0;
         
@@ -343,6 +437,7 @@ static int TotalPages = 7;
 	btn.tag = index;
     _incomingIndex = index;
 	[self loadPage:btn];
+    [_indicatorMenu hightLightBtns:index-1 withAnimation:NO];
 }
 
 -(void)loadPage:(id)sender

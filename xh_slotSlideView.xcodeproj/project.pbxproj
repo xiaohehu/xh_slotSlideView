@@ -15,6 +15,7 @@
 		821A47051919638C00C5CF3D /* 021page.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821A46EC1919638C00C5CF3D /* 021page.jpg */; };
 		821A47071919638C00C5CF3D /* 023page.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821A46EE1919638C00C5CF3D /* 023page.jpg */; };
 		821A47081919638C00C5CF3D /* 024page.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821A46EF1919638C00C5CF3D /* 024page.jpg */; };
+		824C246E192CE5760070A6AC /* menuWithIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 824C246D192CE5760070A6AC /* menuWithIndicator.m */; };
 		826AE92E19094DCD006A689B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826AE92D19094DCD006A689B /* Foundation.framework */; };
 		826AE93019094DCD006A689B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826AE92F19094DCD006A689B /* CoreGraphics.framework */; };
 		826AE93219094DCD006A689B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826AE93119094DCD006A689B /* UIKit.framework */; };
@@ -74,6 +75,8 @@
 		821A46EC1919638C00C5CF3D /* 021page.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 021page.jpg; sourceTree = "<group>"; };
 		821A46EE1919638C00C5CF3D /* 023page.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 023page.jpg; sourceTree = "<group>"; };
 		821A46EF1919638C00C5CF3D /* 024page.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 024page.jpg; sourceTree = "<group>"; };
+		824C246C192CE5760070A6AC /* menuWithIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuWithIndicator.h; sourceTree = "<group>"; };
+		824C246D192CE5760070A6AC /* menuWithIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menuWithIndicator.m; sourceTree = "<group>"; };
 		826AE92A19094DCD006A689B /* xh_slotSlideView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xh_slotSlideView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		826AE92D19094DCD006A689B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		826AE92F19094DCD006A689B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -210,6 +213,8 @@
 				826AE94319094DCD006A689B /* ViewController.m */,
 				826AE96219095253006A689B /* xh_slotScrollView.h */,
 				826AE96319095254006A689B /* xh_slotScrollView.m */,
+				824C246C192CE5760070A6AC /* menuWithIndicator.h */,
+				824C246D192CE5760070A6AC /* menuWithIndicator.m */,
 				8207877619116CAD00279840 /* slotScroll.plist */,
 				8276D27719119B7900849E39 /* BGImage.jpg */,
 				826AE965190963A6006A689B /* fpo_tmp.jpg */,
@@ -428,6 +433,7 @@
 				826AE93A19094DCD006A689B /* main.m in Sources */,
 				82E209E51912CC3400D7BDEC /* embDrawPath.m in Sources */,
 				82E209E81912CC3400D7BDEC /* embPVCBaseViewController.m in Sources */,
+				824C246E192CE5760070A6AC /* menuWithIndicator.m in Sources */,
 				82E209FD1912CD0000D7BDEC /* embBezierItem.m in Sources */,
 				82E209EA1912CC3400D7BDEC /* embPVCRootViewController.m in Sources */,
 				82E20A011912CD2400D7BDEC /* embFenwayBlockPaths.m in Sources */,
