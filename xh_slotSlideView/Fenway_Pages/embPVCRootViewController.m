@@ -78,7 +78,7 @@ static int TotalPages = 7;
 	// Add the page view controller's gesture recognizers to the book view controller's view so that the gestures are started more easily.
 	self.view.gestureRecognizers = self.pageViewController.gestureRecognizers;
 	
-	[self createMenuButtons];
+//	[self createMenuButtons];
 	
 //	UIImageView *logo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20, 204, 67)];
 //	logo.image = [UIImage imageNamed:@"logo.png"];
@@ -95,7 +95,7 @@ static int TotalPages = 7;
 	[self setPageIndex];
 	
     //Alloc the menu with indicator
-    _indicatorMenu = [[menuWithIndicator alloc] initWithFrame:CGRectMake(0.0, 40.0, 1024.0, 50.0)];
+    _indicatorMenu = [[menuWithIndicator alloc] initWithFrame:CGRectMake(0.0, 600.0, 1024.0, 50.0)];
     _indicatorMenu.dataSource = self;
     _indicatorMenu.delegate = self;
     [self.view addSubview: _indicatorMenu];
@@ -282,42 +282,97 @@ static int TotalPages = 7;
     return 6;
 }
 -(NSString *) titleOfButtonsAtIndex:(NSInteger) index {
-    NSString *buttonTitle = nil;
-    
+//    NSString *buttonTitle = nil;
+//    
+//    switch (index) {
+//        case 0:
+//            buttonTitle = @"BIKE";
+//            break;
+//        case 1:
+//            buttonTitle = @"PUBLIC TRANSPORT";
+//            break;
+//        case 2:
+//            buttonTitle = @"PLANE";
+//            break;
+//        case 3:
+//            buttonTitle = @"FOOT";
+//            break;
+//        case 4:
+//            buttonTitle = @"BOAT";
+//            break;
+//        case 5:
+//            buttonTitle = @"CAR";
+//            break;
+//        default:
+//            break;
+//    }
+//    return buttonTitle;
+    return nil;
+}
+
+-(UIImage *)  imageOfButtonsAtIndex:(NSInteger) index {
+    UIImage *buttonImage = [[UIImage alloc] init];
     switch (index) {
         case 0:
-            buttonTitle = @"BIKE";
+            buttonImage = [UIImage imageNamed:@"btn1.jpg"];
             break;
         case 1:
-            buttonTitle = @"PUBLIC TRANSPORT";
+            buttonImage = [UIImage imageNamed:@"btn2.jpg"];
             break;
         case 2:
-            buttonTitle = @"PLANE";
+            buttonImage = [UIImage imageNamed:@"btn1.jpg"];
             break;
         case 3:
-            buttonTitle = @"FOOT";
+            buttonImage = [UIImage imageNamed:@"btn2.jpg"];
             break;
         case 4:
-            buttonTitle = @"BOAT";
+            buttonImage = [UIImage imageNamed:@"btn1.jpg"];
             break;
         case 5:
-            buttonTitle = @"CAR";
+            buttonImage = [UIImage imageNamed:@"btn2.jpg"];
             break;
         default:
             break;
     }
-    return buttonTitle;
-}
-
--(UIImage *)  imageOfButtonsAtIndex:(NSInteger) index {
-    return nil;
+    return buttonImage;
+//    return nil;
 }
 -(UIImage *)  imageOfSelectedButtonAtIndex:(NSInteger) index {
-    return nil;
+    UIImage *selectedImage = [[UIImage alloc] init];
+    switch (index) {
+        case 0:
+            selectedImage = [UIImage imageNamed:@"btn1_selected.jpg"];
+            break;
+        case 1:
+            selectedImage = [UIImage imageNamed:@"btn2_selcted.jpg"];
+            break;
+        case 2:
+            selectedImage = [UIImage imageNamed:@"btn1_selected.jpg"];
+            break;
+        case 3:
+            selectedImage = [UIImage imageNamed:@"btn2_selcted.jpg"];
+            break;
+        case 4:
+            selectedImage = [UIImage imageNamed:@"btn1_selected.jpg"];
+            break;
+        case 5:
+            selectedImage = [UIImage imageNamed:@"btn2_selcted.jpg"];
+            break;
+            
+        default:
+            break;
+    }
+    return selectedImage;
+//    return nil;
 }
 -(UIView *)indicatorForMenu {
     UIView *uiv_indicator = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 20.0, 20.0)];
     uiv_indicator.backgroundColor = [UIColor brownColor];
+    CGPoint saveCenter = uiv_indicator.center;
+    CGRect newFrame = CGRectMake(uiv_indicator.frame.origin.x, uiv_indicator.frame.origin.y, uiv_indicator.frame.size.width, uiv_indicator.frame.size.height);
+    uiv_indicator.frame = newFrame;
+    uiv_indicator.layer.cornerRadius = uiv_indicator.frame.size.height / 2.0;
+    uiv_indicator.center = saveCenter;
     return uiv_indicator;
 }
 -(void) didSelectItemAtIndex:(NSInteger) selectedIndex inMenu:(menuWithIndicator *)indicatorMenu {

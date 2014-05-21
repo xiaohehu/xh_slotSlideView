@@ -7,10 +7,9 @@
 //
 
 #import "menuWithIndicator.h"
-
+static float indicator_Y = -40;
 static float buttonSpace = 20.0;
 @interface menuWithIndicator ()
-//@property (nonatomic)         int                   numOfLevels;
 @property (nonatomic, strong) NSMutableArray        *arr_buttons;
 @property (nonatomic)         int                   preBtnTag;
 @property (nonatomic, strong) UIView                *uiv_menuIndicator;
@@ -32,7 +31,8 @@ static float buttonSpace = 20.0;
         _arr_buttons = [[NSMutableArray alloc] init];
         _uiv_menuIndicator = [[UIView alloc] init];
         _uiv_buttonContainer = [[UIView alloc] initWithFrame:self.bounds];
-        self.backgroundColor = [UIColor blueColor];
+        self.backgroundColor = [UIColor clearColor];
+        self.clipsToBounds = NO;
     }
     return self;
 }
@@ -48,21 +48,6 @@ static float buttonSpace = 20.0;
     [self.arr_buttonImages removeAllObjects];
     [self.arr_buttonSelectImage removeAllObjects];
     
-//    _numOfLevels = (int)[self.dataSource numberOfLevels];
-//    if (_numOfLevels == 0) {
-//        return;
-//    }
-//    else {
-//        if (self.dataSource != nil) {
-//            for (int level = 0; level < _numOfLevels; level++) {
-//                //Add Button Titles
-//                if ([self.dataSource titleOfButtons] != nil) {
-//                    [self.arr_buttonTitles setArray:[self.dataSource titleOfButtons]];
-//                }
-//            }
-//        }
-//    }
-    
     if (self.dataSource != nil) {
         NSInteger count = [self.dataSource numberOfMenuItems];
         
@@ -76,15 +61,13 @@ static float buttonSpace = 20.0;
         //Add Button Background Image
         if ([self.dataSource imageOfButtonsAtIndex:0] != nil) {
             for (int j = 0; j < count; j++) {
-                UIImage *buttonBgImg = [self.dataSource imageOfButtonsAtIndex:j];
-                [self.arr_buttonImages addObject:buttonBgImg];
+                [self.arr_buttonImages addObject:[self.dataSource imageOfButtonsAtIndex:j]];
             }
         }
         //Add Selected Button's Background Image
         if ([self.dataSource imageOfSelectedButtonAtIndex:0] != nil) {
             for (int k = 0; k < count; k++) {
-                UIImage *selectedBtnImg = [self.dataSource imageOfSelectedButtonAtIndex:k];
-                [self.arr_buttonSelectImage addObject:selectedBtnImg];
+                [self.arr_buttonSelectImage addObject:[self.dataSource imageOfSelectedButtonAtIndex:k]];
             }
         }
         //Add menu's indicator
@@ -106,6 +89,7 @@ static float buttonSpace = 20.0;
             uib_menuItem.frame = CGRectMake((preSize.width + buttonSpace + preX), 0.0, stringsize.width, self.frame.size.height);
             [uib_menuItem setTitle:titleString forState:UIControlStateNormal];
             [uib_menuItem setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [uib_menuItem setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
             uib_menuItem.tag = i;
             [uib_menuItem setBackgroundColor:[UIColor yellowColor]];
             [uib_menuItem addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -114,8 +98,45 @@ static float buttonSpace = 20.0;
             [_uiv_buttonContainer addSubview:uib_menuItem];
             [_arr_buttons addObject:uib_menuItem];
         }
+        [self addSubview: _uiv_buttonContainer];
+        return;
     }
-    [self addSubview: _uiv_buttonContainer];
+    if (([self.arr_buttonImages count] > 0) && (self.arr_buttonSelectImage.count == 0)) {
+        for (int i = 0; i < self.arr_buttonImages.count; i++) {
+            UIImage *buttonImage = [self.arr_buttonImages objectAtIndex:i];
+            CGSize imgSize = buttonImage.size;
+            UIButton *uib_menuItem = [UIButton buttonWithType:UIButtonTypeCustom];
+            uib_menuItem.frame = CGRectMake((preSize.width + buttonSpace + preX), 0.0, imgSize.width, self.frame.size.height);
+            [uib_menuItem setImage:buttonImage forState:UIControlStateNormal];
+            uib_menuItem.tag = i;
+            [uib_menuItem addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+            preSize = imgSize;
+            preX = uib_menuItem.frame.origin.x;
+            [_uiv_buttonContainer addSubview:uib_menuItem];
+            [_arr_buttons addObject:uib_menuItem];
+        }
+        [self addSubview: _uiv_buttonContainer];
+        return;
+    }
+    if (([self.arr_buttonImages count] > 0) && (self.arr_buttonImages.count == self.arr_buttonSelectImage.count)) {
+        for (int i = 0; i < self.arr_buttonImages.count; i++) {
+            UIImage *buttonImage = [self.arr_buttonImages objectAtIndex:i];
+            UIImage *selectImage = [self.arr_buttonSelectImage objectAtIndex:i];
+            CGSize imgSize = buttonImage.size;
+            UIButton *uib_menuItem = [UIButton buttonWithType:UIButtonTypeCustom];
+            uib_menuItem.frame = CGRectMake((preSize.width + buttonSpace + preX), 0.0, imgSize.width, self.frame.size.height);
+            [uib_menuItem setImage:buttonImage forState:UIControlStateNormal];
+            [uib_menuItem setImage:selectImage forState:UIControlStateSelected];
+            uib_menuItem.tag = i;
+            [uib_menuItem addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+            preSize = imgSize;
+            preX = uib_menuItem.frame.origin.x;
+            [_uiv_buttonContainer addSubview:uib_menuItem];
+            [_arr_buttons addObject:uib_menuItem];
+        }
+        [self addSubview: _uiv_buttonContainer];
+        return;
+    }
 }
 
 -(void)buttonTapped:(id)sender {    
@@ -123,30 +144,27 @@ static float buttonSpace = 20.0;
     [self addSubview:_uiv_menuIndicator];
     // Tap the button again
     if (_preBtnTag == tmpButton.tag) {
-        if (self.arr_buttonTitles.count > 0) {
-            [tmpButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            _uiv_menuIndicator.hidden = YES;
-        }
+        tmpButton.selected = NO;
+        _uiv_menuIndicator.hidden = YES;
         [self didSelectItemAgainInMenu:self];
         _preBtnTag = -1;
     }
     // Tap the button first time
     else {
         for (UIButton *tmp in _arr_buttons) {
-            [tmp setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            if (tmp.tag == _preBtnTag) {
+                tmp.selected = NO;
+            }
         }
-        if (self.arr_buttonTitles.count > 0) {
-            [tmpButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-            if (_uiv_menuIndicator.hidden) {
-                _uiv_menuIndicator.frame = CGRectMake(tmpButton.frame.origin.x+(tmpButton.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, 0.0, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
-                _uiv_menuIndicator.hidden = NO;
-            }
-            else {
-                [UIView animateWithDuration:0.6 animations:^{
-                    _uiv_menuIndicator.frame = CGRectMake(tmpButton.frame.origin.x+(tmpButton.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, 0.0, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
-                }];
-            }
-            
+        tmpButton.selected = YES;
+        if (_uiv_menuIndicator.hidden) {
+            _uiv_menuIndicator.frame = CGRectMake(tmpButton.frame.origin.x+(tmpButton.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
+            _uiv_menuIndicator.hidden = NO;
+        }
+        else {
+            [UIView animateWithDuration:0.4 animations:^{
+                    _uiv_menuIndicator.frame = CGRectMake(tmpButton.frame.origin.x+(tmpButton.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
+            }];
         }
         [self didSelectItemAtIndex:tmpButton.tag inMenu:self];
         _preBtnTag = (int)tmpButton.tag;
@@ -164,7 +182,7 @@ static float buttonSpace = 20.0;
 #pragma mark - Highlight buttons control
 -(void)unHighLightBtns {
     for (UIButton *tmp in [_uiv_buttonContainer subviews]) {
-        [tmp setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        tmp.selected = NO;
         _uiv_menuIndicator.hidden = YES;
     }
     _preBtnTag = -1;
@@ -172,28 +190,26 @@ static float buttonSpace = 20.0;
 
 -(void)hightLightBtns:(int) index withAnimation:(BOOL)animate{
     for (UIButton *tmp in [_uiv_buttonContainer subviews]) {
-        [tmp setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        
+        if (tmp.tag == _preBtnTag) {
+            tmp.selected = NO;
+        }
         if (animate) {
             if (tmp.tag == index) {
-                [tmp setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-                [UIView animateWithDuration:0.6 animations:^{
-                    _uiv_menuIndicator.frame = CGRectMake(tmp.frame.origin.x+(tmp.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, 0.0, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
+                tmp.selected = YES;
+                [UIView animateWithDuration:0.4 animations:^{
+                    _uiv_menuIndicator.frame = CGRectMake(tmp.frame.origin.x+(tmp.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
                 }];
+                _uiv_menuIndicator.hidden = NO;
             }
         }
         else {
             [self addSubview:_uiv_menuIndicator];
             if (tmp.tag == index) {
-                [tmp setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-                _uiv_menuIndicator.frame = CGRectMake(tmp.frame.origin.x+(tmp.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, 0.0, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
+                tmp.selected = YES;
+                _uiv_menuIndicator.frame = CGRectMake(tmp.frame.origin.x+(tmp.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
                 _uiv_menuIndicator.hidden = NO;
             }
-
         }
-        
-        
-//        _uiv_menuIndicator.hidden = YES;
     }
     _preBtnTag = index;
 }

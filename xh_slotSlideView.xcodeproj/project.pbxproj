@@ -32,10 +32,14 @@
 		826AE95919094DCD006A689B /* xh_slotSlideViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 826AE95819094DCD006A689B /* xh_slotSlideViewTests.m */; };
 		826AE96419095254006A689B /* xh_slotScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 826AE96319095254006A689B /* xh_slotScrollView.m */; };
 		826AE968190963A6006A689B /* fpo_tmp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826AE965190963A6006A689B /* fpo_tmp.jpg */; };
-		826AE969190963A6006A689B /* movie_tmp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826AE966190963A6006A689B /* movie_tmp.jpg */; };
 		826AE96A190963A6006A689B /* pdf_tmp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826AE967190963A6006A689B /* pdf_tmp.jpg */; };
 		8276D27819119B7900849E39 /* BGImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8276D27719119B7900849E39 /* BGImage.jpg */; };
 		828CFAC7191BDF0B009888D7 /* 016page.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 828CFAC6191BDF0B009888D7 /* 016page.jpg */; };
+		82C352A2192D3747005D0D3A /* btn1_selected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82C3529D192D3747005D0D3A /* btn1_selected.jpg */; };
+		82C352A3192D3747005D0D3A /* btn1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82C3529E192D3747005D0D3A /* btn1.jpg */; };
+		82C352A4192D3747005D0D3A /* btn2_selcted.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82C3529F192D3747005D0D3A /* btn2_selcted.jpg */; };
+		82C352A5192D3747005D0D3A /* btn2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82C352A0192D3747005D0D3A /* btn2.jpg */; };
+		82C352A6192D3747005D0D3A /* movie_tmp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82C352A1192D3747005D0D3A /* movie_tmp.jpg */; };
 		82E209E41912CC3400D7BDEC /* embBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E209D61912CC3400D7BDEC /* embBlockViewController.m */; };
 		82E209E51912CC3400D7BDEC /* embDrawPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E209D81912CC3400D7BDEC /* embDrawPath.m */; };
 		82E209E61912CC3400D7BDEC /* embMorphTwoPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E209DA1912CC3400D7BDEC /* embMorphTwoPaths.m */; };
@@ -103,6 +107,11 @@
 		826AE967190963A6006A689B /* pdf_tmp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pdf_tmp.jpg; sourceTree = "<group>"; };
 		8276D27719119B7900849E39 /* BGImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BGImage.jpg; sourceTree = "<group>"; };
 		828CFAC6191BDF0B009888D7 /* 016page.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 016page.jpg; sourceTree = "<group>"; };
+		82C3529D192D3747005D0D3A /* btn1_selected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = btn1_selected.jpg; sourceTree = "<group>"; };
+		82C3529E192D3747005D0D3A /* btn1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = btn1.jpg; sourceTree = "<group>"; };
+		82C3529F192D3747005D0D3A /* btn2_selcted.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = btn2_selcted.jpg; sourceTree = "<group>"; };
+		82C352A0192D3747005D0D3A /* btn2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = btn2.jpg; sourceTree = "<group>"; };
+		82C352A1192D3747005D0D3A /* movie_tmp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie_tmp.jpg; sourceTree = "<group>"; };
 		82E209D51912CC3400D7BDEC /* embBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embBlockViewController.h; sourceTree = "<group>"; };
 		82E209D61912CC3400D7BDEC /* embBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = embBlockViewController.m; sourceTree = "<group>"; };
 		82E209D71912CC3400D7BDEC /* embDrawPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = embDrawPath.h; sourceTree = "<group>"; };
@@ -220,6 +229,11 @@
 				826AE965190963A6006A689B /* fpo_tmp.jpg */,
 				826AE966190963A6006A689B /* movie_tmp.jpg */,
 				826AE967190963A6006A689B /* pdf_tmp.jpg */,
+				82C3529D192D3747005D0D3A /* btn1_selected.jpg */,
+				82C3529E192D3747005D0D3A /* btn1.jpg */,
+				82C3529F192D3747005D0D3A /* btn2_selcted.jpg */,
+				82C352A0192D3747005D0D3A /* btn2.jpg */,
+				82C352A1192D3747005D0D3A /* movie_tmp.jpg */,
 				82E209D41912CC3400D7BDEC /* Fenway_Pages */,
 				826AE94519094DCD006A689B /* Images.xcassets */,
 				826AE93419094DCD006A689B /* Supporting Files */,
@@ -381,8 +395,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				82E209EB1912CC3400D7BDEC /* Fenway.storyboard in Resources */,
+				82C352A3192D3747005D0D3A /* btn1.jpg in Resources */,
 				826AE94619094DCD006A689B /* Images.xcassets in Resources */,
 				821A47051919638C00C5CF3D /* 021page.jpg in Resources */,
+				82C352A4192D3747005D0D3A /* btn2_selcted.jpg in Resources */,
 				8207877719116CAD00279840 /* slotScroll.plist in Resources */,
 				821A46FC1919638C00C5CF3D /* 012page.jpg in Resources */,
 				82E209F61912CC5A00D7BDEC /* panel_fenway.plist in Resources */,
@@ -393,12 +409,14 @@
 				821A46F01919638C00C5CF3D /* 000page.jpg in Resources */,
 				82E209F51912CC5A00D7BDEC /* images.plist in Resources */,
 				821A47071919638C00C5CF3D /* 023page.jpg in Resources */,
+				82C352A2192D3747005D0D3A /* btn1_selected.jpg in Resources */,
 				826AE93819094DCD006A689B /* InfoPlist.strings in Resources */,
 				826AE96A190963A6006A689B /* pdf_tmp.jpg in Resources */,
-				826AE969190963A6006A689B /* movie_tmp.jpg in Resources */,
 				82E209F41912CC5A00D7BDEC /* fenway_panel.plist in Resources */,
+				82C352A6192D3747005D0D3A /* movie_tmp.jpg in Resources */,
 				826AE94119094DCD006A689B /* Main.storyboard in Resources */,
 				8276D27819119B7900849E39 /* BGImage.jpg in Resources */,
+				82C352A5192D3747005D0D3A /* btn2.jpg in Resources */,
 				821A46FB1919638C00C5CF3D /* 011page.jpg in Resources */,
 				821A47081919638C00C5CF3D /* 024page.jpg in Resources */,
 				826AE968190963A6006A689B /* fpo_tmp.jpg in Resources */,
