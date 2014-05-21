@@ -17,4 +17,6 @@
 @property (nonatomic, readwrite)    int             startPage;
 
 - (id)initWithFrame:(CGRect)frame andViewData:(NSArray *)dataArray;
+
+-(void)pauseAnimation:(BOOL)pause;
 @end

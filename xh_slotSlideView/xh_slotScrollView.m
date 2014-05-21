@@ -177,6 +177,28 @@ static float alphaValue = 0.8;
 //    }
 }
 #pragma mark - Pause & Resume Image Animation
+
+-(void)pauseAnimation:(BOOL)pause {
+    if (pause) {
+        for (UIView *tmp in [self subviews]) {
+            if (tmp.tag >= 100) {
+                for (UIImageView *tmpImageView in [tmp subviews]) {
+                    [self pauseLayer:tmpImageView.layer];
+                }
+            }
+        }
+    }
+    else {
+        for (UIView *tmp in [self subviews]) {
+            if (tmp.tag >= 100) {
+                for (UIImageView *tmpImageView in [tmp subviews]) {
+                    [self resumeLayer:tmpImageView.layer];
+                }
+            }
+        }
+    }
+}
+
 -(void)pauseLayer:(CALayer*)layer
 {
     CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];

@@ -127,6 +127,9 @@
                          completion:^(BOOL finished){
                              _uib_back.hidden = NO;
                              _pageVC.view.alpha = 1.0;
+                             [_uis_slotScrollView pauseAnimation:YES];
+                             [_uis_slotScrollView1 pauseAnimation:YES];
+                             [_uis_slotScrollView2 pauseAnimation:YES];
                          }];
     }
     
@@ -145,6 +148,9 @@
                          completion:^(BOOL finished){
                              _uib_back.hidden = NO;
                              _pageVC.view.alpha = 1.0;
+                             [_uis_slotScrollView pauseAnimation:YES];
+                             [_uis_slotScrollView1 pauseAnimation:YES];
+                             [_uis_slotScrollView2 pauseAnimation:YES];
                          }];
     }
     
@@ -163,6 +169,9 @@
                          completion:^(BOOL finished){
                              _uib_back.hidden = NO;
                              _pageVC.view.alpha = 1.0;
+                             [_uis_slotScrollView pauseAnimation:YES];
+                             [_uis_slotScrollView1 pauseAnimation:YES];
+                             [_uis_slotScrollView2 pauseAnimation:YES];
                          }];
     }
 
@@ -172,6 +181,10 @@
 -(void)backToMain
 {
     _uib_back.hidden = YES;
+    
+//    for (xh_slotScrollView *tmp_slot in [self.view subviews]) {
+//        [tmp_slot pauseAnimation:YES];
+//    }
     
     [UIView animateWithDuration:0.33 animations:^{
         _pageVC.view.alpha = 0.0;
@@ -183,7 +196,11 @@
             _uis_slotScrollView.transform = CGAffineTransformIdentity;
             _uis_slotScrollView1.transform = CGAffineTransformIdentity;
             _uis_slotScrollView2.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished){          }];
+        } completion:^(BOOL finished){
+            [_uis_slotScrollView pauseAnimation:NO];
+            [_uis_slotScrollView1 pauseAnimation:NO];
+            [_uis_slotScrollView2 pauseAnimation:NO];
+        }];
         
     }];
 }
