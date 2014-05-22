@@ -125,8 +125,10 @@
             _uis_slotScrollView2.transform = CGAffineTransformMakeTranslation(_uis_slotScrollView2.frame.size.width, 0);
         }
                          completion:^(BOOL finished){
+                             [UIView animateWithDuration:0.33 animations:^{
+                                 _pageVC.view.alpha = 1.0;
+                             }];
                              _uib_back.hidden = NO;
-                             _pageVC.view.alpha = 1.0;
                              [_uis_slotScrollView pauseAnimation:YES];
                              [_uis_slotScrollView1 pauseAnimation:YES];
                              [_uis_slotScrollView2 pauseAnimation:YES];
@@ -146,8 +148,10 @@
             _uis_slotScrollView2.transform = CGAffineTransformMakeTranslation(_uis_slotScrollView2.frame.size.width, 0);
         }
                          completion:^(BOOL finished){
+                             [UIView animateWithDuration:0.33 animations:^{
+                                 _pageVC.view.alpha = 1.0;
+                             }];
                              _uib_back.hidden = NO;
-                             _pageVC.view.alpha = 1.0;
                              [_uis_slotScrollView pauseAnimation:YES];
                              [_uis_slotScrollView1 pauseAnimation:YES];
                              [_uis_slotScrollView2 pauseAnimation:YES];
@@ -167,8 +171,10 @@
             _uis_slotScrollView2.transform = CGAffineTransformMakeTranslation(-_uis_slotScrollView1.frame.size.width - _uis_slotScrollView1.frame.size.width - _uis_slotScrollView2.frame.size.width, 0);
         }
                          completion:^(BOOL finished){
+                             [UIView animateWithDuration:0.33 animations:^{
+                                 _pageVC.view.alpha = 1.0;
+                             }];
                              _uib_back.hidden = NO;
-                             _pageVC.view.alpha = 1.0;
                              [_uis_slotScrollView pauseAnimation:YES];
                              [_uis_slotScrollView1 pauseAnimation:YES];
                              [_uis_slotScrollView2 pauseAnimation:YES];
