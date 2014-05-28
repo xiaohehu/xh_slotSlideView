@@ -35,6 +35,10 @@
 		826AE96A190963A6006A689B /* pdf_tmp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 826AE967190963A6006A689B /* pdf_tmp.jpg */; };
 		8276D27819119B7900849E39 /* BGImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8276D27719119B7900849E39 /* BGImage.jpg */; };
 		828CFAC7191BDF0B009888D7 /* 016page.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 828CFAC6191BDF0B009888D7 /* 016page.jpg */; };
+		82B0917D19362C220083B151 /* xh_slotUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B0917C19362C220083B151 /* xh_slotUIView.m */; };
+		82B0917F1936311C0083B151 /* slotUIView.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82B0917E1936311C0083B151 /* slotUIView.plist */; };
+		82B09182193639780083B151 /* skaskaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B09181193639780083B151 /* skaskaViewController.m */; };
+		82B09185193639880083B151 /* locationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B09184193639880083B151 /* locationViewController.m */; };
 		82C352A2192D3747005D0D3A /* btn1_selected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82C3529D192D3747005D0D3A /* btn1_selected.jpg */; };
 		82C352A3192D3747005D0D3A /* btn1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82C3529E192D3747005D0D3A /* btn1.jpg */; };
 		82C352A4192D3747005D0D3A /* btn2_selcted.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82C3529F192D3747005D0D3A /* btn2_selcted.jpg */; };
@@ -107,6 +111,13 @@
 		826AE967190963A6006A689B /* pdf_tmp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pdf_tmp.jpg; sourceTree = "<group>"; };
 		8276D27719119B7900849E39 /* BGImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BGImage.jpg; sourceTree = "<group>"; };
 		828CFAC6191BDF0B009888D7 /* 016page.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 016page.jpg; sourceTree = "<group>"; };
+		82B0917B19362C220083B151 /* xh_slotUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xh_slotUIView.h; sourceTree = "<group>"; };
+		82B0917C19362C220083B151 /* xh_slotUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xh_slotUIView.m; sourceTree = "<group>"; };
+		82B0917E1936311C0083B151 /* slotUIView.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = slotUIView.plist; sourceTree = "<group>"; };
+		82B09180193639780083B151 /* skaskaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skaskaViewController.h; sourceTree = "<group>"; };
+		82B09181193639780083B151 /* skaskaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skaskaViewController.m; sourceTree = "<group>"; };
+		82B09183193639880083B151 /* locationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = locationViewController.h; sourceTree = "<group>"; };
+		82B09184193639880083B151 /* locationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = locationViewController.m; sourceTree = "<group>"; };
 		82C3529D192D3747005D0D3A /* btn1_selected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = btn1_selected.jpg; sourceTree = "<group>"; };
 		82C3529E192D3747005D0D3A /* btn1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = btn1.jpg; sourceTree = "<group>"; };
 		82C3529F192D3747005D0D3A /* btn2_selcted.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = btn2_selcted.jpg; sourceTree = "<group>"; };
@@ -220,11 +231,18 @@
 				826AE93F19094DCD006A689B /* Main.storyboard */,
 				826AE94219094DCD006A689B /* ViewController.h */,
 				826AE94319094DCD006A689B /* ViewController.m */,
+				82B09180193639780083B151 /* skaskaViewController.h */,
+				82B09181193639780083B151 /* skaskaViewController.m */,
+				82B09183193639880083B151 /* locationViewController.h */,
+				82B09184193639880083B151 /* locationViewController.m */,
 				826AE96219095253006A689B /* xh_slotScrollView.h */,
 				826AE96319095254006A689B /* xh_slotScrollView.m */,
+				82B0917B19362C220083B151 /* xh_slotUIView.h */,
+				82B0917C19362C220083B151 /* xh_slotUIView.m */,
 				824C246C192CE5760070A6AC /* menuWithIndicator.h */,
 				824C246D192CE5760070A6AC /* menuWithIndicator.m */,
 				8207877619116CAD00279840 /* slotScroll.plist */,
+				82B0917E1936311C0083B151 /* slotUIView.plist */,
 				8276D27719119B7900849E39 /* BGImage.jpg */,
 				826AE965190963A6006A689B /* fpo_tmp.jpg */,
 				826AE966190963A6006A689B /* movie_tmp.jpg */,
@@ -411,6 +429,7 @@
 				821A47071919638C00C5CF3D /* 023page.jpg in Resources */,
 				82C352A2192D3747005D0D3A /* btn1_selected.jpg in Resources */,
 				826AE93819094DCD006A689B /* InfoPlist.strings in Resources */,
+				82B0917F1936311C0083B151 /* slotUIView.plist in Resources */,
 				826AE96A190963A6006A689B /* pdf_tmp.jpg in Resources */,
 				82E209F41912CC5A00D7BDEC /* fenway_panel.plist in Resources */,
 				82C352A6192D3747005D0D3A /* movie_tmp.jpg in Resources */,
@@ -444,10 +463,13 @@
 				82E209E61912CC3400D7BDEC /* embMorphTwoPaths.m in Sources */,
 				826AE96419095254006A689B /* xh_slotScrollView.m in Sources */,
 				826AE93E19094DCD006A689B /* AppDelegate.m in Sources */,
+				82B09185193639880083B151 /* locationViewController.m in Sources */,
 				82E20A041912CD3C00D7BDEC /* embBezierPathItem.m in Sources */,
 				82E209FE1912CD0000D7BDEC /* embDrawBezierPath.m in Sources */,
 				82E209E41912CC3400D7BDEC /* embBlockViewController.m in Sources */,
+				82B0917D19362C220083B151 /* xh_slotUIView.m in Sources */,
 				82E209E91912CC3400D7BDEC /* embPVCModelController.m in Sources */,
+				82B09182193639780083B151 /* skaskaViewController.m in Sources */,
 				826AE93A19094DCD006A689B /* main.m in Sources */,
 				82E209E51912CC3400D7BDEC /* embDrawPath.m in Sources */,
 				82E209E81912CC3400D7BDEC /* embPVCBaseViewController.m in Sources */,

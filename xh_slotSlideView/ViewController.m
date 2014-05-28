@@ -9,17 +9,15 @@
 #import "ViewController.h"
 #import "xh_slotScrollView.h"
 #import "embPVCRootViewController.h"
+#import "locationViewController.h"
+#import "skaskaViewController.h"
 @interface ViewController ()
+@property (nonatomic, strong) UIButton          *uib_location;
+@property (nonatomic, strong) UIButton          *uib_skaska360;
+@property (nonatomic, strong) UIButton          *uib_mainScreen;
 
-@property (nonatomic, strong) xh_slotScrollView         *uis_slotScrollView;
-@property (nonatomic, strong) xh_slotScrollView         *uis_slotScrollView1;
-@property (nonatomic, strong) xh_slotScrollView         *uis_slotScrollView2;
-@property (nonatomic, strong) UIView                    *uiv_backView;
-@property (nonatomic, strong) UIButton                  *uib_back;
-@property (nonatomic, strong) embPVCRootViewController     *pageVC;
-//@property (nonatomic, strong) UITapGestureRecognizer    *tapToExpansion;
-//@property (nonatomic, strong) UITapGestureRecognizer    *tapToExpansion1;
-//@property (nonatomic, strong) UITapGestureRecognizer    *tapToExpansion2;
+@property (nonatomic, strong) locationViewController    *locationVC;
+@property (nonatomic, strong) skaskaViewController      *skanskaVC;
 @end
 
 @implementation ViewController
@@ -27,188 +25,60 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _pageVC = [[embPVCRootViewController alloc] init];
-    _pageVC.view.frame = CGRectMake(0.0, 0.0, 1024, 768);
-    _pageVC.view.alpha = 0.0;
-    
-	// Do any additional setup after loading the view, typically from a nib.
-    UIImageView *uiiv_bg = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 1024, 768)];
-    [uiiv_bg setImage: [UIImage imageNamed:@"BGImage.jpg"]];
-    [self.view addSubview:uiiv_bg];
-    
-    [self initScorllViews];
+    [self.view setBackgroundColor:[UIColor darkGrayColor]];
+    [self initButtons];
 }
 
--(void)initScorllViews
-{
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"slotScroll" ofType:@"plist"];
-    NSArray *totalData = [[NSArray alloc] initWithContentsOfFile:path];
+-(void)initButtons {
+    _uib_location = [UIButton buttonWithType:UIButtonTypeCustom];
+    _uib_location.frame = CGRectMake(200.0, 200.0, 200.0, 50.0);
+    _uib_location.backgroundColor = [UIColor whiteColor];
+    [_uib_location setTitle:@"Load Location Slot" forState:UIControlStateNormal];
+    [_uib_location setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_uib_location addTarget:self action:@selector(loadLocationSlot) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview: _uib_location];
     
-    for (int i = 0; i < totalData.count; i++) {
-        NSArray *slotViewData = [[NSArray alloc] initWithArray:[totalData objectAtIndex:i]];
-        
-        switch (i) {
-            case 0:
-            {
-                _uis_slotScrollView = [[xh_slotScrollView alloc] initWithFrame:CGRectMake(0.0 + (342 * i), 0.0, 342, 768) andViewData:slotViewData];
-                _uis_slotScrollView.tag = 100 + i;
-                
-                UITapGestureRecognizer *tapToExpansion = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnSlotScrollView:)];
-                tapToExpansion.delegate = self;
-                _uis_slotScrollView.userInteractionEnabled = YES;
-                [_uis_slotScrollView setShowsVerticalScrollIndicator:NO];
-                [_uis_slotScrollView setContentOffset:CGPointMake(0.0, 768)];
-                [_uis_slotScrollView addGestureRecognizer: tapToExpansion];
-                [self.view addSubview: _uis_slotScrollView];
-                break;
-            }
-            case 1:
-            {
-                _uis_slotScrollView1 = [[xh_slotScrollView alloc] initWithFrame:CGRectMake(0.0 + (342 * i), 0.0, 342, 768) andViewData:slotViewData];
-                _uis_slotScrollView1.tag = 100 + i;
-                
-                UITapGestureRecognizer *tapToExpansion = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnSlotScrollView:)];
-                tapToExpansion.delegate = self;
-                _uis_slotScrollView1.userInteractionEnabled = YES;
-                [_uis_slotScrollView1 setShowsVerticalScrollIndicator:NO];
-                [_uis_slotScrollView1 setContentOffset:CGPointMake(0.0, 768)];
-                [_uis_slotScrollView1 addGestureRecognizer: tapToExpansion];
-                [self.view addSubview: _uis_slotScrollView1];
-                break;
-            }
-            case 2:
-            {
-                _uis_slotScrollView2 = [[xh_slotScrollView alloc] initWithFrame:CGRectMake(0.0 + (342 * i), 0.0, 342, 768) andViewData:slotViewData];
-                _uis_slotScrollView2.tag = 100 + i;
-                
-                UITapGestureRecognizer *tapToExpansion = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnSlotScrollView:)];
-                tapToExpansion.delegate = self;
-                _uis_slotScrollView2.userInteractionEnabled = YES;
-                [_uis_slotScrollView2 setShowsVerticalScrollIndicator:NO];
-                [_uis_slotScrollView2 setContentOffset:CGPointMake(0.0, 768)];
-                [_uis_slotScrollView2 addGestureRecognizer: tapToExpansion];
-                [self.view addSubview: _uis_slotScrollView2];
-                break;
-            }
-            default:
-                break;
-        }
-    }
-    _uib_back = [UIButton buttonWithType:UIButtonTypeCustom];
-    _uib_back.frame = CGRectMake(0.0, 20.0, 60.0, 30.0);
-    _uib_back.backgroundColor = [UIColor blueColor];
-    [_uib_back setTitle:@"back" forState:UIControlStateNormal];
-    [self.view addSubview: _uib_back];
-    _uib_back.hidden = YES;
-    [_uib_back addTarget:self action:@selector(backToMain) forControlEvents:UIControlEventTouchUpInside];
+    _uib_skaska360 = [UIButton buttonWithType:UIButtonTypeCustom];
+    _uib_skaska360.frame = CGRectMake(200.0, 280.0, 200.0, 50.0);
+    _uib_skaska360.backgroundColor = [UIColor whiteColor];
+    [_uib_skaska360 setTitle:@"Load Skanska 360˚" forState:UIControlStateNormal];
+    [_uib_skaska360 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_uib_skaska360 addTarget:self action:@selector(loadSkanskaSlot) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview: _uib_skaska360];
+    
+    _uib_mainScreen = [UIButton buttonWithType:UIButtonTypeCustom];
+    _uib_mainScreen.frame = CGRectMake(40.0, 700, 150, 40);
+    _uib_mainScreen.backgroundColor = [UIColor blackColor];
+    [_uib_mainScreen setTitle:@"<-MAIN MENU" forState:UIControlStateNormal];
+    [_uib_mainScreen addTarget:self action:@selector(backToMainMenu) forControlEvents:UIControlEventTouchUpInside];
+    _uib_mainScreen.hidden = YES;
+    [self.view addSubview:_uib_mainScreen];
 }
 
-#pragma mark - Handle Tap On Slot Scroll View
-
--(void)tapOnSlotScrollView:(UITapGestureRecognizer *)recognizer {
-    _uiv_backView = [[UIView alloc] initWithFrame:self.view.bounds];
-//    [self.view insertSubview:_uiv_backView belowSubview:_uis_slotScrollView];
-    _uiv_backView.backgroundColor = [UIColor blackColor];
-    [self.view insertSubview:_pageVC.view belowSubview:_uib_back];
-    
-    
-    if (recognizer.view.tag == 100) {
-        [_pageVC loadPageFromParent:1];
-        NSLog(@"The tag is 100");
-        if ((_uis_slotScrollView.contentOffset.y/_uis_slotScrollView.frame.size.height) == 1) {
-            _uiv_backView.backgroundColor = [UIColor redColor];
-            [_pageVC loadPageFromParent:3];
-        }
-        [UIView animateWithDuration:1.0 animations:^{
-            _uis_slotScrollView.transform = CGAffineTransformMakeTranslation(-_uis_slotScrollView.frame.size.width, 0.0);
-            _uis_slotScrollView1.transform = CGAffineTransformMakeTranslation(_uis_slotScrollView1.frame.size.width + _uis_slotScrollView2.frame.size.width, 0);
-            _uis_slotScrollView2.transform = CGAffineTransformMakeTranslation(_uis_slotScrollView2.frame.size.width, 0);
-        }
-                         completion:^(BOOL finished){
-                             [UIView animateWithDuration:0.33 animations:^{
-                                 _pageVC.view.alpha = 1.0;
-                             }];
-                             _uib_back.hidden = NO;
-                             [_uis_slotScrollView pauseAnimation:YES];
-                             [_uis_slotScrollView1 pauseAnimation:YES];
-                             [_uis_slotScrollView2 pauseAnimation:YES];
-                         }];
-    }
-    
-    if (recognizer.view.tag == 101) {
-        [_pageVC loadPageFromParent:5];
-        NSLog(@"The tag is 101");
-        if ((_uis_slotScrollView1.contentOffset.y/_uis_slotScrollView1.frame.size.height) == 1) {
-            _uiv_backView.backgroundColor = [UIColor redColor];
-            [_pageVC loadPageFromParent:2];
-        }
-        [UIView animateWithDuration:1.0 animations:^{
-            _uis_slotScrollView.transform = CGAffineTransformMakeTranslation(-_uis_slotScrollView.frame.size.width, 0.0);
-            _uis_slotScrollView1.transform = CGAffineTransformMakeTranslation(-_uis_slotScrollView1.frame.size.width - _uis_slotScrollView.frame.size.width, 0);
-            _uis_slotScrollView2.transform = CGAffineTransformMakeTranslation(_uis_slotScrollView2.frame.size.width, 0);
-        }
-                         completion:^(BOOL finished){
-                             [UIView animateWithDuration:0.33 animations:^{
-                                 _pageVC.view.alpha = 1.0;
-                             }];
-                             _uib_back.hidden = NO;
-                             [_uis_slotScrollView pauseAnimation:YES];
-                             [_uis_slotScrollView1 pauseAnimation:YES];
-                             [_uis_slotScrollView2 pauseAnimation:YES];
-                         }];
-    }
-    
-    if (recognizer.view.tag == 102) {
-        [_pageVC loadPageFromParent:4];
-        NSLog(@"The tag is 102");
-        if ((_uis_slotScrollView2.contentOffset.y/_uis_slotScrollView2.frame.size.height) == 1) {
-            _uiv_backView.backgroundColor = [UIColor redColor];
-            [_pageVC loadPageFromParent:6];
-        }
-        [UIView animateWithDuration:1.0 animations:^{
-            _uis_slotScrollView.transform = CGAffineTransformMakeTranslation(-_uis_slotScrollView.frame.size.width, 0.0);
-            _uis_slotScrollView1.transform = CGAffineTransformMakeTranslation(-_uis_slotScrollView1.frame.size.width - _uis_slotScrollView1.frame.size.width, 0);
-            _uis_slotScrollView2.transform = CGAffineTransformMakeTranslation(-_uis_slotScrollView1.frame.size.width - _uis_slotScrollView1.frame.size.width - _uis_slotScrollView2.frame.size.width, 0);
-        }
-                         completion:^(BOOL finished){
-                             [UIView animateWithDuration:0.33 animations:^{
-                                 _pageVC.view.alpha = 1.0;
-                             }];
-                             _uib_back.hidden = NO;
-                             [_uis_slotScrollView pauseAnimation:YES];
-                             [_uis_slotScrollView1 pauseAnimation:YES];
-                             [_uis_slotScrollView2 pauseAnimation:YES];
-                         }];
-    }
-
+-(void)loadLocationSlot {
+    _locationVC = [[locationViewController alloc] init];
+    [self addChildViewController:_locationVC];
+    [self.view insertSubview:_locationVC.view belowSubview:_uib_mainScreen];
+    _uib_mainScreen.hidden = NO;
 }
-
-#pragma mark - Back to Slot Scroll Views
--(void)backToMain
-{
-    _uib_back.hidden = YES;
-    
-//    for (xh_slotScrollView *tmp_slot in [self.view subviews]) {
-//        [tmp_slot pauseAnimation:YES];
-//    }
-    
-    [UIView animateWithDuration:0.33 animations:^{
-        _pageVC.view.alpha = 0.0;
-    } completion:^(BOOL finished){
-//        [_uiv_backView removeFromSuperview];
-//        _uiv_backView = nil;
-        
-        [UIView animateWithDuration:1.0 animations:^{
-            _uis_slotScrollView.transform = CGAffineTransformIdentity;
-            _uis_slotScrollView1.transform = CGAffineTransformIdentity;
-            _uis_slotScrollView2.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished){
-            [_uis_slotScrollView pauseAnimation:NO];
-            [_uis_slotScrollView1 pauseAnimation:NO];
-            [_uis_slotScrollView2 pauseAnimation:NO];
-        }];
-        
-    }];
+-(void)loadSkanskaSlot {
+    _skanskaVC = [[skaskaViewController alloc] init];
+    [self addChildViewController:_skanskaVC];
+    [self.view insertSubview:_skanskaVC.view belowSubview:_uib_mainScreen];
+    _uib_mainScreen.hidden = NO;
+}
+-(void)backToMainMenu {
+    if (_locationVC.view) {
+        [_locationVC removeFromParentViewController];
+        [_locationVC.view removeFromSuperview];
+        _locationVC = nil;
+    }
+    if (_skanskaVC.view) {
+        [_skanskaVC removeFromParentViewController];
+        [_skanskaVC.view removeFromSuperview];
+        _skanskaVC = nil;
+    }
+    _uib_mainScreen.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
