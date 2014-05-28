@@ -93,17 +93,27 @@ static float alphaValue = 0.8;
         
         //Init animation Imageview part
         NSArray *imageNames = [[NSArray alloc]initWithArray:[contentViewData objectForKey:@"images"]];
-        NSMutableArray *imageFiles = [[NSMutableArray alloc] init];
-        for (int j = 0; j < imageNames.count; j++) {
-            [imageFiles addObject:[UIImage imageNamed:[imageNames objectAtIndex:j]]];
+        if (imageNames.count > 1) {
+            NSMutableArray *imageFiles = [[NSMutableArray alloc] init];
+            for (int j = 0; j < imageNames.count; j++) {
+                [imageFiles addObject:[UIImage imageNamed:[imageNames objectAtIndex:j]]];
+            }
+            UIImageView *uiiv_animationView = [[UIImageView alloc] initWithFrame:CGRectMake(185.0, 192.0, 185.0, 192.0)];
+            [uiiv_animationView setContentMode:UIViewContentModeScaleAspectFit];
+            uiiv_animationView.animationImages = imageFiles;
+            uiiv_animationView.animationDuration = [[contentViewData objectForKey:@"duration"] floatValue];
+            [uiv_contentView addSubview:uiiv_animationView];
+            [uiiv_animationView startAnimating];
+            uiiv_animationView.tag = 200+i;
         }
-        UIImageView *uiiv_animationView = [[UIImageView alloc] initWithFrame:CGRectMake(185.0, 192.0, 185.0, 192.0)];
-        [uiiv_animationView setContentMode:UIViewContentModeScaleAspectFit];
-        uiiv_animationView.animationImages = imageFiles;
-        uiiv_animationView.animationDuration = [[contentViewData objectForKey:@"duration"] floatValue];
-        [uiv_contentView addSubview:uiiv_animationView];
-        [uiiv_animationView startAnimating];
-        uiiv_animationView.tag = 200+i;
+            //If there is only 1 image, no animation
+        if (imageNames.count == 1) {
+            UIImageView *uiiv_animationView = [[UIImageView alloc] initWithFrame:CGRectMake(185.0, 192.0, 185.0, 192.0)];
+            [uiiv_animationView setImage:[UIImage imageNamed:imageNames[0]]];
+            [uiiv_animationView setContentMode:UIViewContentModeScaleAspectFit];
+            [uiv_contentView addSubview:uiiv_animationView];
+            uiiv_animationView.tag = 99;
+        }
         
         //Change Content View BG Color
         NSString *colorData = [contentViewData objectForKey: @"color"];
