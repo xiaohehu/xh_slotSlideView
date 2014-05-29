@@ -39,6 +39,8 @@
 @property (nonatomic, strong)			UIButton				*uib_hiliteBtn;
 
 @property (nonatomic, strong)           menuWithIndicator       *indicatorMenu;
+@property (nonatomic, strong)           UIImageView             *uiiv_titleImage;
+@property (nonatomic, strong)           NSArray                 *arr_titleImage;
 @end
 
 @implementation embPVCRootViewController
@@ -100,6 +102,14 @@ static int TotalPages = 7;
     _indicatorMenu.dataSource = self;
     _indicatorMenu.delegate = self;
     [self.view addSubview: _indicatorMenu];
+    //Init title ImageView & title image array
+    _arr_titleImage = [[NSArray alloc] initWithObjects:@"byCar.jpg",@"byBoat.jpg", @"byRail.jpg", @"byPlane.jpg", @"byBike.jpg", @"byFoot.jpg", nil];
+    _uiiv_titleImage = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 588, 270, 180)];
+    NSLog(@"%@", _arr_titleImage);
+    [_uiiv_titleImage setContentMode:UIViewContentModeScaleAspectFit];
+//    _uiiv_titleImage.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:_uiiv_titleImage];
+    
 	// example
 	//[self loadPageFromParent:_incomingIndex];
 }
@@ -271,8 +281,8 @@ static int TotalPages = 7;
         if (_pageIndex == 7) {
             _pageIndex = 6;
         }
-        [_indicatorMenu hightLightBtns:_pageIndex-1 withAnimation:YES];
-        NSLog(@"the current page is %i",_pageIndex);
+        [_indicatorMenu hightLightBtns:(int)_pageIndex-1 withAnimation:YES];
+        NSLog(@"the current page is %i",(int)_pageIndex);
 //		[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(addTitleLabels) object: nil];
 	}
 }
@@ -438,7 +448,17 @@ static int TotalPages = 7;
 	[self setPageIndex];
 
 }
-
+#pragma mark - Update title Image
+-(void)updateTitleImage:(int)index {
+    [UIView animateWithDuration:0.33 animations:^{
+        _uiiv_titleImage.alpha = 0.0;
+    } completion:^(BOOL finished){
+        [_uiiv_titleImage setImage:[UIImage imageNamed:[_arr_titleImage objectAtIndex:index]]];
+        [UIView animateWithDuration:0.33 animations:^{
+            _uiiv_titleImage.alpha = 1.0;
+        }];
+    }];
+}
 
 #pragma mark - Set Page Index
 -(void)setPageIndex
@@ -451,6 +471,7 @@ static int TotalPages = 7;
         _pageIndex = 0;
         
         _uib_hiliteBtn = buttons[0];
+        [self updateTitleImage:0];
         [self clearAllButtons];
         [self hilightButton:_uib_hiliteBtn];
 
@@ -470,6 +491,7 @@ static int TotalPages = 7;
         _pageIndex = TotalPages;
         
         _uib_hiliteBtn = buttons[5];
+        [self updateTitleImage:5];
         [self clearAllButtons];
         [self hilightButton:_uib_hiliteBtn];
         UIStoryboard *tmp_Sb = [UIStoryboard storyboardWithName:@"Fenway" bundle:nil];
@@ -509,7 +531,6 @@ static int TotalPages = 7;
     
     shouldAddPanel=NO;
     [_panelImg removeFromSuperview];
-
 	_uib_hiliteBtn = buttons[convertedIndex];
 	[self clearAllButtons];
 	[self hilightButton:_uib_hiliteBtn];
