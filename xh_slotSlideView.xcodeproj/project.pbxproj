@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8207877719116CAD00279840 /* slotScroll.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8207877619116CAD00279840 /* slotScroll.plist */; };
+		8215D3291937839E007F40B7 /* slotmachine_skanska_360_icon_local_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215D3271937839E007F40B7 /* slotmachine_skanska_360_icon_local_small@2x.png */; };
+		8215D32A1937839E007F40B7 /* slotmachine_skanska_360_icon_local_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215D3281937839E007F40B7 /* slotmachine_skanska_360_icon_local_small.png */; };
 		821A46F01919638C00C5CF3D /* 000page.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821A46D71919638C00C5CF3D /* 000page.jpg */; };
 		821A46F11919638C00C5CF3D /* 001page.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821A46D81919638C00C5CF3D /* 001page.jpg */; };
 		821A46FB1919638C00C5CF3D /* 011page.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821A46E21919638C00C5CF3D /* 011page.jpg */; };
@@ -15,6 +17,34 @@
 		821A47051919638C00C5CF3D /* 021page.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821A46EC1919638C00C5CF3D /* 021page.jpg */; };
 		821A47071919638C00C5CF3D /* 023page.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821A46EE1919638C00C5CF3D /* 023page.jpg */; };
 		821A47081919638C00C5CF3D /* 024page.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821A46EF1919638C00C5CF3D /* 024page.jpg */; };
+		8247BCDB19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_bike.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCBE19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_bike.png */; };
+		8247BCDC19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_bike@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCBF19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_bike@2x.png */; };
+		8247BCDD19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_car.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCC019376E7700A2AB80 /* slotmachine_surroundings_getting_icon_car.png */; };
+		8247BCDE19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_car@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCC119376E7700A2AB80 /* slotmachine_surroundings_getting_icon_car@2x.png */; };
+		8247BCDF19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_ferry.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCC219376E7700A2AB80 /* slotmachine_surroundings_getting_icon_ferry.png */; };
+		8247BCE019376E7700A2AB80 /* slotmachine_surroundings_getting_icon_ferry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCC319376E7700A2AB80 /* slotmachine_surroundings_getting_icon_ferry@2x.png */; };
+		8247BCE119376E7700A2AB80 /* slotmachine_surroundings_getting_icon_foot.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCC419376E7700A2AB80 /* slotmachine_surroundings_getting_icon_foot.png */; };
+		8247BCE219376E7700A2AB80 /* slotmachine_surroundings_getting_icon_foot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCC519376E7700A2AB80 /* slotmachine_surroundings_getting_icon_foot@2x.png */; };
+		8247BCE319376E7700A2AB80 /* slotmachine_surroundings_getting_icon_plane.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCC619376E7700A2AB80 /* slotmachine_surroundings_getting_icon_plane.png */; };
+		8247BCE419376E7700A2AB80 /* slotmachine_surroundings_getting_icon_plane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCC719376E7700A2AB80 /* slotmachine_surroundings_getting_icon_plane@2x.png */; };
+		8247BCE519376E7700A2AB80 /* slotmachine_surroundings_getting_icon_t.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCC819376E7700A2AB80 /* slotmachine_surroundings_getting_icon_t.png */; };
+		8247BCE619376E7700A2AB80 /* slotmachine_surroundings_getting_icon_t@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCC919376E7700A2AB80 /* slotmachine_surroundings_getting_icon_t@2x.png */; };
+		8247BCE719376E7700A2AB80 /* slotmachine_skanska_360_bg_center.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCCB19376E7700A2AB80 /* slotmachine_skanska_360_bg_center.png */; };
+		8247BCE819376E7700A2AB80 /* slotmachine_skanska_360_bg_center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCCC19376E7700A2AB80 /* slotmachine_skanska_360_bg_center@2x.png */; };
+		8247BCE919376E7700A2AB80 /* slotmachine_skanska_360_bg_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCCD19376E7700A2AB80 /* slotmachine_skanska_360_bg_left.png */; };
+		8247BCEA19376E7700A2AB80 /* slotmachine_skanska_360_bg_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCCE19376E7700A2AB80 /* slotmachine_skanska_360_bg_left@2x.png */; };
+		8247BCEB19376E7700A2AB80 /* slotmachine_skanska_360_bg_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCCF19376E7700A2AB80 /* slotmachine_skanska_360_bg_right.png */; };
+		8247BCEC19376E7700A2AB80 /* slotmachine_skanska_360_bg_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCD019376E7700A2AB80 /* slotmachine_skanska_360_bg_right@2x.png */; };
+		8247BCED19376E7700A2AB80 /* slotmachine_skanska_360_button_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCD119376E7700A2AB80 /* slotmachine_skanska_360_button_down.png */; };
+		8247BCEE19376E7700A2AB80 /* slotmachine_skanska_360_button_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCD219376E7700A2AB80 /* slotmachine_skanska_360_button_down@2x.png */; };
+		8247BCEF19376E7700A2AB80 /* slotmachine_skanska_360_button_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCD319376E7700A2AB80 /* slotmachine_skanska_360_button_up.png */; };
+		8247BCF019376E7700A2AB80 /* slotmachine_skanska_360_button_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCD419376E7700A2AB80 /* slotmachine_skanska_360_button_up@2x.png */; };
+		8247BCF119376E7700A2AB80 /* slotmachine_skanska_360_icon_local.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCD519376E7700A2AB80 /* slotmachine_skanska_360_icon_local.png */; };
+		8247BCF219376E7700A2AB80 /* slotmachine_skanska_360_icon_local@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCD619376E7700A2AB80 /* slotmachine_skanska_360_icon_local@2x.png */; };
+		8247BCF319376E7700A2AB80 /* slotmachine_skanska_360_icon_self.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCD719376E7700A2AB80 /* slotmachine_skanska_360_icon_self.png */; };
+		8247BCF419376E7700A2AB80 /* slotmachine_skanska_360_icon_self@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCD819376E7700A2AB80 /* slotmachine_skanska_360_icon_self@2x.png */; };
+		8247BCF519376E7700A2AB80 /* slotmachine_skanska_360_icon_world.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCD919376E7700A2AB80 /* slotmachine_skanska_360_icon_world.png */; };
+		8247BCF619376E7700A2AB80 /* slotmachine_skanska_360_icon_world@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8247BCDA19376E7700A2AB80 /* slotmachine_skanska_360_icon_world@2x.png */; };
 		824C246E192CE5760070A6AC /* menuWithIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 824C246D192CE5760070A6AC /* menuWithIndicator.m */; };
 		826AE92E19094DCD006A689B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826AE92D19094DCD006A689B /* Foundation.framework */; };
 		826AE93019094DCD006A689B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826AE92F19094DCD006A689B /* CoreGraphics.framework */; };
@@ -76,6 +106,8 @@
 
 /* Begin PBXFileReference section */
 		8207877619116CAD00279840 /* slotScroll.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = slotScroll.plist; sourceTree = "<group>"; };
+		8215D3271937839E007F40B7 /* slotmachine_skanska_360_icon_local_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_skanska_360_icon_local_small@2x.png"; sourceTree = "<group>"; };
+		8215D3281937839E007F40B7 /* slotmachine_skanska_360_icon_local_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_skanska_360_icon_local_small.png; sourceTree = "<group>"; };
 		821A46D71919638C00C5CF3D /* 000page.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 000page.jpg; sourceTree = "<group>"; };
 		821A46D81919638C00C5CF3D /* 001page.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 001page.jpg; sourceTree = "<group>"; };
 		821A46E21919638C00C5CF3D /* 011page.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 011page.jpg; sourceTree = "<group>"; };
@@ -83,6 +115,34 @@
 		821A46EC1919638C00C5CF3D /* 021page.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 021page.jpg; sourceTree = "<group>"; };
 		821A46EE1919638C00C5CF3D /* 023page.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 023page.jpg; sourceTree = "<group>"; };
 		821A46EF1919638C00C5CF3D /* 024page.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 024page.jpg; sourceTree = "<group>"; };
+		8247BCBE19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_bike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_surroundings_getting_icon_bike.png; sourceTree = "<group>"; };
+		8247BCBF19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_bike@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_surroundings_getting_icon_bike@2x.png"; sourceTree = "<group>"; };
+		8247BCC019376E7700A2AB80 /* slotmachine_surroundings_getting_icon_car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_surroundings_getting_icon_car.png; sourceTree = "<group>"; };
+		8247BCC119376E7700A2AB80 /* slotmachine_surroundings_getting_icon_car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_surroundings_getting_icon_car@2x.png"; sourceTree = "<group>"; };
+		8247BCC219376E7700A2AB80 /* slotmachine_surroundings_getting_icon_ferry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_surroundings_getting_icon_ferry.png; sourceTree = "<group>"; };
+		8247BCC319376E7700A2AB80 /* slotmachine_surroundings_getting_icon_ferry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_surroundings_getting_icon_ferry@2x.png"; sourceTree = "<group>"; };
+		8247BCC419376E7700A2AB80 /* slotmachine_surroundings_getting_icon_foot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_surroundings_getting_icon_foot.png; sourceTree = "<group>"; };
+		8247BCC519376E7700A2AB80 /* slotmachine_surroundings_getting_icon_foot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_surroundings_getting_icon_foot@2x.png"; sourceTree = "<group>"; };
+		8247BCC619376E7700A2AB80 /* slotmachine_surroundings_getting_icon_plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_surroundings_getting_icon_plane.png; sourceTree = "<group>"; };
+		8247BCC719376E7700A2AB80 /* slotmachine_surroundings_getting_icon_plane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_surroundings_getting_icon_plane@2x.png"; sourceTree = "<group>"; };
+		8247BCC819376E7700A2AB80 /* slotmachine_surroundings_getting_icon_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_surroundings_getting_icon_t.png; sourceTree = "<group>"; };
+		8247BCC919376E7700A2AB80 /* slotmachine_surroundings_getting_icon_t@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_surroundings_getting_icon_t@2x.png"; sourceTree = "<group>"; };
+		8247BCCB19376E7700A2AB80 /* slotmachine_skanska_360_bg_center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_skanska_360_bg_center.png; sourceTree = "<group>"; };
+		8247BCCC19376E7700A2AB80 /* slotmachine_skanska_360_bg_center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_skanska_360_bg_center@2x.png"; sourceTree = "<group>"; };
+		8247BCCD19376E7700A2AB80 /* slotmachine_skanska_360_bg_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_skanska_360_bg_left.png; sourceTree = "<group>"; };
+		8247BCCE19376E7700A2AB80 /* slotmachine_skanska_360_bg_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_skanska_360_bg_left@2x.png"; sourceTree = "<group>"; };
+		8247BCCF19376E7700A2AB80 /* slotmachine_skanska_360_bg_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_skanska_360_bg_right.png; sourceTree = "<group>"; };
+		8247BCD019376E7700A2AB80 /* slotmachine_skanska_360_bg_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_skanska_360_bg_right@2x.png"; sourceTree = "<group>"; };
+		8247BCD119376E7700A2AB80 /* slotmachine_skanska_360_button_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_skanska_360_button_down.png; sourceTree = "<group>"; };
+		8247BCD219376E7700A2AB80 /* slotmachine_skanska_360_button_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_skanska_360_button_down@2x.png"; sourceTree = "<group>"; };
+		8247BCD319376E7700A2AB80 /* slotmachine_skanska_360_button_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_skanska_360_button_up.png; sourceTree = "<group>"; };
+		8247BCD419376E7700A2AB80 /* slotmachine_skanska_360_button_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_skanska_360_button_up@2x.png"; sourceTree = "<group>"; };
+		8247BCD519376E7700A2AB80 /* slotmachine_skanska_360_icon_local.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_skanska_360_icon_local.png; sourceTree = "<group>"; };
+		8247BCD619376E7700A2AB80 /* slotmachine_skanska_360_icon_local@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_skanska_360_icon_local@2x.png"; sourceTree = "<group>"; };
+		8247BCD719376E7700A2AB80 /* slotmachine_skanska_360_icon_self.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_skanska_360_icon_self.png; sourceTree = "<group>"; };
+		8247BCD819376E7700A2AB80 /* slotmachine_skanska_360_icon_self@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_skanska_360_icon_self@2x.png"; sourceTree = "<group>"; };
+		8247BCD919376E7700A2AB80 /* slotmachine_skanska_360_icon_world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_skanska_360_icon_world.png; sourceTree = "<group>"; };
+		8247BCDA19376E7700A2AB80 /* slotmachine_skanska_360_icon_world@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_skanska_360_icon_world@2x.png"; sourceTree = "<group>"; };
 		824C246C192CE5760070A6AC /* menuWithIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuWithIndicator.h; sourceTree = "<group>"; };
 		824C246D192CE5760070A6AC /* menuWithIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menuWithIndicator.m; sourceTree = "<group>"; };
 		826AE92A19094DCD006A689B /* xh_slotSlideView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xh_slotSlideView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +253,50 @@
 			path = Pages;
 			sourceTree = "<group>";
 		};
+		8247BCBD19376E7700A2AB80 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				8247BCBE19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_bike.png */,
+				8247BCBF19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_bike@2x.png */,
+				8247BCC019376E7700A2AB80 /* slotmachine_surroundings_getting_icon_car.png */,
+				8247BCC119376E7700A2AB80 /* slotmachine_surroundings_getting_icon_car@2x.png */,
+				8247BCC219376E7700A2AB80 /* slotmachine_surroundings_getting_icon_ferry.png */,
+				8247BCC319376E7700A2AB80 /* slotmachine_surroundings_getting_icon_ferry@2x.png */,
+				8247BCC419376E7700A2AB80 /* slotmachine_surroundings_getting_icon_foot.png */,
+				8247BCC519376E7700A2AB80 /* slotmachine_surroundings_getting_icon_foot@2x.png */,
+				8247BCC619376E7700A2AB80 /* slotmachine_surroundings_getting_icon_plane.png */,
+				8247BCC719376E7700A2AB80 /* slotmachine_surroundings_getting_icon_plane@2x.png */,
+				8247BCC819376E7700A2AB80 /* slotmachine_surroundings_getting_icon_t.png */,
+				8247BCC919376E7700A2AB80 /* slotmachine_surroundings_getting_icon_t@2x.png */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		8247BCCA19376E7700A2AB80 /* Skanska360 */ = {
+			isa = PBXGroup;
+			children = (
+				8247BCCB19376E7700A2AB80 /* slotmachine_skanska_360_bg_center.png */,
+				8247BCCC19376E7700A2AB80 /* slotmachine_skanska_360_bg_center@2x.png */,
+				8247BCCD19376E7700A2AB80 /* slotmachine_skanska_360_bg_left.png */,
+				8247BCCE19376E7700A2AB80 /* slotmachine_skanska_360_bg_left@2x.png */,
+				8247BCCF19376E7700A2AB80 /* slotmachine_skanska_360_bg_right.png */,
+				8247BCD019376E7700A2AB80 /* slotmachine_skanska_360_bg_right@2x.png */,
+				8247BCD119376E7700A2AB80 /* slotmachine_skanska_360_button_down.png */,
+				8247BCD219376E7700A2AB80 /* slotmachine_skanska_360_button_down@2x.png */,
+				8247BCD319376E7700A2AB80 /* slotmachine_skanska_360_button_up.png */,
+				8247BCD419376E7700A2AB80 /* slotmachine_skanska_360_button_up@2x.png */,
+				8215D3271937839E007F40B7 /* slotmachine_skanska_360_icon_local_small@2x.png */,
+				8215D3281937839E007F40B7 /* slotmachine_skanska_360_icon_local_small.png */,
+				8247BCD519376E7700A2AB80 /* slotmachine_skanska_360_icon_local.png */,
+				8247BCD619376E7700A2AB80 /* slotmachine_skanska_360_icon_local@2x.png */,
+				8247BCD719376E7700A2AB80 /* slotmachine_skanska_360_icon_self.png */,
+				8247BCD819376E7700A2AB80 /* slotmachine_skanska_360_icon_self@2x.png */,
+				8247BCD919376E7700A2AB80 /* slotmachine_skanska_360_icon_world.png */,
+				8247BCDA19376E7700A2AB80 /* slotmachine_skanska_360_icon_world@2x.png */,
+			);
+			path = Skanska360;
+			sourceTree = "<group>";
+		};
 		826AE92119094DCD006A689B = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +347,8 @@
 				824C246D192CE5760070A6AC /* menuWithIndicator.m */,
 				8207877619116CAD00279840 /* slotScroll.plist */,
 				82B0917E1936311C0083B151 /* slotUIView.plist */,
+				8247BCBD19376E7700A2AB80 /* Location */,
+				8247BCCA19376E7700A2AB80 /* Skanska360 */,
 				8276D27719119B7900849E39 /* BGImage.jpg */,
 				826AE965190963A6006A689B /* fpo_tmp.jpg */,
 				826AE966190963A6006A689B /* movie_tmp.jpg */,
@@ -416,21 +522,43 @@
 				82C352A3192D3747005D0D3A /* btn1.jpg in Resources */,
 				826AE94619094DCD006A689B /* Images.xcassets in Resources */,
 				821A47051919638C00C5CF3D /* 021page.jpg in Resources */,
+				8247BCDE19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_car@2x.png in Resources */,
+				8247BCEB19376E7700A2AB80 /* slotmachine_skanska_360_bg_right.png in Resources */,
+				8247BCF219376E7700A2AB80 /* slotmachine_skanska_360_icon_local@2x.png in Resources */,
+				8247BCEF19376E7700A2AB80 /* slotmachine_skanska_360_button_up.png in Resources */,
 				82C352A4192D3747005D0D3A /* btn2_selcted.jpg in Resources */,
 				8207877719116CAD00279840 /* slotScroll.plist in Resources */,
+				8215D3291937839E007F40B7 /* slotmachine_skanska_360_icon_local_small@2x.png in Resources */,
 				821A46FC1919638C00C5CF3D /* 012page.jpg in Resources */,
+				8247BCE419376E7700A2AB80 /* slotmachine_surroundings_getting_icon_plane@2x.png in Resources */,
+				8247BCF519376E7700A2AB80 /* slotmachine_skanska_360_icon_world.png in Resources */,
+				8247BCE819376E7700A2AB80 /* slotmachine_skanska_360_bg_center@2x.png in Resources */,
+				8247BCE019376E7700A2AB80 /* slotmachine_surroundings_getting_icon_ferry@2x.png in Resources */,
 				82E209F61912CC5A00D7BDEC /* panel_fenway.plist in Resources */,
 				82E209F31912CC5A00D7BDEC /* blockpaths.plist in Resources */,
+				8247BCF419376E7700A2AB80 /* slotmachine_skanska_360_icon_self@2x.png in Resources */,
+				8247BCF119376E7700A2AB80 /* slotmachine_skanska_360_icon_local.png in Resources */,
 				82E209F71912CC5A00D7BDEC /* panel_images.plist in Resources */,
+				8215D32A1937839E007F40B7 /* slotmachine_skanska_360_icon_local_small.png in Resources */,
 				821A46F11919638C00C5CF3D /* 001page.jpg in Resources */,
 				82E209F81912CC5A00D7BDEC /* titles.plist in Resources */,
 				821A46F01919638C00C5CF3D /* 000page.jpg in Resources */,
+				8247BCE619376E7700A2AB80 /* slotmachine_surroundings_getting_icon_t@2x.png in Resources */,
+				8247BCEE19376E7700A2AB80 /* slotmachine_skanska_360_button_down@2x.png in Resources */,
 				82E209F51912CC5A00D7BDEC /* images.plist in Resources */,
 				821A47071919638C00C5CF3D /* 023page.jpg in Resources */,
 				82C352A2192D3747005D0D3A /* btn1_selected.jpg in Resources */,
+				8247BCED19376E7700A2AB80 /* slotmachine_skanska_360_button_down.png in Resources */,
 				826AE93819094DCD006A689B /* InfoPlist.strings in Resources */,
 				82B0917F1936311C0083B151 /* slotUIView.plist in Resources */,
+				8247BCE319376E7700A2AB80 /* slotmachine_surroundings_getting_icon_plane.png in Resources */,
+				8247BCE119376E7700A2AB80 /* slotmachine_surroundings_getting_icon_foot.png in Resources */,
+				8247BCDB19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_bike.png in Resources */,
+				8247BCDD19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_car.png in Resources */,
+				8247BCEA19376E7700A2AB80 /* slotmachine_skanska_360_bg_left@2x.png in Resources */,
+				8247BCE219376E7700A2AB80 /* slotmachine_surroundings_getting_icon_foot@2x.png in Resources */,
 				826AE96A190963A6006A689B /* pdf_tmp.jpg in Resources */,
+				8247BCDC19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_bike@2x.png in Resources */,
 				82E209F41912CC5A00D7BDEC /* fenway_panel.plist in Resources */,
 				82C352A6192D3747005D0D3A /* movie_tmp.jpg in Resources */,
 				826AE94119094DCD006A689B /* Main.storyboard in Resources */,
@@ -438,7 +566,15 @@
 				82C352A5192D3747005D0D3A /* btn2.jpg in Resources */,
 				821A46FB1919638C00C5CF3D /* 011page.jpg in Resources */,
 				821A47081919638C00C5CF3D /* 024page.jpg in Resources */,
+				8247BCE719376E7700A2AB80 /* slotmachine_skanska_360_bg_center.png in Resources */,
+				8247BCF619376E7700A2AB80 /* slotmachine_skanska_360_icon_world@2x.png in Resources */,
 				826AE968190963A6006A689B /* fpo_tmp.jpg in Resources */,
+				8247BCEC19376E7700A2AB80 /* slotmachine_skanska_360_bg_right@2x.png in Resources */,
+				8247BCE919376E7700A2AB80 /* slotmachine_skanska_360_bg_left.png in Resources */,
+				8247BCF019376E7700A2AB80 /* slotmachine_skanska_360_button_up@2x.png in Resources */,
+				8247BCDF19376E7700A2AB80 /* slotmachine_surroundings_getting_icon_ferry.png in Resources */,
+				8247BCE519376E7700A2AB80 /* slotmachine_surroundings_getting_icon_t.png in Resources */,
+				8247BCF319376E7700A2AB80 /* slotmachine_skanska_360_icon_self.png in Resources */,
 				828CFAC7191BDF0B009888D7 /* 016page.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,14 +7,16 @@
 //
 
 #import "xh_slotUIView.h"
-#define kImage_X 185.0
-#define kImage_Y 192.0
+#define kImage_X 175.0
+#define kImage_Y 267.0
 #define kImage_W 185.0
 #define kImage_H 192.0
 
 @interface xh_slotUIView () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView              *uis_scrollView;
+@property (nonatomic, readwrite) float                  imageWidth;
+@property (nonatomic, readwrite) float                  imageHeight;
 
 @end
 
@@ -58,6 +60,7 @@
         _uis_scrollView.delegate = self;
         _uis_scrollView.scrollEnabled = YES;
         _uis_scrollView.pagingEnabled = YES;
+        _uis_scrollView.userInteractionEnabled = YES;
         [_uis_scrollView setBackgroundColor:[UIColor clearColor]];
         [_uis_scrollView setShowsVerticalScrollIndicator:NO];
         [self addSubview: _uis_scrollView];
@@ -93,18 +96,12 @@
         //Init animation Imageview part
         NSArray *imageNames = [[NSArray alloc]initWithArray:[contentViewData objectForKey:@"images"]];
         
-        CGRect  frame;
-        if ([contentViewData objectForKey:@"text"] != nil)
-            frame = CGRectMake(kImage_X-100, kImage_Y-20, kImage_W, kImage_H);
-        else
-            frame = CGRectMake(kImage_X, kImage_Y, kImage_W, kImage_H);
-        
         if (imageNames.count > 1) {
             NSMutableArray *imageFiles = [[NSMutableArray alloc] init];
             for (int j = 0; j < imageNames.count; j++) {
                 [imageFiles addObject:[UIImage imageNamed:[imageNames objectAtIndex:j]]];
             }
-            UIImageView *uiiv_animationView = [[UIImageView alloc] initWithFrame:frame];
+            UIImageView *uiiv_animationView = [[UIImageView alloc] initWithFrame:CGRectMake(kImage_X, kImage_Y, kImage_W, kImage_H)];
             [uiiv_animationView setContentMode:UIViewContentModeScaleAspectFit];
             uiiv_animationView.animationImages = imageFiles;
             uiiv_animationView.animationDuration = [[contentViewData objectForKey:@"duration"] floatValue];
@@ -114,8 +111,17 @@
         }
         //If there is only 1 image, no animation
         if (imageNames.count == 1) {
-            UIImageView *uiiv_animationView = [[UIImageView alloc] initWithFrame:frame];
-            [uiiv_animationView setImage:[UIImage imageNamed:imageNames[0]]];
+            UIImageView *uiiv_animationView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageNames[0]]];
+            CGRect  frame;
+            if ([contentViewData objectForKey:@"text"] != nil)
+                    frame = CGRectMake((self.frame.size.width - uiiv_animationView.frame.size.width*0.8)/2, kImage_Y-50, uiiv_animationView.frame.size.width*0.8, uiiv_animationView.frame.size.height*0.8);
+            else
+                frame = CGRectMake(kImage_X, kImage_Y, uiiv_animationView.frame.size.width, uiiv_animationView.frame.size.height);
+            
+            _imageHeight = frame.size.height;
+            _imageWidth = frame.size.width;
+            
+            uiiv_animationView.frame = frame;
             [uiiv_animationView setContentMode:UIViewContentModeScaleAspectFit];
             [uiv_contentView addSubview:uiiv_animationView];
             uiiv_animationView.tag = 99;
@@ -134,17 +140,22 @@
         
         //Init Label Text Part
         if ([contentViewData objectForKey:@"label"] != nil) {
-            UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, 255.0, self.frame.size.width, 300)];
+            UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(5.0, kImage_Y+40, self.frame.size.width, 300)];
             textView.userInteractionEnabled = NO;
             NSString *str_text = [contentViewData objectForKey:@"label"];
             textView.text = [str_text stringByReplacingOccurrencesOfString:@" " withString:@"\n"];
             textView.backgroundColor = [UIColor clearColor];
+            [textView setTextColor:[UIColor colorWithRed:100.0/255.0 green:101.0/255.0 blue:105.0/255.0 alpha:1.0]];
             if ([str_text length] > 16) {
                 //            textView.frame = CGRectMake(textView.frame.origin.x, textView.frame.origin.y + 50, textView.frame.size.width, textView.frame.size.height);
-                [textView setFont: [UIFont systemFontOfSize:50]];
+                [textView setFont: [UIFont systemFontOfSize:40]];
             }
             else {
-                [textView setFont: [UIFont systemFontOfSize:70]];
+                CGRect textFrame = textView.frame;
+                textFrame.origin.x += 15;
+                textFrame.origin.y += 15;
+                textView.frame = textFrame;
+                [textView setFont: [UIFont systemFontOfSize:45]];
             }
             
             
@@ -164,8 +175,16 @@
         //Init info Text Part
         if ([contentViewData objectForKey:@"text"] != nil) {
             //ADD TEXT
+            UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(5.0, kImage_Y-50+_imageHeight+20 , self.frame.size.width, 300)];
+            textView.userInteractionEnabled = NO;
+            NSString *str_text = [contentViewData objectForKey:@"text"];
+            textView.text = [str_text stringByReplacingOccurrencesOfString:@"+" withString:@"\n"];
+            textView.backgroundColor = [UIColor clearColor];
+            [textView setTextColor:[UIColor colorWithRed:100.0/255.0 green:101.0/255.0 blue:105.0/255.0 alpha:1.0]];
+            [textView setFont: [UIFont systemFontOfSize:30]];
+            [textView setTextAlignment:NSTextAlignmentCenter];
             
-            //CHANGE IMAGE SIZE & POSITION
+            [uiv_contentView addSubview:textView];
             
         }
         [_uis_scrollView addSubview: uiv_contentView];

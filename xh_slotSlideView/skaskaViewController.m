@@ -31,6 +31,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self initScorllView];
 }
@@ -45,7 +46,7 @@
         switch (i) {
             case 0:
             {
-                _uis_slotView1 = [[xh_slotUIView alloc] initWithFrame:CGRectMake(0.0 + (342 * 0), 0.0, 342, 768) andViewData:slotViewData];
+                _uis_slotView1 = [[xh_slotUIView alloc] initWithFrame:CGRectMake(0.0 + (342 * i), 0.0, 342, 768) andViewData:slotViewData];
                 _uis_slotView1.tag = 100 + i;
                 _uis_slotView1.userInteractionEnabled = YES;
                 [_uis_slotView1 setStartPage:1];
@@ -54,7 +55,7 @@
             }
             case 1:
             {
-                _uis_slotView2 = [[xh_slotUIView alloc] initWithFrame:CGRectMake(0.0 + (342 * 1), 0.0, 342, 768) andViewData:slotViewData];
+                _uis_slotView2 = [[xh_slotUIView alloc] initWithFrame:CGRectMake(0.0 + (342 * i), 0.0, 342, 768) andViewData:slotViewData];
                 _uis_slotView2.tag = 100 + i;
                 _uis_slotView2.userInteractionEnabled = YES;
                 [_uis_slotView2 setStartPage:1];
@@ -63,7 +64,7 @@
             }
             case 2:
             {
-                _uis_slotView3 = [[xh_slotUIView alloc] initWithFrame:CGRectMake(0.0 + (342 * 2), 0.0, 342, 768) andViewData:slotViewData];
+                _uis_slotView3 = [[xh_slotUIView alloc] initWithFrame:CGRectMake(0.0 + (342 * i), 0.0, 342, 768) andViewData:slotViewData];
                 _uis_slotView3.tag = 100 + i;
                 _uis_slotView3.userInteractionEnabled = YES;
                 [_uis_slotView3 setStartPage:1];

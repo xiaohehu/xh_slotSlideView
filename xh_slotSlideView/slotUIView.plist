@@ -6,122 +6,102 @@
 		<dict>
 			<key>images</key>
 			<array>
-				<string>fpo_tmp.jpg</string>
+				<string>slotmachine_skanska_360_icon_self.png</string>
 			</array>
-			<key>color</key>
-			<string>120,50,36</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>text</key>
-			<string>BY BIKE</string>
+			<string>125 YEARS OF+GLOBAL EXPERIENCE+WITH INNOVATIVE+AND AWAED-WINNING+PROJECTS</string>
 		</dict>
 		<dict>
 			<key>images</key>
 			<array>
-				<string>fpo_tmp.jpg</string>
+				<string>slotmachine_skanska_360_icon_self.png</string>
 			</array>
-			<key>color</key>
-			<string>120,251,36</string>
+			<key>bgimage</key>
+			<string>slotmachine_skanska_360_bg_left.png</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>label</key>
-			<string>BY PLANE</string>
+			<string>SELF FINANCE</string>
 		</dict>
 		<dict>
 			<key>images</key>
 			<array>
-				<string>fpo_tmp.jpg</string>
+				<string>slotmachine_skanska_360_icon_self.png</string>
 			</array>
-			<key>color</key>
-			<string>120,50,36</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>text</key>
-			<string>BY BIKE</string>
+			<string>125 YEARS OF+GLOBAL EXPERIENCE+WITH INNOVATIVE+AND AWAED-WINNING+PROJECTS</string>
 		</dict>
 	</array>
 	<array>
 		<dict>
 			<key>images</key>
 			<array>
-				<string>fpo_tmp.jpg</string>
-				<string>movie_tmp.jpg</string>
-				<string>pdf_tmp.jpg</string>
+				<string>slotmachine_skanska_360_icon_local_small.png</string>
 			</array>
-			<key>color</key>
-			<string>120,50,36</string>
 			<key>duration</key>
 			<real>1</real>
-			<key>label</key>
-			<string>BY BOAT</string>
+			<key>text</key>
+			<string>11 MILLION SF+OF SUSTAINABLE+OFFICE BUILDINGS+DELIVERED IN THE+PAST FIVE YEARS</string>
 		</dict>
 		<dict>
 			<key>images</key>
 			<array>
-				<string>movie_tmp.jpg</string>
+				<string>slotmachine_skanska_360_icon_local.png</string>
 			</array>
-			<key>color</key>
-			<string>120,251,36</string>
+			<key>bgimage</key>
+			<string>slotmachine_skanska_360_bg_center.png</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>label</key>
-			<string>BY PUBLIC TRANSPORT</string>
+			<string>LOCAL DEVELOPMENT EXPERTS</string>
 		</dict>
 		<dict>
 			<key>images</key>
 			<array>
-				<string>fpo_tmp.jpg</string>
-				<string>movie_tmp.jpg</string>
-				<string>pdf_tmp.jpg</string>
+				<string>slotmachine_skanska_360_icon_local_small.png</string>
 			</array>
-			<key>color</key>
-			<string>120,50,36</string>
 			<key>duration</key>
 			<real>1</real>
-			<key>label</key>
-			<string>BY BOAT</string>
+			<key>text</key>
+			<string>11 MILLION SF+OF SUSTAINABLE+OFFICE BUILDINGS+DELIVERED IN THE+PAST FIVE YEARS</string>
 		</dict>
 	</array>
 	<array>
 		<dict>
 			<key>images</key>
 			<array>
-				<string>pdf_tmp.jpg</string>
+				<string>slotmachine_skanska_360_icon_world.png</string>
 			</array>
-			<key>color</key>
-			<string>120,50,36</string>
 			<key>duration</key>
 			<real>1</real>
-			<key>label</key>
-			<string>BY FOOT</string>
+			<key>text</key>
+			<string>11 MILLION SF+OF SUSTAINABLE+OFFICE BUILDINGS+DELIVERED IN THE+PAST FIVE YEARS</string>
 		</dict>
 		<dict>
 			<key>images</key>
 			<array>
-				<string>fpo_tmp.jpg</string>
-				<string>movie_tmp.jpg</string>
-				<string>pdf_tmp.jpg</string>
+				<string>slotmachine_skanska_360_icon_world.png</string>
 			</array>
-			<key>color</key>
-			<string>120,251,36</string>
+			<key>bgimage</key>
+			<string>slotmachine_skanska_360_bg_right.png</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>label</key>
-			<string>BY CAR</string>
+			<string>WORLD CLASS CONSTRUCTION</string>
 		</dict>
 		<dict>
 			<key>images</key>
 			<array>
-				<string>fpo_tmp.jpg</string>
-				<string>movie_tmp.jpg</string>
-				<string>pdf_tmp.jpg</string>
+				<string>slotmachine_skanska_360_icon_world.png</string>
 			</array>
-			<key>color</key>
-			<string>120,50,36</string>
 			<key>duration</key>
 			<real>1</real>
-			<key>label</key>
-			<string>BY FOOT</string>
+			<key>text</key>
+			<string>11 MILLION SF+OF SUSTAINABLE+OFFICE BUILDINGS+DELIVERED IN THE+PAST FIVE YEARS</string>
 		</dict>
 	</array>
 </array>
