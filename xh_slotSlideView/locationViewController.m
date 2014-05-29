@@ -34,13 +34,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.frame = CGRectMake(0.0, 0.0, 1024, 768);
     _pageVC = [[embPVCRootViewController alloc] init];
     _pageVC.view.frame = CGRectMake(0.0, 0.0, 1024, 768);
     _pageVC.view.alpha = 0.0;
     
 	// Do any additional setup after loading the view, typically from a nib.
     UIImageView *uiiv_bg = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 1024, 768)];
-    [uiiv_bg setImage: [UIImage imageNamed:@"BGImage.jpg"]];
+    [uiiv_bg setImage: [UIImage imageNamed:@"grfx_location_slot_bg.jpg"]];
     [self.view addSubview:uiiv_bg];
     
     [self initScorllViews];
@@ -63,7 +64,7 @@
                 tapToExpansion.delegate = self;
                 _uis_slotScrollView.userInteractionEnabled = YES;
                 [_uis_slotScrollView setShowsVerticalScrollIndicator:NO];
-                [_uis_slotScrollView setContentOffset:CGPointMake(0.0, 768)];
+                [_uis_slotScrollView setStartPage:1];
                 [_uis_slotScrollView addGestureRecognizer: tapToExpansion];
                 [self.view addSubview: _uis_slotScrollView];
                 break;
@@ -77,7 +78,7 @@
                 tapToExpansion.delegate = self;
                 _uis_slotScrollView1.userInteractionEnabled = YES;
                 [_uis_slotScrollView1 setShowsVerticalScrollIndicator:NO];
-                [_uis_slotScrollView1 setContentOffset:CGPointMake(0.0, 768)];
+                [_uis_slotScrollView1 setStartPage:1];
                 [_uis_slotScrollView1 addGestureRecognizer: tapToExpansion];
                 [self.view addSubview: _uis_slotScrollView1];
                 break;
@@ -91,7 +92,7 @@
                 tapToExpansion.delegate = self;
                 _uis_slotScrollView2.userInteractionEnabled = YES;
                 [_uis_slotScrollView2 setShowsVerticalScrollIndicator:NO];
-                [_uis_slotScrollView2 setContentOffset:CGPointMake(0.0, 768)];
+                [_uis_slotScrollView2 setStartPage:1];
                 [_uis_slotScrollView2 addGestureRecognizer: tapToExpansion];
                 [self.view addSubview: _uis_slotScrollView2];
                 break;
@@ -101,7 +102,7 @@
         }
     }
     _uib_back = [UIButton buttonWithType:UIButtonTypeCustom];
-    _uib_back.frame = CGRectMake(0.0, 20.0, 60.0, 30.0);
+    _uib_back.frame = CGRectMake(290.0, 710.0, 60.0, 30.0);
     _uib_back.backgroundColor = [UIColor blueColor];
     [_uib_back setTitle:@"back" forState:UIControlStateNormal];
     [self.view addSubview: _uib_back];
@@ -119,11 +120,11 @@
     
     
     if (recognizer.view.tag == 100) {
-        [_pageVC loadPageFromParent:1];
+        [_pageVC loadPageFromParent:5];
         NSLog(@"The tag is 100");
         if ((_uis_slotScrollView.contentOffset.y/_uis_slotScrollView.frame.size.height) == 1) {
             _uiv_backView.backgroundColor = [UIColor redColor];
-            [_pageVC loadPageFromParent:3];
+            [_pageVC loadPageFromParent:4];
         }
         [UIView animateWithDuration:1.0 animations:^{
             _uis_slotScrollView.transform = CGAffineTransformMakeTranslation(-_uis_slotScrollView.frame.size.width, 0.0);
@@ -142,11 +143,11 @@
     }
     
     if (recognizer.view.tag == 101) {
-        [_pageVC loadPageFromParent:5];
+        [_pageVC loadPageFromParent:2];
         NSLog(@"The tag is 101");
         if ((_uis_slotScrollView1.contentOffset.y/_uis_slotScrollView1.frame.size.height) == 1) {
             _uiv_backView.backgroundColor = [UIColor redColor];
-            [_pageVC loadPageFromParent:2];
+            [_pageVC loadPageFromParent:3];
         }
         [UIView animateWithDuration:1.0 animations:^{
             _uis_slotScrollView.transform = CGAffineTransformMakeTranslation(-_uis_slotScrollView.frame.size.width, 0.0);
@@ -165,11 +166,11 @@
     }
     
     if (recognizer.view.tag == 102) {
-        [_pageVC loadPageFromParent:4];
+        [_pageVC loadPageFromParent:6];
         NSLog(@"The tag is 102");
         if ((_uis_slotScrollView2.contentOffset.y/_uis_slotScrollView2.frame.size.height) == 1) {
             _uiv_backView.backgroundColor = [UIColor redColor];
-            [_pageVC loadPageFromParent:6];
+            [_pageVC loadPageFromParent:1];
         }
         [UIView animateWithDuration:1.0 animations:^{
             _uis_slotScrollView.transform = CGAffineTransformMakeTranslation(-_uis_slotScrollView.frame.size.width, 0.0);

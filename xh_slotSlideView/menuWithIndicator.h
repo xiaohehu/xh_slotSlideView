@@ -21,6 +21,7 @@
 @property (nonatomic, strong)   NSMutableArray              *arr_buttonTitles;
 @property (nonatomic, strong)   NSMutableArray              *arr_buttonImages;
 @property (nonatomic, strong)   NSMutableArray              *arr_buttonSelectImage;
+@property (nonatomic, strong)   NSMutableArray              *arr_indicatorColors;
 
 //Method control hightlight buttons
 -(void)unHighLightBtns;
@@ -36,6 +37,7 @@
 -(UIImage *)  imageOfButtonsAtIndex:(NSInteger) index;
 -(UIImage *)  imageOfSelectedButtonAtIndex:(NSInteger) index;
 -(UIView *) indicatorForMenu;
+-(UIColor *)  colorsForIndicator:(NSInteger) index;
 //-(NSArray *) titleOfButtons;
 //-(NSArray *) imageOfButtons;
 //-(NSArray *) imageOfSelectedButton;

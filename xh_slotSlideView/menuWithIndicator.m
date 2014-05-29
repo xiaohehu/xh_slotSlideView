@@ -7,8 +7,9 @@
 //
 
 #import "menuWithIndicator.h"
-static float indicator_Y = -40;
-static float buttonSpace = 20.0;
+static float indicator_Y = -10;
+static float buttonSpace = 0.0;
+static float buttonWidth = 70.0;
 @interface menuWithIndicator ()
 @property (nonatomic, strong) NSMutableArray        *arr_buttons;
 @property (nonatomic)         int                   preBtnTag;
@@ -17,7 +18,7 @@ static float buttonSpace = 20.0;
 @end
 
 @implementation menuWithIndicator
-@synthesize arr_buttonImages, arr_buttonSelectImage, arr_buttonTitles;
+@synthesize arr_buttonImages, arr_buttonSelectImage, arr_buttonTitles, arr_indicatorColors;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -28,6 +29,7 @@ static float buttonSpace = 20.0;
         self.arr_buttonImages = [[NSMutableArray alloc] init];
         self.arr_buttonTitles = [[NSMutableArray alloc] init];
         self.arr_buttonSelectImage = [[NSMutableArray alloc] init];
+        self.arr_indicatorColors = [[NSMutableArray alloc] init];
         _arr_buttons = [[NSMutableArray alloc] init];
         _uiv_menuIndicator = [[UIView alloc] init];
         _uiv_buttonContainer = [[UIView alloc] initWithFrame:self.bounds];
@@ -47,6 +49,7 @@ static float buttonSpace = 20.0;
     [self.arr_buttonTitles removeAllObjects];
     [self.arr_buttonImages removeAllObjects];
     [self.arr_buttonSelectImage removeAllObjects];
+    [self.arr_indicatorColors removeAllObjects];
     
     if (self.dataSource != nil) {
         NSInteger count = [self.dataSource numberOfMenuItems];
@@ -68,6 +71,12 @@ static float buttonSpace = 20.0;
         if ([self.dataSource imageOfSelectedButtonAtIndex:0] != nil) {
             for (int k = 0; k < count; k++) {
                 [self.arr_buttonSelectImage addObject:[self.dataSource imageOfSelectedButtonAtIndex:k]];
+            }
+        }
+        //Add indicator's colors
+        if ([self.dataSource colorsForIndicator:0] != nil) {
+            for (int i = 0; i < count; i++) {
+                [self.arr_indicatorColors addObject:[self.dataSource colorsForIndicator:i]];
             }
         }
         //Add menu's indicator
@@ -106,7 +115,7 @@ static float buttonSpace = 20.0;
             UIImage *buttonImage = [self.arr_buttonImages objectAtIndex:i];
             CGSize imgSize = buttonImage.size;
             UIButton *uib_menuItem = [UIButton buttonWithType:UIButtonTypeCustom];
-            uib_menuItem.frame = CGRectMake((preSize.width + buttonSpace + preX), 0.0, imgSize.width, self.frame.size.height);
+            uib_menuItem.frame = CGRectMake((buttonWidth + buttonSpace + preX), 0.0, imgSize.width, self.frame.size.height);
             [uib_menuItem setImage:buttonImage forState:UIControlStateNormal];
             uib_menuItem.tag = i;
             [uib_menuItem addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -124,7 +133,8 @@ static float buttonSpace = 20.0;
             UIImage *selectImage = [self.arr_buttonSelectImage objectAtIndex:i];
             CGSize imgSize = buttonImage.size;
             UIButton *uib_menuItem = [UIButton buttonWithType:UIButtonTypeCustom];
-            uib_menuItem.frame = CGRectMake((preSize.width + buttonSpace + preX), 0.0, imgSize.width, self.frame.size.height);
+//            uib_menuItem.backgroundColor = [UIColor redColor];
+            uib_menuItem.frame = CGRectMake(buttonWidth*i+buttonSpace, 0.0, buttonWidth, self.frame.size.height);
             [uib_menuItem setImage:buttonImage forState:UIControlStateNormal];
             [uib_menuItem setImage:selectImage forState:UIControlStateSelected];
             uib_menuItem.tag = i;
@@ -134,7 +144,11 @@ static float buttonSpace = 20.0;
             [_uiv_buttonContainer addSubview:uib_menuItem];
             [_arr_buttons addObject:uib_menuItem];
         }
+        UIView *uiv_menuBar = [[UIView alloc] initWithFrame:CGRectMake(0.0, indicator_Y+_uiv_menuIndicator.frame.size.height/2 , _uiv_buttonContainer.frame.size.width, 1.5)];
+        uiv_menuBar.backgroundColor = [UIColor colorWithRed:100.0/255.0 green:101.0/255.0 blue:105.0/255.0 alpha:1.0];
         [self addSubview: _uiv_buttonContainer];
+        [self insertSubview:uiv_menuBar belowSubview:_uiv_buttonContainer];
+
         return;
     }
 }
@@ -158,13 +172,33 @@ static float buttonSpace = 20.0;
         }
         tmpButton.selected = YES;
         if (_uiv_menuIndicator.hidden) {
-            _uiv_menuIndicator.frame = CGRectMake(tmpButton.frame.origin.x+(tmpButton.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
-            _uiv_menuIndicator.hidden = NO;
+            if (self.arr_indicatorColors.count > 0) {
+                _uiv_menuIndicator.frame = CGRectMake(tmpButton.frame.origin.x+(tmpButton.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
+                UIColor *uic_indicatorColor = [self.arr_indicatorColors objectAtIndex:tmpButton.tag];
+                _uiv_menuIndicator.layer.backgroundColor = uic_indicatorColor.CGColor;
+                _uiv_menuIndicator.hidden = NO;
+            }
+            else {
+                _uiv_menuIndicator.frame = CGRectMake(tmpButton.frame.origin.x+(tmpButton.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
+                _uiv_menuIndicator.hidden = NO;
+            }
+            
         }
         else {
-            [UIView animateWithDuration:0.4 animations:^{
+            if (self.arr_indicatorColors.count > 0) {
+                UIColor *uic_indicatorColor = [self.arr_indicatorColors objectAtIndex:tmpButton.tag];
+                NSLog(@"The color for indicator is %@", uic_indicatorColor);
+                [UIView animateWithDuration:0.4 animations:^{
                     _uiv_menuIndicator.frame = CGRectMake(tmpButton.frame.origin.x+(tmpButton.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
-            }];
+                    _uiv_menuIndicator.layer.backgroundColor = uic_indicatorColor.CGColor;
+                }];
+            }
+            else {
+                [UIView animateWithDuration:0.4 animations:^{
+                    _uiv_menuIndicator.frame = CGRectMake(tmpButton.frame.origin.x+(tmpButton.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
+                }];
+            }
+            
         }
         [self didSelectItemAtIndex:tmpButton.tag inMenu:self];
         _preBtnTag = (int)tmpButton.tag;
@@ -196,9 +230,18 @@ static float buttonSpace = 20.0;
         if (animate) {
             if (tmp.tag == index) {
                 tmp.selected = YES;
-                [UIView animateWithDuration:0.4 animations:^{
-                    _uiv_menuIndicator.frame = CGRectMake(tmp.frame.origin.x+(tmp.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
-                }];
+                if (self.arr_indicatorColors.count > 0) {
+                    UIColor *uic_indicatorColor = [self.arr_indicatorColors objectAtIndex:index];
+                    [UIView animateWithDuration:0.4 animations:^{
+                        _uiv_menuIndicator.frame = CGRectMake(tmp.frame.origin.x+(tmp.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
+                        _uiv_menuIndicator.layer.backgroundColor = uic_indicatorColor.CGColor;
+                    }];
+                }
+                else {
+                    [UIView animateWithDuration:0.4 animations:^{
+                        _uiv_menuIndicator.frame = CGRectMake(tmp.frame.origin.x+(tmp.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
+                    }];
+                }
                 _uiv_menuIndicator.hidden = NO;
             }
         }
@@ -206,7 +249,14 @@ static float buttonSpace = 20.0;
             [self addSubview:_uiv_menuIndicator];
             if (tmp.tag == index) {
                 tmp.selected = YES;
-                _uiv_menuIndicator.frame = CGRectMake(tmp.frame.origin.x+(tmp.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
+                if (self.arr_indicatorColors.count > 0) {
+                    UIColor *uic_indicatorColor = [self.arr_indicatorColors objectAtIndex:index];
+                    _uiv_menuIndicator.frame = CGRectMake(tmp.frame.origin.x+(tmp.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
+                    _uiv_menuIndicator.layer.backgroundColor = uic_indicatorColor.CGColor;
+                }
+                else {
+                    _uiv_menuIndicator.frame = CGRectMake(tmp.frame.origin.x+(tmp.frame.size.width - _uiv_menuIndicator.frame.size.width)/2, indicator_Y, _uiv_menuIndicator.frame.size.width, _uiv_menuIndicator.frame.size.height);
+                }
                 _uiv_menuIndicator.hidden = NO;
             }
         }

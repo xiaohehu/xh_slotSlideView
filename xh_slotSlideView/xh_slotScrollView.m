@@ -10,6 +10,8 @@
 
 @interface xh_slotScrollView () <UIScrollViewDelegate>
 
+@property (nonatomic, strong) UIButton                  *uib_upArrow;
+@property (nonatomic, strong) UIButton                  *uib_downArrow;
 @end
 static float alphaValue = 0.8;
 @implementation xh_slotScrollView
@@ -74,6 +76,7 @@ static float alphaValue = 0.8;
 -(void)setOffsetOfScrollView
 {
     [self setContentOffset:CGPointMake(0, self.frame.size.height*startPage)];
+    [self initArrowBtns];
 }
 
 -(void)initViewInScrollView:(NSArray *)dataArray
@@ -115,13 +118,23 @@ static float alphaValue = 0.8;
             uiiv_animationView.tag = 99;
         }
         
+        //Check Background image and Init
+        if ([contentViewData objectForKeyedSubscript:@"bgimage"] != nil) {
+            UIImageView *uiiv_bgImage = [[UIImageView alloc] initWithFrame:uiv_contentView.bounds];
+            [uiiv_bgImage setImage:[UIImage imageNamed:[contentViewData objectForKey:@"bgimage"]]];
+            [uiiv_bgImage setContentMode:UIViewContentModeScaleAspectFit];
+            [uiv_contentView addSubview:uiiv_bgImage];
+        }
+        
         //Change Content View BG Color
-        NSString *colorData = [contentViewData objectForKey: @"color"];
-        NSArray *colorsArray = [colorData componentsSeparatedByString:@","];
-        float redValue = [[colorsArray objectAtIndex:0] floatValue];
-        float greenValue = [[colorsArray objectAtIndex:1] floatValue];
-        float blueValue = [[colorsArray objectAtIndex:2] floatValue];
-        [uiv_contentView setBackgroundColor:[UIColor colorWithRed:redValue/255.0 green:greenValue/255.0 blue:blueValue/255.0 alpha:1.0]];
+        if ([contentViewData objectForKey:@"color" ] != nil) {
+            NSString *colorData = [contentViewData objectForKey: @"color"];
+            NSArray *colorsArray = [colorData componentsSeparatedByString:@","];
+            float redValue = [[colorsArray objectAtIndex:0] floatValue];
+            float greenValue = [[colorsArray objectAtIndex:1] floatValue];
+            float blueValue = [[colorsArray objectAtIndex:2] floatValue];
+            [uiv_contentView setBackgroundColor:[UIColor colorWithRed:redValue/255.0 green:greenValue/255.0 blue:blueValue/255.0 alpha:1.0]];
+        }
         
         //Init Text Part
         UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, 255.0, self.frame.size.width, 300)];
@@ -153,7 +166,119 @@ static float alphaValue = 0.8;
         [self addSubview: uiv_contentView];
     }
 }
+-(void)initArrowBtns {
+    _uib_upArrow = [UIButton buttonWithType:UIButtonTypeCustom];
+    _uib_upArrow.frame = CGRectMake(0.0, 40.0, self.frame.size.width, 60);
+    [_uib_upArrow setImage:[UIImage imageNamed:@"slotmachine_surroundings_getting_button_up.png"] forState:UIControlStateNormal];
+    _uib_upArrow.tag = 10;
+    [_uib_upArrow addTarget:self action:@selector(arrowButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    _uib_downArrow = [UIButton buttonWithType:UIButtonTypeCustom];
+    _uib_downArrow.frame = CGRectMake(0.0, self.frame.size.height-100, self.frame.size.width, 60);
+    [_uib_downArrow setImage:[UIImage imageNamed:@"slotmachine_surroundings_getting_button_down.png"] forState:UIControlStateNormal];
+    _uib_downArrow.tag = 20;
+    [_uib_downArrow addTarget:self action:@selector(arrowButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self insertSubview:_uib_upArrow atIndex:HUGE];
+    [self insertSubview:_uib_downArrow atIndex:HUGE];
 
+    switch (startPage) {
+        case 0: {
+            _uib_upArrow.hidden = YES;
+            _uib_downArrow.hidden = NO;
+            _uib_downArrow.transform = CGAffineTransformIdentity;
+            _uib_upArrow.transform = CGAffineTransformIdentity;
+            break;
+        }
+        case 1: {
+            _uib_upArrow.hidden = NO;
+            _uib_downArrow.hidden = NO;
+            _uib_upArrow.transform = CGAffineTransformMakeTranslation(0, 768);
+            _uib_downArrow.transform = CGAffineTransformMakeTranslation(0, 768);
+            break;
+        }
+        case 2: {
+            _uib_upArrow.hidden = NO;
+            _uib_downArrow.hidden = YES;
+            _uib_upArrow.transform = CGAffineTransformMakeTranslation(0, 1536);
+            _uib_downArrow.transform = CGAffineTransformMakeTranslation(0, 1536);
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+-(void)arrowButtonTapped:(id)sender {
+    UIButton *tmpBtn = sender;
+    CGPoint point = self.contentOffset;
+    if (tmpBtn.tag == 10) {
+        point.y -= 768;
+        [UIView animateWithDuration:0.33 animations:^{
+            self.contentOffset = point;
+        }
+                         completion:^(BOOL finished){
+                             switch ((int)self.contentOffset.y) {
+                                 case 0: {
+                                     _uib_upArrow.hidden = YES;
+                                     _uib_downArrow.hidden = NO;
+                                     _uib_downArrow.transform = CGAffineTransformIdentity;
+                                     _uib_upArrow.transform = CGAffineTransformIdentity;
+                                     break;
+                                 }
+                                 case 768: {
+                                     _uib_upArrow.hidden = NO;
+                                     _uib_downArrow.hidden = NO;
+                                     _uib_upArrow.transform = CGAffineTransformMakeTranslation(0, 768);
+                                     _uib_downArrow.transform = CGAffineTransformMakeTranslation(0, 768);
+                                     break;
+                                 }
+                                 case 1536: {
+                                     _uib_upArrow.hidden = NO;
+                                     _uib_downArrow.hidden = YES;
+                                     _uib_upArrow.transform = CGAffineTransformMakeTranslation(0, 1536);
+                                     _uib_downArrow.transform = CGAffineTransformMakeTranslation(0, 1536);
+                                     break;
+                                 }
+                                 default:
+                                     break;
+                             }
+                         }];
+    }
+    if (tmpBtn.tag == 20) {
+        point.y += 768;
+        [UIView animateWithDuration:0.33 animations:^{
+            self.contentOffset = point;
+        }
+                         completion:^(BOOL finished){
+                             switch ((int)self.contentOffset.y) {
+                                 case 0: {
+                                     _uib_upArrow.hidden = YES;
+                                     _uib_downArrow.hidden = NO;
+                                     _uib_downArrow.transform = CGAffineTransformIdentity;
+                                     _uib_upArrow.transform = CGAffineTransformIdentity;
+                                     break;
+                                 }
+                                 case 768: {
+                                     _uib_upArrow.hidden = NO;
+                                     _uib_downArrow.hidden = NO;
+                                     _uib_upArrow.transform = CGAffineTransformMakeTranslation(0, 768);
+                                     _uib_downArrow.transform = CGAffineTransformMakeTranslation(0, 768);
+                                     break;
+                                 }
+                                 case 1536: {
+                                     _uib_upArrow.hidden = NO;
+                                     _uib_downArrow.hidden = YES;
+                                     _uib_upArrow.transform = CGAffineTransformMakeTranslation(0, 1536);
+                                     _uib_downArrow.transform = CGAffineTransformMakeTranslation(0, 1536);
+                                     break;
+                                 }
+                                 default:
+                                     break;
+                             }
+                         }];
+    }
+}
 #pragma mark - Scrollview Delegate
 // After scrolling, Get current page and resume animation
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -164,6 +289,32 @@ static float alphaValue = 0.8;
                 [self resumeLayer:tmpImageView.layer];
             }
         }
+    }
+
+    switch (pageIndex) {
+        case 0: {
+            _uib_upArrow.hidden = YES;
+            _uib_downArrow.hidden = NO;
+            _uib_downArrow.transform = CGAffineTransformIdentity;
+            _uib_upArrow.transform = CGAffineTransformIdentity;
+            break;
+        }
+        case 1: {
+            _uib_upArrow.hidden = NO;
+            _uib_downArrow.hidden = NO;
+            _uib_upArrow.transform = CGAffineTransformMakeTranslation(0, 768);
+            _uib_downArrow.transform = CGAffineTransformMakeTranslation(0, 768);
+            break;
+        }
+        case 2: {
+            _uib_upArrow.hidden = NO;
+            _uib_downArrow.hidden = YES;
+            _uib_upArrow.transform = CGAffineTransformMakeTranslation(0, 1536);
+            _uib_downArrow.transform = CGAffineTransformMakeTranslation(0, 1536);
+            break;
+        }
+        default:
+            break;
     }
 }
 // While scrolling, STOP all UIImageView Animation

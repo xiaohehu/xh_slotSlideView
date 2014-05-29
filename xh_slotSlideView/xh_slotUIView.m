@@ -17,7 +17,8 @@
 @property (nonatomic, strong) UIScrollView              *uis_scrollView;
 @property (nonatomic, readwrite) float                  imageWidth;
 @property (nonatomic, readwrite) float                  imageHeight;
-
+@property (nonatomic, strong) UIButton                  *uib_upArrow;
+@property (nonatomic, strong) UIButton                  *uib_downArrow;
 @end
 
 @implementation xh_slotUIView
@@ -43,6 +44,7 @@
 -(void)setOffsetOfScrollView
 {
     [_uis_scrollView setContentOffset:CGPointMake(0, _uis_scrollView.frame.size.height*startPage)];
+    [self initArrowBtns];
 }
 
 - (id)initWithFrame:(CGRect)frame andViewData:(NSArray *)dataArray  {
@@ -191,6 +193,102 @@
     }
 }
 
+-(void)initArrowBtns {
+    _uib_upArrow = [UIButton buttonWithType:UIButtonTypeCustom];
+    _uib_upArrow.frame = CGRectMake(0.0, 40.0, self.frame.size.width, 60);
+    [_uib_upArrow setImage:[UIImage imageNamed:@"slotmachine_skanska_360_button_up.png"] forState:UIControlStateNormal];
+    _uib_upArrow.tag = 10;
+    [_uib_upArrow addTarget:self action:@selector(arrowButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    _uib_downArrow = [UIButton buttonWithType:UIButtonTypeCustom];
+    _uib_downArrow.frame = CGRectMake(0.0, self.frame.size.height-100, self.frame.size.width, 60);
+    [_uib_downArrow setImage:[UIImage imageNamed:@"slotmachine_skanska_360_button_down.png"] forState:UIControlStateNormal];
+    _uib_downArrow.tag = 20;
+    [_uib_downArrow addTarget:self action:@selector(arrowButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self addSubview:_uib_upArrow];
+    [self addSubview:_uib_downArrow];
+    
+    CGPoint position = _uis_scrollView.contentOffset;
+    switch ((int)position.y) {
+        case 0: {
+            _uib_upArrow.hidden = YES;
+            _uib_downArrow.hidden = NO;
+            break;
+        }
+        case 768: {
+            _uib_upArrow.hidden = NO;
+            _uib_downArrow.hidden = NO;
+            break;
+        }
+        case 1536: {
+            _uib_upArrow.hidden = NO;
+            _uib_downArrow.hidden = YES;
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+-(void)arrowButtonTapped:(id)sender {
+    UIButton *tmpBtn = sender;
+    CGPoint point = _uis_scrollView.contentOffset;
+    if (tmpBtn.tag == 10) {
+        point.y -= 768;
+        [UIView animateWithDuration:0.33 animations:^{
+            _uis_scrollView.contentOffset = point;
+    }
+            completion:^(BOOL finished){
+                switch ((int)_uis_scrollView.contentOffset.y) {
+                    case 0: {
+                        _uib_upArrow.hidden = YES;
+                        _uib_downArrow.hidden = NO;
+                        break;
+                    }
+                    case 768: {
+                        _uib_upArrow.hidden = NO;
+                        _uib_downArrow.hidden = NO;
+                        break;
+                    }
+                    case 1536: {
+                        _uib_upArrow.hidden = NO;
+                        _uib_downArrow.hidden = YES;
+                        break;
+                    }
+                    default:
+                        break;
+                }
+            }];
+    }
+    if (tmpBtn.tag == 20) {
+        point.y += 768;
+        [UIView animateWithDuration:0.33 animations:^{
+            _uis_scrollView.contentOffset = point;
+        }
+            completion:^(BOOL finished){
+            switch ((int)_uis_scrollView.contentOffset.y) {
+                case 0: {
+                    _uib_upArrow.hidden = YES;
+                    _uib_downArrow.hidden = NO;
+                    break;
+                }
+                case 768: {
+                    _uib_upArrow.hidden = NO;
+                    _uib_downArrow.hidden = NO;
+                    break;
+                }
+                case 1536: {
+                    _uib_upArrow.hidden = NO;
+                    _uib_downArrow.hidden = YES;
+                    break;
+                }
+                default:
+                    break;
+            }
+        }];
+    }
+}
 #pragma mark - Scrollview Delegate
 // After scrolling, Get current page and resume animation
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -203,6 +301,26 @@
                 }
             }
         }
+    }
+    
+    switch (pageIndex) {
+        case 0: {
+            _uib_upArrow.hidden = YES;
+            _uib_downArrow.hidden = NO;
+            break;
+        }
+        case 1: {
+            _uib_upArrow.hidden = NO;
+            _uib_downArrow.hidden = NO;
+            break;
+        }
+        case 2: {
+            _uib_upArrow.hidden = NO;
+            _uib_downArrow.hidden = YES;
+            break;
+        }
+        default:
+            break;
     }
 }
 // While scrolling, STOP all UIImageView Animation

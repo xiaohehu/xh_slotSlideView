@@ -50,6 +50,7 @@ static int TotalPages = 7;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    self.view.frame = CGRectMake(0.0, 0.0, 1024.0, 768.0);
     NSDictionary *dict_option = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInteger:50],@"UIPageViewControllerOptionInterPageSpacingKey", nil];
 	// Do any additional setup after loading the view, typically from a nib.
 	// Configure the page view controller and add it as a child view controller.
@@ -95,7 +96,7 @@ static int TotalPages = 7;
 	[self setPageIndex];
 	
     //Alloc the menu with indicator
-    _indicatorMenu = [[menuWithIndicator alloc] initWithFrame:CGRectMake(0.0, 600.0, 1024.0, 50.0)];
+    _indicatorMenu = [[menuWithIndicator alloc] initWithFrame:CGRectMake(585, 685.0, 420.0, 60.0)];
     _indicatorMenu.dataSource = self;
     _indicatorMenu.delegate = self;
     [self.view addSubview: _indicatorMenu];
@@ -314,22 +315,22 @@ static int TotalPages = 7;
     UIImage *buttonImage = [[UIImage alloc] init];
     switch (index) {
         case 0:
-            buttonImage = [UIImage imageNamed:@"btn1.jpg"];
+            buttonImage = [UIImage imageNamed:@"slotmachine_surroundings_getting_nav2_car_icon_off.png"];
             break;
         case 1:
-            buttonImage = [UIImage imageNamed:@"btn2.jpg"];
+            buttonImage = [UIImage imageNamed:@"slotmachine_surroundings_getting_nav2_ferry_icon_off.png"];
             break;
         case 2:
-            buttonImage = [UIImage imageNamed:@"btn1.jpg"];
+            buttonImage = [UIImage imageNamed:@"slotmachine_surroundings_getting_nav2_T_icon_off.png"];
             break;
         case 3:
-            buttonImage = [UIImage imageNamed:@"btn2.jpg"];
+            buttonImage = [UIImage imageNamed:@"slotmachine_surroundings_getting_nav2_plane_icon_off.png"];
             break;
         case 4:
-            buttonImage = [UIImage imageNamed:@"btn1.jpg"];
+            buttonImage = [UIImage imageNamed:@"slotmachine_surroundings_getting_nav2_bike_icon_off.png"];
             break;
         case 5:
-            buttonImage = [UIImage imageNamed:@"btn2.jpg"];
+            buttonImage = [UIImage imageNamed:@"slotmachine_surroundings_getting_nav2_foot_off.png"];
             break;
         default:
             break;
@@ -341,22 +342,22 @@ static int TotalPages = 7;
     UIImage *selectedImage = [[UIImage alloc] init];
     switch (index) {
         case 0:
-            selectedImage = [UIImage imageNamed:@"btn1_selected.jpg"];
+            selectedImage = [UIImage imageNamed:@"slotmachine_surroundings_getting_nav2_car_icon_on.png"];
             break;
         case 1:
-            selectedImage = [UIImage imageNamed:@"btn2_selcted.jpg"];
+            selectedImage = [UIImage imageNamed:@"slotmachine_surroundings_getting_nav2_ferry_icon_on.png"];
             break;
         case 2:
-            selectedImage = [UIImage imageNamed:@"btn1_selected.jpg"];
+            selectedImage = [UIImage imageNamed:@"slotmachine_surroundings_getting_nav2_T_icon_on.png"];
             break;
         case 3:
-            selectedImage = [UIImage imageNamed:@"btn2_selcted.jpg"];
+            selectedImage = [UIImage imageNamed:@"slotmachine_surroundings_getting_nav2_plane_icon_on.png"];
             break;
         case 4:
-            selectedImage = [UIImage imageNamed:@"btn1_selected.jpg"];
+            selectedImage = [UIImage imageNamed:@"slotmachine_surroundings_getting_nav2_bike_icon_on.png"];
             break;
         case 5:
-            selectedImage = [UIImage imageNamed:@"btn2_selcted.jpg"];
+            selectedImage = [UIImage imageNamed:@"slotmachine_surroundings_getting_nav2_foot_icon_on.png"];
             break;
             
         default:
@@ -366,8 +367,8 @@ static int TotalPages = 7;
 //    return nil;
 }
 -(UIView *)indicatorForMenu {
-    UIView *uiv_indicator = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 20.0, 20.0)];
-    uiv_indicator.backgroundColor = [UIColor brownColor];
+    UIView *uiv_indicator = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 10.0, 10.0)];
+//    uiv_indicator.backgroundColor = [UIColor brownColor];
     CGPoint saveCenter = uiv_indicator.center;
     CGRect newFrame = CGRectMake(uiv_indicator.frame.origin.x, uiv_indicator.frame.origin.y, uiv_indicator.frame.size.width, uiv_indicator.frame.size.height);
     uiv_indicator.frame = newFrame;
@@ -375,6 +376,34 @@ static int TotalPages = 7;
     uiv_indicator.center = saveCenter;
     return uiv_indicator;
 }
+-(UIColor *) colorsForIndicator:(NSInteger)index {
+    UIColor *indicatorColor;
+    switch (index) {
+        case 0:
+            indicatorColor = [UIColor colorWithRed:42.0/255.0 green:64.0/255.0 blue:255.0/255.0 alpha:1.0];
+            break;
+        case 1:
+            indicatorColor = [UIColor colorWithRed:74.0/255.0 green:189.0/255.0 blue:232.0/255.0 alpha:1.0];
+            break;
+        case 2:
+            indicatorColor = [UIColor colorWithRed:43.0/255.0 green:56.0/255.0 blue:143.0/255.0 alpha:1.0];
+            break;
+        case 3:
+            indicatorColor = [UIColor colorWithRed:98.0/255.0 green:102.0/255.0 blue:106.0/255.0 alpha:1.0];
+            break;
+        case 4:
+            indicatorColor = [UIColor colorWithRed:80.0/255.0 green:157.0/255.0 blue:69.0/255.0 alpha:1.0];
+            break;
+        case 5:
+            indicatorColor = [UIColor colorWithRed:255.0/255.0 green:142.0/255.0 blue:20.0/255.0 alpha:1.0];
+            break;
+            
+        default:
+            break;
+    }
+    return indicatorColor;
+}
+
 -(void) didSelectItemAtIndex:(NSInteger) selectedIndex inMenu:(menuWithIndicator *)indicatorMenu {
     NSLog(@"\n\n No.%i  Tap first time", (int)selectedIndex);
     [self loadThePage:(int)selectedIndex+1];

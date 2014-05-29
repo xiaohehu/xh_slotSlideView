@@ -3,28 +3,28 @@
 <plist version="1.0">
 <array>
 	<array>
-		<string>000page.jpg</string>
+		<string>foot_dup.jpg</string>
 	</array>
 	<array>
-		<string>001page.jpg</string>
+		<string>car.jpg</string>
 	</array>
 	<array>
-		<string>016page.jpg</string>
+		<string>Boat.jpg</string>
 	</array>
 	<array>
-		<string>011page.jpg</string>
+		<string>T.jpg</string>
 	</array>
 	<array>
-		<string>021page.jpg</string>
+		<string>plane.jpg</string>
 	</array>
 	<array>
-		<string>012page.jpg</string>
+		<string>bike.jpg</string>
 	</array>
 	<array>
-		<string>023page.jpg</string>
+		<string>foot.jpg</string>
 	</array>
 	<array>
-		<string>024page.jpg</string>
+		<string>car_dup.jpg</string>
 	</array>
 </array>
 </plist>

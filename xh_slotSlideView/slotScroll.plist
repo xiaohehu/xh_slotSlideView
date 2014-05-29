@@ -10,8 +10,8 @@
 				<string>movie_tmp.jpg</string>
 				<string>pdf_tmp.jpg</string>
 			</array>
-			<key>color</key>
-			<string>120,50,36</string>
+			<key>bgimage</key>
+			<string>slotmachine_surroundings_getting_bg_leftright.png</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>label</key>
@@ -24,8 +24,8 @@
 				<string>movie_tmp.jpg</string>
 				<string>pdf_tmp.jpg</string>
 			</array>
-			<key>color</key>
-			<string>120,251,36</string>
+			<key>bgimage</key>
+			<string>slotmachine_surroundings_getting_bg_leftright.png</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>label</key>
@@ -38,8 +38,8 @@
 				<string>movie_tmp.jpg</string>
 				<string>pdf_tmp.jpg</string>
 			</array>
-			<key>color</key>
-			<string>120,50,36</string>
+			<key>bgimage</key>
+			<string>slotmachine_surroundings_getting_bg_leftright.png</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>label</key>
@@ -54,8 +54,8 @@
 				<string>movie_tmp.jpg</string>
 				<string>pdf_tmp.jpg</string>
 			</array>
-			<key>color</key>
-			<string>120,50,36</string>
+			<key>bgimage</key>
+			<string>slotmachine_surroundings_getting_bg_center.png</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>label</key>
@@ -68,12 +68,12 @@
 				<string>movie_tmp.jpg</string>
 				<string>pdf_tmp.jpg</string>
 			</array>
-			<key>color</key>
-			<string>120,251,36</string>
+			<key>bgimage</key>
+			<string>slotmachine_surroundings_getting_bg_center.png</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>label</key>
-			<string>BY PUBLIC TRANSPORT</string>
+			<string>BY RAIL</string>
 		</dict>
 		<dict>
 			<key>images</key>
@@ -82,8 +82,8 @@
 				<string>movie_tmp.jpg</string>
 				<string>pdf_tmp.jpg</string>
 			</array>
-			<key>color</key>
-			<string>120,50,36</string>
+			<key>bgimage</key>
+			<string>slotmachine_surroundings_getting_bg_center.png</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>label</key>
@@ -98,8 +98,8 @@
 				<string>movie_tmp.jpg</string>
 				<string>pdf_tmp.jpg</string>
 			</array>
-			<key>color</key>
-			<string>120,50,36</string>
+			<key>bgimage</key>
+			<string>slotmachine_surroundings_getting_bg_leftright.png</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>label</key>
@@ -112,8 +112,8 @@
 				<string>movie_tmp.jpg</string>
 				<string>pdf_tmp.jpg</string>
 			</array>
-			<key>color</key>
-			<string>120,251,36</string>
+			<key>bgimage</key>
+			<string>slotmachine_surroundings_getting_bg_leftright.png</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>label</key>
@@ -126,8 +126,8 @@
 				<string>movie_tmp.jpg</string>
 				<string>pdf_tmp.jpg</string>
 			</array>
-			<key>color</key>
-			<string>120,50,36</string>
+			<key>bgimage</key>
+			<string>slotmachine_surroundings_getting_bg_leftright.png</string>
 			<key>duration</key>
 			<real>1</real>
 			<key>label</key>

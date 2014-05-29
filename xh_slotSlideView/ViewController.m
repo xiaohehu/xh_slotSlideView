@@ -31,25 +31,26 @@
 
 -(void)initButtons {
     _uib_location = [UIButton buttonWithType:UIButtonTypeCustom];
-    _uib_location.frame = CGRectMake(200.0, 200.0, 200.0, 50.0);
+    _uib_location.frame = CGRectMake(412.0, 200.0, 200.0, 50.0);
     _uib_location.backgroundColor = [UIColor whiteColor];
-    [_uib_location setTitle:@"Load Location Slot" forState:UIControlStateNormal];
+    [_uib_location setTitle:@"Location Slot" forState:UIControlStateNormal];
     [_uib_location setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_uib_location addTarget:self action:@selector(loadLocationSlot) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview: _uib_location];
     
     _uib_skaska360 = [UIButton buttonWithType:UIButtonTypeCustom];
-    _uib_skaska360.frame = CGRectMake(200.0, 280.0, 200.0, 50.0);
+    _uib_skaska360.frame = CGRectMake(412.0, 380.0, 200.0, 50.0);
     _uib_skaska360.backgroundColor = [UIColor whiteColor];
-    [_uib_skaska360 setTitle:@"Load Skanska 360˚" forState:UIControlStateNormal];
+    [_uib_skaska360 setTitle:@"Skanska 360˚" forState:UIControlStateNormal];
     [_uib_skaska360 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_uib_skaska360 addTarget:self action:@selector(loadSkanskaSlot) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview: _uib_skaska360];
     
     _uib_mainScreen = [UIButton buttonWithType:UIButtonTypeCustom];
-    _uib_mainScreen.frame = CGRectMake(40.0, 700, 150, 40);
+    _uib_mainScreen.frame = CGRectMake(0.0, 0, 100, 40);
     _uib_mainScreen.backgroundColor = [UIColor blackColor];
-    [_uib_mainScreen setTitle:@"<-MAIN MENU" forState:UIControlStateNormal];
+    [_uib_mainScreen setTitle:@"<-BACK" forState:UIControlStateNormal];
+    _uib_mainScreen.alpha = 0.4;
     [_uib_mainScreen addTarget:self action:@selector(backToMainMenu) forControlEvents:UIControlEventTouchUpInside];
     _uib_mainScreen.hidden = YES;
     [self.view addSubview:_uib_mainScreen];
