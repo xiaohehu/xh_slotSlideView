@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		8207877719116CAD00279840 /* slotScroll.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8207877619116CAD00279840 /* slotScroll.plist */; };
+		820B86C51937DF370021DFA7 /* byBike.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86B91937DF370021DFA7 /* byBike.jpg */; };
+		820B86C61937DF370021DFA7 /* byBike@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86BA1937DF370021DFA7 /* byBike@2x.jpg */; };
+		820B86C71937DF370021DFA7 /* byBoat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86BB1937DF370021DFA7 /* byBoat.jpg */; };
+		820B86C81937DF370021DFA7 /* byBoat@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86BC1937DF370021DFA7 /* byBoat@2x.jpg */; };
+		820B86C91937DF370021DFA7 /* byCar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86BD1937DF370021DFA7 /* byCar.jpg */; };
+		820B86CA1937DF370021DFA7 /* byCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86BE1937DF370021DFA7 /* byCar@2x.jpg */; };
+		820B86CB1937DF370021DFA7 /* byFoot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86BF1937DF370021DFA7 /* byFoot.jpg */; };
+		820B86CC1937DF370021DFA7 /* byFoot@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86C01937DF370021DFA7 /* byFoot@2x.jpg */; };
+		820B86CD1937DF370021DFA7 /* byPlane.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86C11937DF370021DFA7 /* byPlane.jpg */; };
+		820B86CE1937DF370021DFA7 /* byPlane@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86C21937DF370021DFA7 /* byPlane@2x.jpg */; };
+		820B86CF1937DF370021DFA7 /* byRail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86C31937DF370021DFA7 /* byRail.jpg */; };
+		820B86D01937DF370021DFA7 /* byRail@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86C41937DF370021DFA7 /* byRail@2x.jpg */; };
 		8215D3291937839E007F40B7 /* slotmachine_skanska_360_icon_local_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215D3271937839E007F40B7 /* slotmachine_skanska_360_icon_local_small@2x.png */; };
 		8215D32A1937839E007F40B7 /* slotmachine_skanska_360_icon_local_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215D3281937839E007F40B7 /* slotmachine_skanska_360_icon_local_small.png */; };
 		821A46F01919638C00C5CF3D /* car_dup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 821A46D71919638C00C5CF3D /* car_dup.jpg */; };
@@ -135,6 +147,18 @@
 
 /* Begin PBXFileReference section */
 		8207877619116CAD00279840 /* slotScroll.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = slotScroll.plist; sourceTree = "<group>"; };
+		820B86B91937DF370021DFA7 /* byBike.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = byBike.jpg; sourceTree = "<group>"; };
+		820B86BA1937DF370021DFA7 /* byBike@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "byBike@2x.jpg"; sourceTree = "<group>"; };
+		820B86BB1937DF370021DFA7 /* byBoat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = byBoat.jpg; sourceTree = "<group>"; };
+		820B86BC1937DF370021DFA7 /* byBoat@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "byBoat@2x.jpg"; sourceTree = "<group>"; };
+		820B86BD1937DF370021DFA7 /* byCar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = byCar.jpg; sourceTree = "<group>"; };
+		820B86BE1937DF370021DFA7 /* byCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "byCar@2x.jpg"; sourceTree = "<group>"; };
+		820B86BF1937DF370021DFA7 /* byFoot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = byFoot.jpg; sourceTree = "<group>"; };
+		820B86C01937DF370021DFA7 /* byFoot@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "byFoot@2x.jpg"; sourceTree = "<group>"; };
+		820B86C11937DF370021DFA7 /* byPlane.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = byPlane.jpg; sourceTree = "<group>"; };
+		820B86C21937DF370021DFA7 /* byPlane@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "byPlane@2x.jpg"; sourceTree = "<group>"; };
+		820B86C31937DF370021DFA7 /* byRail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = byRail.jpg; sourceTree = "<group>"; };
+		820B86C41937DF370021DFA7 /* byRail@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "byRail@2x.jpg"; sourceTree = "<group>"; };
 		8215D3271937839E007F40B7 /* slotmachine_skanska_360_icon_local_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotmachine_skanska_360_icon_local_small@2x.png"; sourceTree = "<group>"; };
 		8215D3281937839E007F40B7 /* slotmachine_skanska_360_icon_local_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotmachine_skanska_360_icon_local_small.png; sourceTree = "<group>"; };
 		821A46D71919638C00C5CF3D /* car_dup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = car_dup.jpg; sourceTree = "<group>"; };
@@ -433,6 +457,18 @@
 		829BAF711937BB8000B3F1BF /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				820B86B91937DF370021DFA7 /* byBike.jpg */,
+				820B86BA1937DF370021DFA7 /* byBike@2x.jpg */,
+				820B86BB1937DF370021DFA7 /* byBoat.jpg */,
+				820B86BC1937DF370021DFA7 /* byBoat@2x.jpg */,
+				820B86BD1937DF370021DFA7 /* byCar.jpg */,
+				820B86BE1937DF370021DFA7 /* byCar@2x.jpg */,
+				820B86BF1937DF370021DFA7 /* byFoot.jpg */,
+				820B86C01937DF370021DFA7 /* byFoot@2x.jpg */,
+				820B86C11937DF370021DFA7 /* byPlane.jpg */,
+				820B86C21937DF370021DFA7 /* byPlane@2x.jpg */,
+				820B86C31937DF370021DFA7 /* byRail.jpg */,
+				820B86C41937DF370021DFA7 /* byRail@2x.jpg */,
 				822211A61937C9DD008EFA89 /* slotmachine_surroundings_getting_bg_center.png */,
 				822211A71937C9DD008EFA89 /* slotmachine_surroundings_getting_bg_center@2x.png */,
 				822211A81937C9DD008EFA89 /* slotmachine_surroundings_getting_bg_leftright.png */,
@@ -607,6 +643,7 @@
 			files = (
 				82E209EB1912CC3400D7BDEC /* Fenway.storyboard in Resources */,
 				826AE94619094DCD006A689B /* Images.xcassets in Resources */,
+				820B86CB1937DF370021DFA7 /* byFoot.jpg in Resources */,
 				821A47051919638C00C5CF3D /* foot.jpg in Resources */,
 				829BAFB61937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_foot_icon_on.png in Resources */,
 				829BAFA71937BB8000B3F1BF /* slotmachine_surroundings_getting_icon_plane@2x.png in Resources */,
@@ -619,6 +656,7 @@
 				8207877719116CAD00279840 /* slotScroll.plist in Resources */,
 				8215D3291937839E007F40B7 /* slotmachine_skanska_360_icon_local_small@2x.png in Resources */,
 				829BAFB81937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_foot_off.png in Resources */,
+				820B86C71937DF370021DFA7 /* byBoat.jpg in Resources */,
 				829BAFB11937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_car_icon_on@2x.png in Resources */,
 				821A46FC1919638C00C5CF3D /* Boat.jpg in Resources */,
 				829BAFB51937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_ferry_icon_on@2x.png in Resources */,
@@ -632,17 +670,23 @@
 				8247BCF419376E7700A2AB80 /* slotmachine_skanska_360_icon_self@2x.png in Resources */,
 				829BAFB41937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_ferry_icon_on.png in Resources */,
 				829BAFAC1937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_bike_icon_on.png in Resources */,
+				820B86CC1937DF370021DFA7 /* byFoot@2x.jpg in Resources */,
 				829BAFA81937BB8000B3F1BF /* slotmachine_surroundings_getting_icon_t.png in Resources */,
 				8247BCF119376E7700A2AB80 /* slotmachine_skanska_360_icon_local.png in Resources */,
 				82E209F71912CC5A00D7BDEC /* panel_images.plist in Resources */,
 				829BAFAA1937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_bike_icon_off.png in Resources */,
+				820B86C51937DF370021DFA7 /* byBike.jpg in Resources */,
 				829BAFBB1937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_plane_icon_off@2x.png in Resources */,
 				8215D32A1937839E007F40B7 /* slotmachine_skanska_360_icon_local_small.png in Resources */,
 				822211A51937C4F5008EFA89 /* foot_dup.jpg in Resources */,
+				820B86D01937DF370021DFA7 /* byRail@2x.jpg in Resources */,
 				821A46F11919638C00C5CF3D /* bike.jpg in Resources */,
+				820B86CE1937DF370021DFA7 /* byPlane@2x.jpg in Resources */,
+				820B86CA1937DF370021DFA7 /* byCar@2x.jpg in Resources */,
 				829BAFAF1937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_car_icon_off@2x.png in Resources */,
 				822211AD1937C9DD008EFA89 /* slotmachine_surroundings_getting_bg_leftright@2x.png in Resources */,
 				82E209F81912CC5A00D7BDEC /* titles.plist in Resources */,
+				820B86C81937DF370021DFA7 /* byBoat@2x.jpg in Resources */,
 				821A46F01919638C00C5CF3D /* car_dup.jpg in Resources */,
 				829BAFBC1937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_plane_icon_on.png in Resources */,
 				8247BCEE19376E7700A2AB80 /* slotmachine_skanska_360_button_down@2x.png in Resources */,
@@ -652,6 +696,7 @@
 				822211AA1937C9DD008EFA89 /* slotmachine_surroundings_getting_bg_center.png in Resources */,
 				821A47071919638C00C5CF3D /* car.jpg in Resources */,
 				829BAFA11937BB8000B3F1BF /* slotmachine_surroundings_getting_icon_car@2x.png in Resources */,
+				820B86CF1937DF370021DFA7 /* byRail.jpg in Resources */,
 				8247BCED19376E7700A2AB80 /* slotmachine_skanska_360_button_down.png in Resources */,
 				826AE93819094DCD006A689B /* InfoPlist.strings in Resources */,
 				829BAFB31937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_ferry_icon_off@2x.png in Resources */,
@@ -659,6 +704,7 @@
 				829BAF0B1937A89600B3F1BF /* grfx_location_slot_bg@2x.jpg in Resources */,
 				82B0917F1936311C0083B151 /* slotUIView.plist in Resources */,
 				822211AB1937C9DD008EFA89 /* slotmachine_surroundings_getting_bg_center@2x.png in Resources */,
+				820B86C91937DF370021DFA7 /* byCar.jpg in Resources */,
 				829BAFA91937BB8000B3F1BF /* slotmachine_surroundings_getting_icon_t@2x.png in Resources */,
 				829BAFB01937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_car_icon_on.png in Resources */,
 				829BAFA21937BB8000B3F1BF /* slotmachine_surroundings_getting_icon_ferry.png in Resources */,
@@ -667,6 +713,7 @@
 				822211AC1937C9DD008EFA89 /* slotmachine_surroundings_getting_bg_leftright.png in Resources */,
 				829BAFA51937BB8000B3F1BF /* slotmachine_surroundings_getting_icon_foot@2x.png in Resources */,
 				829BAFA41937BB8000B3F1BF /* slotmachine_surroundings_getting_icon_foot.png in Resources */,
+				820B86CD1937DF370021DFA7 /* byPlane.jpg in Resources */,
 				82E209F41912CC5A00D7BDEC /* fenway_panel.plist in Resources */,
 				829BAFAD1937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_bike_icon_on@2x.png in Resources */,
 				829BAFB21937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_ferry_icon_off.png in Resources */,
@@ -681,6 +728,7 @@
 				8247BCE719376E7700A2AB80 /* slotmachine_skanska_360_bg_center.png in Resources */,
 				8247BCF619376E7700A2AB80 /* slotmachine_skanska_360_icon_world@2x.png in Resources */,
 				826AE968190963A6006A689B /* fpo_tmp.jpg in Resources */,
+				820B86C61937DF370021DFA7 /* byBike@2x.jpg in Resources */,
 				8247BCEC19376E7700A2AB80 /* slotmachine_skanska_360_bg_right@2x.png in Resources */,
 				829BAFB71937BB8000B3F1BF /* slotmachine_surroundings_getting_nav2_foot_icon_on@2x.png in Resources */,
 				829BAF9E1937BB8000B3F1BF /* slotmachine_surroundings_getting_icon_bike.png in Resources */,
