@@ -101,11 +101,29 @@
                 break;
         }
     }
+    
+    //Init back view
+    _uiv_backView = [[UIView alloc] initWithFrame:CGRectMake(350, 710, 150, 40)];
+    UIImageView *uiiv_backArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"slotmachine_surroundings_getting_button_back.png"]];
+    uiiv_backArrow.frame = CGRectMake(0.0, 0.0, uiiv_backArrow.frame.size.width, uiiv_backArrow.frame.size.height);
+    [_uiv_backView addSubview:uiiv_backArrow];
+    UILabel *uil_back = [[UILabel alloc] initWithFrame:CGRectMake(30.0, 0.0, 50.0, 25.0)];
+    [uil_back setText:@"BACK"];
+    [uil_back setTextColor:[UIColor colorWithRed:80.0/255.0 green:157.0/255.0 blue:69.0/255.0 alpha:1.0]];
+    [_uiv_backView addSubview:uil_back];
+    _uiv_backView.hidden = YES;
+    [self.view addSubview:_uiv_backView];
+    
+    UITapGestureRecognizer *tapToBack = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backToMain)];
+    tapToBack.delegate = self;
+    _uiv_backView.userInteractionEnabled = YES;
+    [_uiv_backView addGestureRecognizer:tapToBack];
+    
     _uib_back = [UIButton buttonWithType:UIButtonTypeCustom];
     _uib_back.frame = CGRectMake(290.0, 710.0, 60.0, 30.0);
     _uib_back.backgroundColor = [UIColor blueColor];
     [_uib_back setTitle:@"back" forState:UIControlStateNormal];
-    [self.view addSubview: _uib_back];
+//    [self.view addSubview: _uib_back];
     _uib_back.hidden = YES;
     [_uib_back addTarget:self action:@selector(backToMain) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -113,17 +131,14 @@
 #pragma mark - Handle Tap On Slot Scroll View
 
 -(void)tapOnSlotScrollView:(UITapGestureRecognizer *)recognizer {
-    _uiv_backView = [[UIView alloc] initWithFrame:self.view.bounds];
-    //    [self.view insertSubview:_uiv_backView belowSubview:_uis_slotScrollView];
-    _uiv_backView.backgroundColor = [UIColor blackColor];
-    [self.view insertSubview:_pageVC.view belowSubview:_uib_back];
+
+    [self.view insertSubview:_pageVC.view belowSubview:_uiv_backView];
     
     
     if (recognizer.view.tag == 100) {
         
         NSLog(@"The tag is 100");
         if ((_uis_slotScrollView.contentOffset.y/_uis_slotScrollView.frame.size.height) == 1) {
-            _uiv_backView.backgroundColor = [UIColor redColor];
             [_pageVC loadPageFromParent:4];
         }
         else {
@@ -139,6 +154,7 @@
                                  _pageVC.view.alpha = 1.0;
                              }];
                              _uib_back.hidden = NO;
+                             _uiv_backView.hidden = NO;
                              [_uis_slotScrollView pauseAnimation:YES];
                              [_uis_slotScrollView1 pauseAnimation:YES];
                              [_uis_slotScrollView2 pauseAnimation:YES];
@@ -149,7 +165,6 @@
         
         NSLog(@"The tag is 101");
         if ((_uis_slotScrollView1.contentOffset.y/_uis_slotScrollView1.frame.size.height) == 1) {
-            _uiv_backView.backgroundColor = [UIColor redColor];
             [_pageVC loadPageFromParent:3];
             [_pageVC updateTitleImage:2];
         }
@@ -166,6 +181,7 @@
                                  _pageVC.view.alpha = 1.0;
                              }];
                              _uib_back.hidden = NO;
+                             _uiv_backView.hidden = NO;
                              [_uis_slotScrollView pauseAnimation:YES];
                              [_uis_slotScrollView1 pauseAnimation:YES];
                              [_uis_slotScrollView2 pauseAnimation:YES];
@@ -176,7 +192,6 @@
         
         NSLog(@"The tag is 102");
         if ((_uis_slotScrollView2.contentOffset.y/_uis_slotScrollView2.frame.size.height) == 1) {
-            _uiv_backView.backgroundColor = [UIColor redColor];
             [_pageVC loadPageFromParent:1];
         }
         else {
@@ -192,6 +207,7 @@
                                  _pageVC.view.alpha = 1.0;
                              }];
                              _uib_back.hidden = NO;
+                             _uiv_backView.hidden = NO;
                              [_uis_slotScrollView pauseAnimation:YES];
                              [_uis_slotScrollView1 pauseAnimation:YES];
                              [_uis_slotScrollView2 pauseAnimation:YES];
@@ -204,7 +220,7 @@
 -(void)backToMain
 {
     _uib_back.hidden = YES;
-    
+    _uiv_backView.hidden = YES;
     //    for (xh_slotScrollView *tmp_slot in [self.view subviews]) {
     //        [tmp_slot pauseAnimation:YES];
     //    }
