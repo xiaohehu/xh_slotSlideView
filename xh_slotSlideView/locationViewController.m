@@ -120,11 +120,14 @@
     
     
     if (recognizer.view.tag == 100) {
-        [_pageVC loadPageFromParent:5];
+        
         NSLog(@"The tag is 100");
         if ((_uis_slotScrollView.contentOffset.y/_uis_slotScrollView.frame.size.height) == 1) {
             _uiv_backView.backgroundColor = [UIColor redColor];
             [_pageVC loadPageFromParent:4];
+        }
+        else {
+            [_pageVC loadPageFromParent:5];
         }
         [UIView animateWithDuration:1.0 animations:^{
             _uis_slotScrollView.transform = CGAffineTransformMakeTranslation(-_uis_slotScrollView.frame.size.width, 0.0);
@@ -143,11 +146,15 @@
     }
     
     if (recognizer.view.tag == 101) {
-        [_pageVC loadPageFromParent:2];
+        
         NSLog(@"The tag is 101");
         if ((_uis_slotScrollView1.contentOffset.y/_uis_slotScrollView1.frame.size.height) == 1) {
             _uiv_backView.backgroundColor = [UIColor redColor];
             [_pageVC loadPageFromParent:3];
+            [_pageVC updateTitleImage:2];
+        }
+        else {
+            [_pageVC loadPageFromParent:2];
         }
         [UIView animateWithDuration:1.0 animations:^{
             _uis_slotScrollView.transform = CGAffineTransformMakeTranslation(-_uis_slotScrollView.frame.size.width, 0.0);
@@ -166,11 +173,14 @@
     }
     
     if (recognizer.view.tag == 102) {
-        [_pageVC loadPageFromParent:6];
+        
         NSLog(@"The tag is 102");
         if ((_uis_slotScrollView2.contentOffset.y/_uis_slotScrollView2.frame.size.height) == 1) {
             _uiv_backView.backgroundColor = [UIColor redColor];
             [_pageVC loadPageFromParent:1];
+        }
+        else {
+            [_pageVC loadPageFromParent:6];
         }
         [UIView animateWithDuration:1.0 animations:^{
             _uis_slotScrollView.transform = CGAffineTransformMakeTranslation(-_uis_slotScrollView.frame.size.width, 0.0);

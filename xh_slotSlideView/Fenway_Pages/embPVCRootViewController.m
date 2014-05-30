@@ -506,7 +506,7 @@ static int TotalPages = 7;
                                              completion:nil];
         return;
     }
-    
+    [self updateTitleImage:(int)_pageIndex-1];
 	BOOL shouldAddPanel;
 	int convertedIndex = 1;
     

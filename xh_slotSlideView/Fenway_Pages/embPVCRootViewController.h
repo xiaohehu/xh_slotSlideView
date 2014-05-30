@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 -(void)loadPageFromParent:(int)index;
+-(void)updateTitleImage:(int)index;
 @property (nonatomic,assign) int incomingIndex;
 @end
