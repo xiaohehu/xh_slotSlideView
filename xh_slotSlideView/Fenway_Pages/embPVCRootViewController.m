@@ -292,35 +292,9 @@ static int TotalPages = 7;
 -(NSInteger) numberOfMenuItems {
     return 6;
 }
--(NSString *) titleOfButtonsAtIndex:(NSInteger) index {
-//    NSString *buttonTitle = nil;
-//    
-//    switch (index) {
-//        case 0:
-//            buttonTitle = @"BIKE";
-//            break;
-//        case 1:
-//            buttonTitle = @"PUBLIC TRANSPORT";
-//            break;
-//        case 2:
-//            buttonTitle = @"PLANE";
-//            break;
-//        case 3:
-//            buttonTitle = @"FOOT";
-//            break;
-//        case 4:
-//            buttonTitle = @"BOAT";
-//            break;
-//        case 5:
-//            buttonTitle = @"CAR";
-//            break;
-//        default:
-//            break;
-//    }
-//    return buttonTitle;
-    return nil;
+-(CGFloat) indicatorYValue {
+    return -10.0;
 }
-
 -(UIImage *)  imageOfButtonsAtIndex:(NSInteger) index {
     UIImage *buttonImage = [[UIImage alloc] init];
     switch (index) {
@@ -346,8 +320,8 @@ static int TotalPages = 7;
             break;
     }
     return buttonImage;
-//    return nil;
 }
+
 -(UIImage *)  imageOfSelectedButtonAtIndex:(NSInteger) index {
     UIImage *selectedImage = [[UIImage alloc] init];
     switch (index) {
@@ -374,11 +348,10 @@ static int TotalPages = 7;
             break;
     }
     return selectedImage;
-//    return nil;
 }
+
 -(UIView *)indicatorForMenu {
     UIView *uiv_indicator = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 10.0, 10.0)];
-//    uiv_indicator.backgroundColor = [UIColor brownColor];
     CGPoint saveCenter = uiv_indicator.center;
     CGRect newFrame = CGRectMake(uiv_indicator.frame.origin.x, uiv_indicator.frame.origin.y, uiv_indicator.frame.size.width, uiv_indicator.frame.size.height);
     uiv_indicator.frame = newFrame;
@@ -386,6 +359,7 @@ static int TotalPages = 7;
     uiv_indicator.center = saveCenter;
     return uiv_indicator;
 }
+
 -(UIColor *) colorsForIndicator:(NSInteger)index {
     UIColor *indicatorColor;
     switch (index) {

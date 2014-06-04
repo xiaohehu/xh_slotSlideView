@@ -14,6 +14,7 @@
 @interface menuWithIndicator : UIView {
 
 }
+@property (nonatomic, readwrite)float                       indicator_Y;
 
 @property (nonatomic, strong) id<indicatorMenuDataSource>   dataSource;
 @property (nonatomic, strong) id<indicatorMenuDelegate>     delegate;
@@ -38,6 +39,7 @@
 -(UIImage *)  imageOfSelectedButtonAtIndex:(NSInteger) index;
 -(UIView *) indicatorForMenu;
 -(UIColor *)  colorsForIndicator:(NSInteger) index;
+-(CGFloat)    indicatorYValue;
 //-(NSArray *) titleOfButtons;
 //-(NSArray *) imageOfButtons;
 //-(NSArray *) imageOfSelectedButton;

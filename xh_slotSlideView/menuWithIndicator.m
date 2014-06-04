@@ -7,7 +7,7 @@
 //
 
 #import "menuWithIndicator.h"
-static float indicator_Y = -10;
+//static float indicator_Y = -10;
 static float buttonSpace = 0.0;
 static float buttonWidth = 70.0;
 @interface menuWithIndicator ()
@@ -19,13 +19,15 @@ static float buttonWidth = 70.0;
 
 @implementation menuWithIndicator
 @synthesize arr_buttonImages, arr_buttonSelectImage, arr_buttonTitles, arr_indicatorColors;
-
+@synthesize indicator_Y;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         _preBtnTag = -1;
+        indicator_Y = 0.0;
+        
         self.arr_buttonImages = [[NSMutableArray alloc] init];
         self.arr_buttonTitles = [[NSMutableArray alloc] init];
         self.arr_buttonSelectImage = [[NSMutableArray alloc] init];
@@ -55,29 +57,33 @@ static float buttonWidth = 70.0;
         NSInteger count = [self.dataSource numberOfMenuItems];
         
         //Add button Title
-        if ([self.dataSource titleOfButtonsAtIndex:0] != nil) {
+        if ([self.dataSource respondsToSelector:@selector(titleOfButtonsAtIndex:)] ) {
             for (int i = 0; i < count; i++) {
                 NSString *buttonTitle = [self.dataSource titleOfButtonsAtIndex:i];
                 [self.arr_buttonTitles addObject:buttonTitle];
             }
         }
         //Add Button Background Image
-        if ([self.dataSource imageOfButtonsAtIndex:0] != nil) {
+        if ([self.dataSource respondsToSelector:@selector(imageOfButtonsAtIndex:)]) {
             for (int j = 0; j < count; j++) {
                 [self.arr_buttonImages addObject:[self.dataSource imageOfButtonsAtIndex:j]];
             }
         }
         //Add Selected Button's Background Image
-        if ([self.dataSource imageOfSelectedButtonAtIndex:0] != nil) {
+        if ([self.dataSource respondsToSelector:@selector(imageOfSelectedButtonAtIndex:)] ) {
             for (int k = 0; k < count; k++) {
                 [self.arr_buttonSelectImage addObject:[self.dataSource imageOfSelectedButtonAtIndex:k]];
             }
         }
         //Add indicator's colors
-        if ([self.dataSource colorsForIndicator:0] != nil) {
+        if ([self.dataSource respondsToSelector:@selector(colorsForIndicator:)] ) {
             for (int i = 0; i < count; i++) {
                 [self.arr_indicatorColors addObject:[self.dataSource colorsForIndicator:i]];
             }
+        }
+        //Set indicator's Y Value
+        if ([self.dataSource respondsToSelector:@selector(indicatorYValue)]) {
+            indicator_Y = [self.dataSource indicatorYValue];
         }
         //Add menu's indicator
         _uiv_menuIndicator = [self.dataSource indicatorForMenu];
