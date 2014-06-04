@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8207877719116CAD00279840 /* slotScroll.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8207877619116CAD00279840 /* slotScroll.plist */; };
+		8207952C193F7422002DEEDE /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8207952B193F7422002DEEDE /* UIColor+Extensions.m */; };
 		820B86C51937DF370021DFA7 /* byBike.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86B91937DF370021DFA7 /* byBike.jpg */; };
 		820B86C61937DF370021DFA7 /* byBike@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86BA1937DF370021DFA7 /* byBike@2x.jpg */; };
 		820B86C71937DF370021DFA7 /* byBoat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 820B86BB1937DF370021DFA7 /* byBoat.jpg */; };
@@ -157,6 +158,8 @@
 
 /* Begin PBXFileReference section */
 		8207877619116CAD00279840 /* slotScroll.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = slotScroll.plist; sourceTree = "<group>"; };
+		8207952A193F7422002DEEDE /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
+		8207952B193F7422002DEEDE /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
 		820B86B91937DF370021DFA7 /* byBike.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = byBike.jpg; sourceTree = "<group>"; };
 		820B86BA1937DF370021DFA7 /* byBike@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "byBike@2x.jpg"; sourceTree = "<group>"; };
 		820B86BB1937DF370021DFA7 /* byBoat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = byBoat.jpg; sourceTree = "<group>"; };
@@ -436,6 +439,8 @@
 				82B0917C19362C220083B151 /* xh_slotUIView.m */,
 				824C246C192CE5760070A6AC /* menuWithIndicator.h */,
 				824C246D192CE5760070A6AC /* menuWithIndicator.m */,
+				8207952A193F7422002DEEDE /* UIColor+Extensions.h */,
+				8207952B193F7422002DEEDE /* UIColor+Extensions.m */,
 				8207877619116CAD00279840 /* slotScroll.plist */,
 				82B0917E1936311C0083B151 /* slotUIView.plist */,
 				829BAF711937BB8000B3F1BF /* Location */,
@@ -817,6 +822,7 @@
 				82E209FD1912CD0000D7BDEC /* embBezierItem.m in Sources */,
 				82E209EA1912CC3400D7BDEC /* embPVCRootViewController.m in Sources */,
 				82E20A011912CD2400D7BDEC /* embFenwayBlockPaths.m in Sources */,
+				8207952C193F7422002DEEDE /* UIColor+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

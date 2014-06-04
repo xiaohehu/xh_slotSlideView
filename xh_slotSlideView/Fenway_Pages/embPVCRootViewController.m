@@ -11,6 +11,7 @@
 #import "embPVCBaseViewController.h"
 #import "embMorphTwoPaths.h"
 #import "menuWithIndicator.h"
+#import "UIColor+Extensions.h"
 @interface embPVCRootViewController () <embMorphTwoPathsDelegate, indicatorMenuDataSource, indicatorMenuDelegate>
 {
 	CGRect				titleLabelFrame;
@@ -364,22 +365,22 @@ static int TotalPages = 7;
     UIColor *indicatorColor;
     switch (index) {
         case 0:
-            indicatorColor = [UIColor colorWithRed:42.0/255.0 green:64.0/255.0 blue:255.0/255.0 alpha:1.0];
+            indicatorColor = [UIColor skCarPath];
             break;
         case 1:
-            indicatorColor = [UIColor colorWithRed:74.0/255.0 green:189.0/255.0 blue:232.0/255.0 alpha:1.0];
+            indicatorColor = [UIColor skLightBlue];
             break;
         case 2:
-            indicatorColor = [UIColor colorWithRed:43.0/255.0 green:56.0/255.0 blue:143.0/255.0 alpha:1.0];
+            indicatorColor = [UIColor skRailPath];
             break;
         case 3:
-            indicatorColor = [UIColor colorWithRed:98.0/255.0 green:102.0/255.0 blue:106.0/255.0 alpha:1.0];
+            indicatorColor = [UIColor skDarkGray];
             break;
         case 4:
-            indicatorColor = [UIColor colorWithRed:80.0/255.0 green:157.0/255.0 blue:69.0/255.0 alpha:1.0];
+            indicatorColor = [UIColor skDarkGreen];
             break;
         case 5:
-            indicatorColor = [UIColor colorWithRed:255.0/255.0 green:142.0/255.0 blue:20.0/255.0 alpha:1.0];
+            indicatorColor = [UIColor skFootPath];
             break;
             
         default:
