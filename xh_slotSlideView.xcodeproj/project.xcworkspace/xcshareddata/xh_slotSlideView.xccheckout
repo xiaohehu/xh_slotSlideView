@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4B214A7C-077E-4C8C-A100-296E25AA251E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>xh_slotSlideView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7EAE5800-A385-40C3-986D-564E329AD2D4</key>
+		<string>https://github.com/xiaohehu/xh_slotSlideView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>xh_slotSlideView.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7EAE5800-A385-40C3-986D-564E329AD2D4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/xiaohehu/xh_slotSlideView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7EAE5800-A385-40C3-986D-564E329AD2D4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7EAE5800-A385-40C3-986D-564E329AD2D4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>xh_slotSlideView</string>
+		</dict>
+	</array>
+</dict>
+</plist>
